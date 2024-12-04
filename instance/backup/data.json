@@ -1,0 +1,6224 @@
+[
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 1,
+        "kasm_server_needed": true,
+        "name": "Thomas Edison",
+        "pfp": "toby.png",
+        "role": "Admin",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2025
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2025
+            }
+        ],
+        "uid": "toby"
+    },
+    {
+        "access": [
+            "rw"
+        ],
+        "email": "?",
+        "id": 2,
+        "kasm_server_needed": false,
+        "name": "Grace Hopper",
+        "pfp": "hop.png",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2025
+            },
+            {
+                "abbreviation": "Robotics",
+                "id": 3,
+                "name": "Engineering Robotics",
+                "year": 2025
+            }
+        ],
+        "uid": "hop"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 3,
+        "kasm_server_needed": false,
+        "name": "Nicholas Tesla",
+        "pfp": "niko.png",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2025
+            }
+        ],
+        "uid": "niko"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 7,
+        "kasm_server_needed": false,
+        "name": "Luna Iwazaki",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "lunaiwa"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 8,
+        "kasm_server_needed": false,
+        "name": "Aliya Tang",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "aliyatang"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 9,
+        "kasm_server_needed": false,
+        "name": "Tay Kim",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "TayKimmy"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 10,
+        "kasm_server_needed": false,
+        "name": "Ethan Tran",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "realethantran"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 11,
+        "kasm_server_needed": false,
+        "name": "Raymond Sheng",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            }
+        ],
+        "uid": "raymondYsheng"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 12,
+        "kasm_server_needed": false,
+        "name": "Eunseo Lim",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "eunseolim123"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 13,
+        "kasm_server_needed": false,
+        "name": "Jordan Pham",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "jntpham"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 14,
+        "kasm_server_needed": false,
+        "name": "Aashray Reddy",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "KinetekEnergy"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 15,
+        "kasm_server_needed": false,
+        "name": "Avanthika Daita",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "avanthikadaita"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 16,
+        "kasm_server_needed": false,
+        "name": "Ryan Liu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "RyanZLiu"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 17,
+        "kasm_server_needed": false,
+        "name": "Dante Atanassov",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "DanteA-tech"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 18,
+        "kasm_server_needed": false,
+        "name": "Aditya D",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "ad1tyad3sa1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 19,
+        "kasm_server_needed": false,
+        "name": "Saaras",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Saaras859"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 20,
+        "kasm_server_needed": false,
+        "name": "William Cheng",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "will-w-cheng"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 21,
+        "kasm_server_needed": false,
+        "name": "Rayane Souissi",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "rayanesouuuu1234"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 22,
+        "kasm_server_needed": false,
+        "name": "Timo Al-Faraje",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "TimoA35"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 23,
+        "kasm_server_needed": false,
+        "name": "Jake Shim",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "jkaeshim"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 24,
+        "kasm_server_needed": false,
+        "name": "Daniel Lee",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "daniel-s-lee"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 25,
+        "kasm_server_needed": false,
+        "name": "Cayden Shi",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Deeskili"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 26,
+        "kasm_server_needed": false,
+        "name": "Grayson Guyot",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Delta760"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 27,
+        "kasm_server_needed": false,
+        "name": "Lakshanya S",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "lakshusan"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 28,
+        "kasm_server_needed": false,
+        "name": "Anthony Yoo",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "yooanthony"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 29,
+        "kasm_server_needed": false,
+        "name": "Sri Vaidya S",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "srivaidyas"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 30,
+        "kasm_server_needed": false,
+        "name": "Arushi Pandey",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Arushi-maker"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 31,
+        "kasm_server_needed": false,
+        "name": "Sai Talisetty",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "saiSeahawks"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 32,
+        "kasm_server_needed": false,
+        "name": "Aditya Ramesh",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "AdiBricks"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 33,
+        "kasm_server_needed": false,
+        "name": "Jason Gao",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "JasonGao76"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 34,
+        "kasm_server_needed": false,
+        "name": "Aditya Samavedam",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "AdityaSamavedam"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 35,
+        "kasm_server_needed": false,
+        "name": "Harkirat H",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Harkirat47"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 36,
+        "kasm_server_needed": false,
+        "name": "Edwin Abraham",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "EdwinKuttappi"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 37,
+        "kasm_server_needed": false,
+        "name": "Paaras Mandar Vikas Dnyaneshwar Purohit",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "PaarasPurohit"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 38,
+        "kasm_server_needed": false,
+        "name": "Isabelle G",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "isabelle926"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 39,
+        "kasm_server_needed": false,
+        "name": "Finn",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "F1nnC"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "tanishapatil07@gmail.com",
+        "id": 40,
+        "kasm_server_needed": false,
+        "name": "Tanisha Patil",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "tanishapatil1234"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 41,
+        "kasm_server_needed": false,
+        "name": "Aiden Huynh",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "aidenhuynh"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 42,
+        "kasm_server_needed": false,
+        "name": "Tianbin L",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            },
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2022
+            }
+        ],
+        "uid": "TianbinLiu"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "sreeja2930@gmail.com",
+        "id": 43,
+        "kasm_server_needed": false,
+        "name": "Sreeja Gangapuram",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "sreejagangapuram"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 44,
+        "kasm_server_needed": false,
+        "name": "Tanay Patel",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "tanayp327"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 45,
+        "kasm_server_needed": false,
+        "name": "Mati Danish",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "hsinaDitaM"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "Ryanrob327@gmail.com",
+        "id": 46,
+        "kasm_server_needed": false,
+        "name": "Ryan McWeeny",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "Ryanrob327"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 47,
+        "kasm_server_needed": false,
+        "name": "Justin Nguyen",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "jyustin"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 48,
+        "kasm_server_needed": false,
+        "name": "Rohin Sood",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "rohinsood"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 49,
+        "kasm_server_needed": false,
+        "name": "AJ Ruiz",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "KKcbal"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 50,
+        "kasm_server_needed": false,
+        "name": "Toby Leeder",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "Toby-Leeder"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 51,
+        "kasm_server_needed": false,
+        "name": "Aniket Chakradeo",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "AniCricKet"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 52,
+        "kasm_server_needed": false,
+        "name": "Shaurya Goel",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "STG-7"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 53,
+        "kasm_server_needed": false,
+        "name": "Kevin Du",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            }
+        ],
+        "uid": "DasMoge124"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 54,
+        "kasm_server_needed": false,
+        "name": "Orlando Carcamo",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "Orlando-c"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 55,
+        "kasm_server_needed": false,
+        "name": "Parav Salaniwal",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "paravsalaniwal"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 56,
+        "kasm_server_needed": false,
+        "name": "Yuri Subramaniam",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "yuricoder07"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 57,
+        "kasm_server_needed": false,
+        "name": "Grace Wang",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "gwang1224"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 58,
+        "kasm_server_needed": false,
+        "name": "Soham Kamat",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "Soham360"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 59,
+        "kasm_server_needed": false,
+        "name": "Theo Huntalas",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "TheoH32"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 60,
+        "kasm_server_needed": false,
+        "name": "Krishiv Mahendru",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "Krishiv111"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 61,
+        "kasm_server_needed": false,
+        "name": "nick kerr",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "booboo"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 62,
+        "kasm_server_needed": false,
+        "name": "Kaiden Do",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "kaiden-dough"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 63,
+        "kasm_server_needed": false,
+        "name": "Shreyas Sarurkar",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "Henerystone"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 64,
+        "kasm_server_needed": false,
+        "name": "Rachit Jaiswal",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            }
+        ],
+        "uid": "rachit-j"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 65,
+        "kasm_server_needed": false,
+        "name": "Akshat Parikh",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "akshat122805"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 66,
+        "kasm_server_needed": false,
+        "name": "Aditya",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "firestorm0986"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 67,
+        "kasm_server_needed": false,
+        "name": "Trevor Vick",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2023
+            }
+        ],
+        "uid": "Tvick22"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 68,
+        "kasm_server_needed": false,
+        "name": "Gavin Copley",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "GavinCopley"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 69,
+        "kasm_server_needed": false,
+        "name": "Katie Kim",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "katiek27"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 70,
+        "kasm_server_needed": false,
+        "name": "Ninaad Kiran",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "ninaadkiran"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 71,
+        "kasm_server_needed": false,
+        "name": "Ian Wu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "iwu78"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 72,
+        "kasm_server_needed": false,
+        "name": "Jared Baza",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "JBaza12"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 73,
+        "kasm_server_needed": false,
+        "name": "Tanay Shah",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "tanayshah1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 74,
+        "kasm_server_needed": false,
+        "name": "Akhil Singamneni",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Akhil353"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "advik.sd@gmail.com",
+        "id": 75,
+        "kasm_server_needed": false,
+        "name": "Advik Garg",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "advikg"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 76,
+        "kasm_server_needed": false,
+        "name": "Srijan Atti",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "SrijDude3416"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 77,
+        "kasm_server_needed": false,
+        "name": "Jason Guan",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "JasonGuan1012"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 78,
+        "kasm_server_needed": false,
+        "name": "Imaad Muzaffer",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Imaad08"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 79,
+        "kasm_server_needed": false,
+        "name": "Ananya Asudani",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "AnanyaAsudani"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 80,
+        "kasm_server_needed": false,
+        "name": "Aaron Hsu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "AaronH1234"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 81,
+        "kasm_server_needed": false,
+        "name": "Nandan Vallamkondu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Th35py27"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 82,
+        "kasm_server_needed": false,
+        "name": "Ashwin V",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Ashwinv93"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 83,
+        "kasm_server_needed": false,
+        "name": "Torin Wolff",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "TDWolff"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 84,
+        "kasm_server_needed": false,
+        "name": "Samhita Lagisetti",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "samhita-l"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 85,
+        "kasm_server_needed": false,
+        "name": "Aashray Rajagopalan",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "aashrayr"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 86,
+        "kasm_server_needed": false,
+        "name": "Vidha Ganji",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "vidhaganji"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 87,
+        "kasm_server_needed": false,
+        "name": "Arnav Nadar",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "ArnavNadar"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 88,
+        "kasm_server_needed": false,
+        "name": "Trevor Huang",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "trevorhuang1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 89,
+        "kasm_server_needed": false,
+        "name": "Shaun Li",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "shaunli8"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 90,
+        "kasm_server_needed": false,
+        "name": "Tucker Golpariani",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "tuckergol"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 91,
+        "kasm_server_needed": false,
+        "name": "Spencer Lyons",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Frogpants"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 92,
+        "kasm_server_needed": false,
+        "name": "Matthew Wang",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "7mwang"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 93,
+        "kasm_server_needed": false,
+        "name": "Emaad Mir",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            }
+        ],
+        "uid": "Emaad-Mir"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 94,
+        "kasm_server_needed": false,
+        "name": "Abdullah Khanani",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "abdullahkhanani9"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 95,
+        "kasm_server_needed": false,
+        "name": "Sophia S",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "55ophia"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 96,
+        "kasm_server_needed": false,
+        "name": "Maryam Abdul-Aziz",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "MaryamAbdul-Aziz"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 97,
+        "kasm_server_needed": false,
+        "name": "Tanvi Pampati",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Tanvi-3"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 98,
+        "kasm_server_needed": false,
+        "name": "Anagha Ashtewale",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "anaghaa1206"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 99,
+        "kasm_server_needed": false,
+        "name": "Cindy",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "cliang1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 100,
+        "kasm_server_needed": false,
+        "name": "Kayla Le",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "kaylale124"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 101,
+        "kasm_server_needed": false,
+        "name": "Tarun Jaikumar",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "tarunja1ks"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 102,
+        "kasm_server_needed": false,
+        "name": "Brandon So",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "brandonso36"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 103,
+        "kasm_server_needed": false,
+        "name": "Eashaan Reddy",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "eashaan-r"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 104,
+        "kasm_server_needed": false,
+        "name": "Eshika Pallapotu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "EshikaP1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 105,
+        "kasm_server_needed": false,
+        "name": "Ian Manangan",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Im2008"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 106,
+        "kasm_server_needed": false,
+        "name": "Matthew Sean Borabo",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "MatthewBorabo"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 107,
+        "kasm_server_needed": false,
+        "name": "Nikki Hekmat",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "nikkihekmat"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 108,
+        "kasm_server_needed": false,
+        "name": "Chloe Keirn",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "chloekeirn"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 109,
+        "kasm_server_needed": false,
+        "name": "Bhouvanamohini-Vrnda Kanhye",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "BVrndaKanhye"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 110,
+        "kasm_server_needed": false,
+        "name": "Gurshawn Boparai",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Gurbop"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 111,
+        "kasm_server_needed": false,
+        "name": "Ryan Liao",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "rliao569"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 112,
+        "kasm_server_needed": false,
+        "name": "Varaprassad Nibhanupudi",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "nVarap"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 113,
+        "kasm_server_needed": false,
+        "name": "David Vasilev",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "DavidVasilev1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 114,
+        "kasm_server_needed": false,
+        "name": "Deva Sasikumar",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "devaSas1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 115,
+        "kasm_server_needed": false,
+        "name": "Ekamjot Kaire",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "Ekamjot-Kaire"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 116,
+        "kasm_server_needed": false,
+        "name": "Derrick Huang",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "Pitsco"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 117,
+        "kasm_server_needed": false,
+        "name": "Ethan Zhao",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "dolphinalt"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 118,
+        "kasm_server_needed": false,
+        "name": "Haoxuan Tong",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "JasoXDDD"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 119,
+        "kasm_server_needed": false,
+        "name": "Anusha Khobare",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Flying-Book"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 120,
+        "kasm_server_needed": false,
+        "name": "Colin Weis",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "BobTheFarmer"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 121,
+        "kasm_server_needed": false,
+        "name": "Anthony Bazhenov",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            }
+        ],
+        "uid": "Ant11234"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 122,
+        "kasm_server_needed": false,
+        "name": "Vinay Rajagopalan",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            }
+        ],
+        "uid": "VINERAJ"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 123,
+        "kasm_server_needed": false,
+        "name": "Mirza Beg",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "h4seeb-cmd"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 124,
+        "kasm_server_needed": false,
+        "name": "Nupur Bhalla",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Nupurbb"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 125,
+        "kasm_server_needed": false,
+        "name": "Nathan Obodovski",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Nathaniel633"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 126,
+        "kasm_server_needed": false,
+        "name": "Nitin Balaji",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "nitinsandiego"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 127,
+        "kasm_server_needed": false,
+        "name": "Alisha Hussain",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "alishahussain"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 128,
+        "kasm_server_needed": false,
+        "name": "Jishnu Singiresu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "JishnuS420"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 129,
+        "kasm_server_needed": false,
+        "name": "Alara Ipek",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "alaraipek"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 130,
+        "kasm_server_needed": false,
+        "name": "Shuban Pal",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "shuban-789"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 131,
+        "kasm_server_needed": false,
+        "name": "Tanvi Movva",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "tanvim-18"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 132,
+        "kasm_server_needed": false,
+        "name": "Abby Albert",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "abby-albert"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 133,
+        "kasm_server_needed": false,
+        "name": "Akshay Nagesh",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "AkshayNagesh"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 134,
+        "kasm_server_needed": false,
+        "name": "Sreeja Rai",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Sreejarai123"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 135,
+        "kasm_server_needed": false,
+        "name": "Aiden Kim",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "aidenk1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 136,
+        "kasm_server_needed": false,
+        "name": "Sharon Kodali",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "sharonkodali"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 137,
+        "kasm_server_needed": false,
+        "name": "Tarun Tata",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Djxnxnx"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 138,
+        "kasm_server_needed": false,
+        "name": "Grace Oswald",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2023
+            }
+        ],
+        "uid": "graceqo"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 139,
+        "kasm_server_needed": false,
+        "name": "Peyton Leigh",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "peytonl11098"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 140,
+        "kasm_server_needed": false,
+        "name": "Hayden Chen",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "monke7769"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 141,
+        "kasm_server_needed": false,
+        "name": "Prakruti Bhatt ",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "parkib"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 142,
+        "kasm_server_needed": false,
+        "name": "Sri Surapaneni",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "SriS126"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 143,
+        "kasm_server_needed": false,
+        "name": "Tejas Manoj",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "TejM123"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 144,
+        "kasm_server_needed": false,
+        "name": "Aidan Lau",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "AidanLau10"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 145,
+        "kasm_server_needed": false,
+        "name": "Jonathan Liu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "spooketti"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 146,
+        "kasm_server_needed": false,
+        "name": "Daniel Choi",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "danielchoi2008"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 147,
+        "kasm_server_needed": false,
+        "name": "David Lee",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "DavidL0914"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 148,
+        "kasm_server_needed": false,
+        "name": "Anvay Yadav",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "AnvayYadav"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 149,
+        "kasm_server_needed": false,
+        "name": "Chris Park",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "ChrisP121"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 150,
+        "kasm_server_needed": false,
+        "name": "Tanujsai Nimmagadda",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Tanuj253"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 151,
+        "kasm_server_needed": false,
+        "name": "Smithi Thaneer",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "SmithiThaneer"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 152,
+        "kasm_server_needed": false,
+        "name": "Austin Zhang",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "AustinZhang1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 153,
+        "kasm_server_needed": false,
+        "name": "Srinivas Nampalli",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "SrinivasNampalli"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 154,
+        "kasm_server_needed": false,
+        "name": "Gavin",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "shakeSphereStuff"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 155,
+        "kasm_server_needed": false,
+        "name": "Arthur Liu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "dino596"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 156,
+        "kasm_server_needed": false,
+        "name": "Sumedha Kamaraju",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "sumedhaKl"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 157,
+        "kasm_server_needed": false,
+        "name": "Ethan Rahmat",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "ratmat5"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 158,
+        "kasm_server_needed": false,
+        "name": "Dean Phillips",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "DeanPhillips24"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 159,
+        "kasm_server_needed": false,
+        "name": "Nora Ahadian",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "NoraTheTurtle"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 160,
+        "kasm_server_needed": false,
+        "name": "Nikhil Chakravarthula",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "nikhilc3"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 161,
+        "kasm_server_needed": false,
+        "name": "Nate T",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "NateTurman"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 162,
+        "kasm_server_needed": false,
+        "name": "Derek Kang",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "derekkang1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 163,
+        "kasm_server_needed": false,
+        "name": "Varnika",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "vs26625"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 164,
+        "kasm_server_needed": false,
+        "name": "Kevin Tran",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "tran-kevinn"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 165,
+        "kasm_server_needed": false,
+        "name": "Ryan Nguyen",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "ryann96"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 166,
+        "kasm_server_needed": false,
+        "name": "James Lee",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "Jw95z"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 167,
+        "kasm_server_needed": false,
+        "name": "Deeshi Gupta",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Deeshi-Gupta"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 168,
+        "kasm_server_needed": false,
+        "name": "Gabriel Hall",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Gabhall"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 169,
+        "kasm_server_needed": false,
+        "name": "Soni Dhenuva",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "SoniDhenuva"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 170,
+        "kasm_server_needed": false,
+        "name": "John Crooks",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "MightyBeast153"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 171,
+        "kasm_server_needed": false,
+        "name": "Zidane Ahmed",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "ZidaneAhmed01"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 172,
+        "kasm_server_needed": false,
+        "name": "Logan Brown",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2023
+            }
+        ],
+        "uid": "Jojoblox"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 173,
+        "kasm_server_needed": false,
+        "name": "Aditi Bharadwaj",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Aditi99b"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 174,
+        "kasm_server_needed": false,
+        "name": "Lincoln Crowell",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "LincolnC2008"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 175,
+        "kasm_server_needed": false,
+        "name": "Abigail Besufekad",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "abi1961"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 176,
+        "kasm_server_needed": false,
+        "name": "Gabriel Ye",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "gabriely07"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 177,
+        "kasm_server_needed": false,
+        "name": "Will Bartelt",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "willbartelt15"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 178,
+        "kasm_server_needed": false,
+        "name": "Jayden Chen",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "jaydenchen17"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 179,
+        "kasm_server_needed": false,
+        "name": "Daisy Zhang",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "daisyzhang2024"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 180,
+        "kasm_server_needed": false,
+        "name": "Katelyn Gelle",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "jellinki"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 181,
+        "kasm_server_needed": false,
+        "name": "Justin Liporada",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "jplip"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 182,
+        "kasm_server_needed": false,
+        "name": "Karam Kambo",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "KaramKambo"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 183,
+        "kasm_server_needed": false,
+        "name": "Hao Yuan",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "herry2333"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 184,
+        "kasm_server_needed": false,
+        "name": "Miheer Purandare",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "ParadoxX19"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 185,
+        "kasm_server_needed": false,
+        "name": "Pranavi Vakkala",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "pranavivak"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 186,
+        "kasm_server_needed": false,
+        "name": "Lindsay Tang",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Lin-cT"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 187,
+        "kasm_server_needed": false,
+        "name": "Ethan Hong",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "EthanH06"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 188,
+        "kasm_server_needed": false,
+        "name": "Lilian Wu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "LiliWuu"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 189,
+        "kasm_server_needed": false,
+        "name": "Miguel Villa",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "MiguelVilla1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 190,
+        "kasm_server_needed": false,
+        "name": "Patrick Hastings",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "PatrickHastings2"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 191,
+        "kasm_server_needed": false,
+        "name": "Nihar Gupta",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "NiharGupta1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 192,
+        "kasm_server_needed": false,
+        "name": "Kaiyu Sugiyama",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "KaiyuSugiyama"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 193,
+        "kasm_server_needed": false,
+        "name": "Ameer Hussain",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "MEERIE"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 194,
+        "kasm_server_needed": false,
+        "name": "Joshua Thinh",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "JoshThinh"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 195,
+        "kasm_server_needed": false,
+        "name": "Alyssa-Allen Abrams",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "AllenAbra"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 196,
+        "kasm_server_needed": false,
+        "name": "Hannah Reyes",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "hanr12"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 197,
+        "kasm_server_needed": false,
+        "name": "HowieNguyen",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "HowieNguyen21"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 198,
+        "kasm_server_needed": false,
+        "name": "Tajrian Masum",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Taj-L-M"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 199,
+        "kasm_server_needed": false,
+        "name": "Trystan Schmits",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Trystan-Schmits"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 200,
+        "kasm_server_needed": false,
+        "name": "Ankit Pulivendula",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Ankit-177"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 201,
+        "kasm_server_needed": false,
+        "name": "Katie Hua",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "katiehua"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 202,
+        "kasm_server_needed": false,
+        "name": "Varun Manoj Pillai",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "varunm532"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 203,
+        "kasm_server_needed": false,
+        "name": "Katelyn Chen",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "katelync05"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 204,
+        "kasm_server_needed": false,
+        "name": "Kayden Le",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "KaydenLe"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 205,
+        "kasm_server_needed": false,
+        "name": "Zafeer Ahmed",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "ZafeerA123"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 206,
+        "kasm_server_needed": false,
+        "name": "Aidan Delgado",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "AidanDelgado2"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 207,
+        "kasm_server_needed": false,
+        "name": "Gabriel",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Gabriel-Gravin"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 208,
+        "kasm_server_needed": false,
+        "name": "Kaden Vo ",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "whoskaden"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 209,
+        "kasm_server_needed": false,
+        "name": "Justin Quach",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "JustinQ-DNHS"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 210,
+        "kasm_server_needed": false,
+        "name": "Daniel Fitzwilliam",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "DanielFitzwilliam"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 211,
+        "kasm_server_needed": false,
+        "name": "Marcus Hernandez",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Marcushe31"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 212,
+        "kasm_server_needed": false,
+        "name": "Arthur",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "ArthurSerrao"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 213,
+        "kasm_server_needed": false,
+        "name": "Timur",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "rxstrell"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 214,
+        "kasm_server_needed": false,
+        "name": "Xavier Thompson",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "XavierTho"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 215,
+        "kasm_server_needed": false,
+        "name": "Sean Nakagawa",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "SeanNakagawa"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 216,
+        "kasm_server_needed": false,
+        "name": "Yeongsu Kim",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "YeongsuKimm"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 217,
+        "kasm_server_needed": false,
+        "name": "Hanlun Li",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "hanlunli"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 218,
+        "kasm_server_needed": false,
+        "name": "Anika Bhatnagar ",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "anikabhatnagar20"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 219,
+        "kasm_server_needed": false,
+        "name": "Anika Pillai",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "anikapillaii"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 220,
+        "kasm_server_needed": false,
+        "name": "Ishan Cornick",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "IshanCornick"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 221,
+        "kasm_server_needed": false,
+        "name": "Sergi Serpukhovitinov",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "sergi1207"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 222,
+        "kasm_server_needed": false,
+        "name": "Eshaan Kumar",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "eshaank1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 223,
+        "kasm_server_needed": false,
+        "name": "Soham Kulkarni",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "SOoctosnake"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 224,
+        "kasm_server_needed": false,
+        "name": "aanya",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "aanyaa22"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 225,
+        "kasm_server_needed": false,
+        "name": "Graham Johnson",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Grahamjohnson12"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 226,
+        "kasm_server_needed": false,
+        "name": "Beijan Moniza",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "beijanm"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 227,
+        "kasm_server_needed": false,
+        "name": "Andrew K",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "ak146"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 228,
+        "kasm_server_needed": false,
+        "name": "Ishi Singh",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "Ishi-Singh"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 229,
+        "kasm_server_needed": false,
+        "name": "Ellie Rozenkrants ",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2023
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "ellierozen"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 230,
+        "kasm_server_needed": false,
+        "name": "Andrew Chang",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "andri-c"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 231,
+        "kasm_server_needed": false,
+        "name": "Shriya Paladugu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "shriya1401"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 232,
+        "kasm_server_needed": false,
+        "name": "Kevin Do",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "kevin-dough"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 233,
+        "kasm_server_needed": false,
+        "name": "Monika Roy",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "mhr77777"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 234,
+        "kasm_server_needed": false,
+        "name": "Tirth Thakkar",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "Tirth-Thakkar"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 235,
+        "kasm_server_needed": false,
+        "name": "Vardaan Sinha",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "vardaansinha"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 236,
+        "kasm_server_needed": false,
+        "name": "Vivian Ni",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "vivianknee"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 237,
+        "kasm_server_needed": false,
+        "name": "Raunak Mondal",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "raunak2007"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 238,
+        "kasm_server_needed": false,
+        "name": "Drew Reed",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "drewreed2005"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 239,
+        "kasm_server_needed": false,
+        "name": "Saathvik Gampa",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "sgtech08"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 240,
+        "kasm_server_needed": false,
+        "name": "William Lee",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "wl0503"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 241,
+        "kasm_server_needed": false,
+        "name": "Aaron Rubin",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "aaron-rub"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 242,
+        "kasm_server_needed": false,
+        "name": "Alexander Lu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "YLu-1258"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 243,
+        "kasm_server_needed": false,
+        "name": "quinn bireley",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "QDBordtoshred"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 244,
+        "kasm_server_needed": false,
+        "name": "Christina Zhou",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Chrissiez"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 245,
+        "kasm_server_needed": false,
+        "name": "Matthew Wakayama",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "M8tth3"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 246,
+        "kasm_server_needed": false,
+        "name": "Isabelle Park",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "isabellehp"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 247,
+        "kasm_server_needed": false,
+        "name": "Ishraq Hossain",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "ishraqh1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 248,
+        "kasm_server_needed": false,
+        "name": "Vishnu Aravind",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            }
+        ],
+        "uid": "VishnuAravind12"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 249,
+        "kasm_server_needed": false,
+        "name": "Eric Yu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "Be1uga4life"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 250,
+        "kasm_server_needed": false,
+        "name": "Vance Reynolds",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "VanceReynolds"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 251,
+        "kasm_server_needed": false,
+        "name": "Remy Liu",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "sfremy"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 252,
+        "kasm_server_needed": false,
+        "name": "Ronit Thomas",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "RonitT1234"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 253,
+        "kasm_server_needed": false,
+        "name": "Pele",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "aidanywu"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 254,
+        "kasm_server_needed": false,
+        "name": "Rayyan Darugar",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "RayyanDarugar"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 255,
+        "kasm_server_needed": false,
+        "name": "Drishya Mody",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "DrishyaMody"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 256,
+        "kasm_server_needed": false,
+        "name": "Nicholas Tesla",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "safinsingh"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 257,
+        "kasm_server_needed": false,
+        "name": "Alexander Graham Bell",
+        "pfp": "",
+        "role": "User",
+        "sections": [],
+        "uid": "rjawesome"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 258,
+        "kasm_server_needed": false,
+        "name": "Gavin Ireland",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Gavaruba"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 259,
+        "kasm_server_needed": false,
+        "name": "Shivansh Goel",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2024
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2023
+            }
+        ],
+        "uid": "DeadshotLegend"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 260,
+        "kasm_server_needed": false,
+        "name": "Tara Sehdave ",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "tarasehdave"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 261,
+        "kasm_server_needed": false,
+        "name": "Vibha Yadav Ganji",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2024
+            }
+        ],
+        "uid": "vibha-yganji"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 262,
+        "kasm_server_needed": false,
+        "name": "Pele",
+        "pfp": "",
+        "role": "User",
+        "sections": [],
+        "uid": "king"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 263,
+        "kasm_server_needed": false,
+        "name": "Manahil Khan",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "manahilkhan"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 264,
+        "kasm_server_needed": false,
+        "name": "Yoseph",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "YosephAttaii"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 265,
+        "kasm_server_needed": false,
+        "name": "Xavier Celis ",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Cell-21"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 266,
+        "kasm_server_needed": false,
+        "name": "Yuva Bala",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "yuvabala09"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 267,
+        "kasm_server_needed": false,
+        "name": "Sahana Parekh ",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "sahanaparekh"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 268,
+        "kasm_server_needed": false,
+        "name": "Pranav Santhosh",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "SanPranav"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 269,
+        "kasm_server_needed": false,
+        "name": "Suhani Wadhwa",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "suhaniw"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 270,
+        "kasm_server_needed": false,
+        "name": "Mya Madriaga",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "myamadriaga"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 271,
+        "kasm_server_needed": false,
+        "name": "Tristan Nguyen",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Nerp124"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 272,
+        "kasm_server_needed": false,
+        "name": "Nicolas Diaz",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "NickDiaz09"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 273,
+        "kasm_server_needed": false,
+        "name": "Kailyn Sanford",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "kailynsanford"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 274,
+        "kasm_server_needed": false,
+        "name": "Anvay Vahia",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "CyberLord09"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 275,
+        "kasm_server_needed": false,
+        "name": "Vibha Mandayam",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "vibha1019"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 276,
+        "kasm_server_needed": false,
+        "name": "Brian Snipes",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Doliousis"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 277,
+        "kasm_server_needed": false,
+        "name": "Shaurya Adappa",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "shauryaa08"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 278,
+        "kasm_server_needed": false,
+        "name": "Abby Manalo",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "abbymanalo"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 279,
+        "kasm_server_needed": false,
+        "name": "Travis Callow",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "TravisCallow"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 280,
+        "kasm_server_needed": false,
+        "name": "Alejandro Rubio",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "AlexRubio1"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 281,
+        "kasm_server_needed": false,
+        "name": "Yash Parikh",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "illuminati1618"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 282,
+        "kasm_server_needed": false,
+        "name": "Tiffany L",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "tiffsl996"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 283,
+        "kasm_server_needed": false,
+        "name": "wisam sahr",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "wisam-s"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 284,
+        "kasm_server_needed": false,
+        "name": "Amelia",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Miag123"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 285,
+        "kasm_server_needed": false,
+        "name": "Areeba Ahmed",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "areeba-ahmed"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 286,
+        "kasm_server_needed": false,
+        "name": "Katheeja Sahib",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "KatheejaSahib"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 287,
+        "kasm_server_needed": false,
+        "name": "Anyi Wang",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Annie0523"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 288,
+        "kasm_server_needed": false,
+        "name": "Andrew Kushnir",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Active8604"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 289,
+        "kasm_server_needed": false,
+        "name": "Mihir Bapat",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "Hypernova101"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 290,
+        "kasm_server_needed": false,
+        "name": "Ansh Kumar",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "magic005"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 291,
+        "kasm_server_needed": false,
+        "name": "Alexander Glaser",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "1916059-Glaser"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 292,
+        "kasm_server_needed": false,
+        "name": "Callisto Badri",
+        "pfp": "",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2024
+            }
+        ],
+        "uid": "CallistoB"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "jmort1021@yahoo.com",
+        "id": 293,
+        "kasm_server_needed": true,
+        "name": "John Mortensen",
+        "pfp": "jm1021.png",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2025
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2025
+            },
+            {
+                "abbreviation": "CSSE",
+                "id": 4,
+                "name": "Computer Science and Software Engineering",
+                "year": 2025
+            }
+        ],
+        "uid": "jm1021"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 294,
+        "kasm_server_needed": false,
+        "name": "Bella",
+        "pfp": "iKAN2025.png",
+        "role": "User",
+        "sections": [
+            {
+                "abbreviation": "CSA",
+                "id": 1,
+                "name": "Computer Science A",
+                "year": 2025
+            },
+            {
+                "abbreviation": "CSP",
+                "id": 2,
+                "name": "Computer Science Principles",
+                "year": 2025
+            }
+        ],
+        "uid": "iKAN2025"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 295,
+        "kasm_server_needed": true,
+        "name": "Fred Flinstone",
+        "pfp": "",
+        "role": "User",
+        "sections": [],
+        "uid": "fred"
+    },
+    {
+        "access": [
+            "ro"
+        ],
+        "email": "?",
+        "id": 296,
+        "kasm_server_needed": false,
+        "name": "manoharan",
+        "pfp": "manoharan.png",
+        "role": "User",
+        "sections": [],
+        "uid": "manoharan"
+    }
+]

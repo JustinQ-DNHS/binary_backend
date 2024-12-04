@@ -1,0 +1,12 @@
+version: '3'
+services:
+        web:
+                image: flask_2025
+                build: .
+                env_file:
+                        - .env # This file is optional; defaults will be used if it does not exist
+                ports:
+                        - "8887:8887"
+                volumes:
+                        - ./instance:/instance
+                restart: unless-stopped

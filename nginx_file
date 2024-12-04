@@ -1,0 +1,20 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name flocker.nighthawkcodingsociety.com ; # Change server name to the one on R53
+    # Configure CORS Headers
+    location / { 
+        proxy_pass http://localhost:8887; # Change port to port on docker
+        # Simple requests
+        if ($request_method ~* "(GET|POST|PUT|DELETE)") { # Customize Request methods based on your needs
+                add_header "Access-Control-Allow-Origin"  *;
+        }
+        # Preflighted requests 
+        if ($request_method = OPTIONS ) {
+                add_header "Access-Control-Allow-Origin"  *;
+                add_header "Access-Control-Allow-Methods" "GET, POST, PUT, DELETE, OPTIONS, HEAD"; # Make sure the request methods above match here
+                add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept";
+                return 200;
+        }
+    }
+}
