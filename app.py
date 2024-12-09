@@ -131,7 +131,7 @@ def get_weston():
         "LastName": "Gardener",
         "DOB": "October 2",
         "Residence": "San Diego",
-        "Email": "troll@gmail.com",
+        "Email": "troll2@gmail.com",
         "Owns_Cars": ["2015-Fusion", "2011-Ranger", "2003-Excursion", "1997-F350", "1969-Cadillac"]
     })    
     return jsonify(InfoDb)
