@@ -48,6 +48,11 @@ class StudentAPI:
            # implement the get method 
            pass
 
+    class _Students(Resource): 
+        def get(self):
+           # implement the get method 
+           pass
+
     # building RESTapi endpoint
     api.add_resource(_Manahil, '/student/manahil')          
     api.add_resource(_Justin, '/student/justin')
@@ -57,4 +62,4 @@ class StudentAPI:
     api.add_resource(_Weston, '/student/weston')
     api.add_resource(_Shaurya, '/student/shaurya')
     api.add_resource(_Rutvik, '/student/rutvik')
-    api.add_resource(_Rutvik, '/students')
+    api.add_resource(_Students, '/students')
