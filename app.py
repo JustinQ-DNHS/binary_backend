@@ -128,11 +128,11 @@ def get_weston():
     # add a row to list, an Info record
     InfoDb.append({
         "FirstName": "Weston",
-        "LastName": "Gardener",
+        "LastName": "Gardner",
         "DOB": "October 2",
         "Residence": "San Diego",
-        "Email": "troll2@gmail.com",
-        "Owns_Cars": ["2015-Fusion", "2011-Ranger", "2003-Excursion", "1997-F350", "1969-Cadillac"]
+        "Email": "westonrgardner@gmail.com",
+        "Owns_Cars": ["2008 Jeep Wrangler"]
     })    
     return jsonify(InfoDb)
 
