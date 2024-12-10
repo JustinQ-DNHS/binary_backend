@@ -28,7 +28,6 @@ from api.carphoto import car_api
 from api.carChat import car_chat_api
 
 from api.vote import vote_api
-from api.vote import students_api
 # database Initialization functions
 from model.carChat import CarChat
 from model.user import User, initUsers
@@ -49,6 +48,7 @@ app.register_blueprint(channel_api)
 app.register_blueprint(group_api)
 app.register_blueprint(section_api)
 app.register_blueprint(car_chat_api)
+app.register_blueprint(student_api)
 # Added new files to create nestPosts, uses a different format than Mortensen and didn't want to touch his junk
 app.register_blueprint(nestPost_api)
 app.register_blueprint(nestImg_api)
