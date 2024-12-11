@@ -121,49 +121,4 @@ class PostAPI:
             # Return response
             return jsonify({"message": "Post deleted"})
 
-    class _USER(Resource):
-        @token_required()
-        def get(self):
-            """
-            Retrieve all posts by the current user.
-            """
-            # Obtain the current user
-            current_user = g.current_user
-            # Find all the posts by the current user
-            posts = Post.query.filter(Post._user_id == current_user.id).all()
-            # Prepare a JSON list of all the posts, using list comprehension
-            json_ready = [post.read() for post in posts]
-            # Return a JSON list, converting Python dictionaries to JSON format
-            return jsonify(json_ready)
-
-    class _FILTER(Resource):
-        @token_required()
-        def post(self):
-            """
-            Retrieve all posts by channel ID and user ID.
-            """
-            # Obtain and validate the request data sent by the RESTful client API
-            data = request.get_json()
-            if data is None:
-                return {'message': 'Channel and User data not found'}, 400
-            if 'channel_id' not in data:
-                return {'message': 'Channel ID not found'}, 400
-            
-            # Find all posts by channel ID and user ID
-            posts = Post.query.filter_by(_channel_id=data['channel_id']).all()
-            # Prepare a JSON list of all the posts, using list comprehension
-            json_ready = [post.read() for post in posts]
-            # Return a JSON list, converting Python dictionaries to JSON format
-            return jsonify(json_ready)
-
-    """
-    Map the _CRUD, _USER, _BULK_CRUD, and _FILTER classes to the API endpoints for /post, /post/user, /posts, and /posts/filter.
-    - The API resource class inherits from flask_restful.Resource.
-    - The _CRUD class defines the HTTP methods for the API.
-    - The _USER class defines the endpoints for retrieving posts by the current user.
-    - The _BULK_CRUD class defines the bulk operations for the API.
-    - The _FILTER class defines the endpoints for filtering posts by channel ID and user ID.
-    """
     api.add_resource(_CRUD, '/post')
-    api.add_resource(_USER, '/post/user')
-    api.add_resource(_FILTER, '/posts/filter')
