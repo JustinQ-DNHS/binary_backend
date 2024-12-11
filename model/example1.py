@@ -39,7 +39,7 @@ class NestPost(db.Model):
             group_id (int): The group to which the post belongs.
             image_url (str): The url path to the image
         """
-        self._first_name = first name
+        self._first_name = first_name
         self._content = content
         self._user_id = user_id
         self._group_id = group_id
