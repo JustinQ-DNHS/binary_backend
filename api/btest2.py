@@ -136,46 +136,6 @@ class PostAPI:
             # Return a JSON list, converting Python dictionaries to JSON format
             return jsonify(json_ready)
 
-    class _BULK_CRUD(Resource):
-        def post(self):
-            """
-            Handle bulk post creation by sending POST requests to the single post endpoint.
-            """
-            posts = request.get_json()
-
-            if not isinstance(posts, list):
-                return {'message': 'Expected a list of post data'}, 400
-
-            results = {'errors': [], 'success_count': 0, 'error_count': 0}
-
-            with current_app.test_client() as client:
-                for post in posts:
-                    # Simulate a POST request to the single post creation endpoint
-                    response = client.post('/api/post', json=post)
-
-                    if response.status_code == 200:
-                        results['success_count'] += 1
-                    else:
-                        results['errors'].append(response.get_json())
-                        results['error_count'] += 1
-
-            # Return the results of the bulk creation process
-            return jsonify(results)
-        
-        def get(self):
-            """
-            Retrieve all posts.
-            """
-            # Find all the posts
-            posts = Post.query.all()
-            # Prepare a JSON list of all the posts, using list comprehension
-            json_ready = []
-            for post in posts:
-                post_data = post.read()
-                json_ready.append(post_data)
-            # Return a JSON list, converting Python dictionaries to JSON format
-            return jsonify(json_ready)
-
     class _FILTER(Resource):
         @token_required()
         def post(self):
@@ -206,5 +166,4 @@ class PostAPI:
     """
     api.add_resource(_CRUD, '/post')
     api.add_resource(_USER, '/post/user')
-    api.add_resource(_BULK_CRUD, '/posts')
     api.add_resource(_FILTER, '/posts/filter')
