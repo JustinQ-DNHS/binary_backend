@@ -15,8 +15,7 @@ class NestPost(db.Model):
         id (db.Column): The primary key, an integer representing the unique identifier for the post.
         _title (db.Column): A string representing the title of the post.
         _content (db.Column): A Text blob representing the content of the post.
-        _user_id (db.Column): An integer representing the user who created the post.
-        _group_id (db.Column): An integer representing the group to which the post belongs.
+        _username (db.Column): An integer representing the user who created the post.
         _image_url (db.Column): A string representing the url path to the image contained in the post
     """
     __tablename__ = 'nestPosts'
@@ -24,25 +23,25 @@ class NestPost(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     _title = db.Column(db.String(255), nullable=False)
     _content = db.Column(Text, nullable=False)
-    _user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    _group_id = db.Column(db.Integer, db.ForeignKey('groups.id'), nullable=False)
+    _username = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    _password = db.Column(db.Integer, db.ForeignKey('groups.id'), nullable=False)
     _image_url = db.Column(db.String(255), nullable=False)
 
-    def __init__(self, title, content, user_id, group_id, image_url):
+    def __init__(self, title, content, username, password, image_url):
         """
         Constructor, 1st step in object creation.
         
         Args:
             title (str): The title of the post.
             content (str): The content of the post.
-            user_id (int): The user who created the post.
-            group_id (int): The group to which the post belongs.
+            username (int): The user who created the post.
+            password (int): The group to which the post belongs.
             image_url (str): The url path to the image
         """
         self._title = title
         self._content = content
-        self._user_id = user_id
-        self._group_id = group_id
+        self._username = username
+        self._password = password
         self._image_url = image_url
 
     def __repr__(self):
@@ -53,7 +52,7 @@ class NestPost(db.Model):
         Returns:
             str: A text representation of how to create the object.
         """
-        return f"Post(id={self.id}, title={self._title}, content={self._content}, user_id={self._user_id}, group_id={self._group_id}, image_url={self._image_url})"
+        return f"Post(id={self.id}, title={self._title}, content={self._content}, username={self._username}, password={self._password}, image_url={self._image_url})"
 
     def create(self):
         """
@@ -82,8 +81,8 @@ class NestPost(db.Model):
         Returns:
             dict: A dictionary containing the post data, including user and group names.
         """
-        user = User.query.get(self._user_id)
-        group = Group.query.get(self._group_id)
+        user = User.query.get(self._username)
+        group = Group.query.get(self._password)
         data = {
             "id": self.id,
             "title": self._title,
@@ -146,10 +145,10 @@ def initNestPosts():
         db.create_all()
         """Tester data for table"""
         
-        p1 = NestPost(title='Calculus Help', content='Need help with derivatives.', user_id=1, group_id=1, image_url="toby1.png")  
-        p2 = NestPost(title='Game Day', content='Who is coming to the game?', user_id=2, group_id=2, image_url="toby2.png")
-        p3 = NestPost(title='New Releases', content='What movies are you excited for?', user_id=3, group_id=3, image_url="toby3.png")
-        p4 = NestPost(title='Study Group', content='Meeting at the library.', user_id=1, group_id=1, image_url="toby4.png")
+        p1 = NestPost(title='Calculus Help', content='Need help with derivatives.')  
+        p2 = NestPost(title='Game Day', content='Who is coming to the game?')
+        p3 = NestPost(title='New Releases', content='What movies are you excited for?')
+        p4 = NestPost(title='Study Group', content='Meeting at the library.')
         
         for post in [p1, p2, p3, p4]:
             try:
