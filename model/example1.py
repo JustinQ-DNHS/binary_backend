@@ -6,9 +6,9 @@ from __init__ import app, db
 from model.user import User
 from model.group import Group
 
-class NestPost(db.Model):
+class Example(db.Model):
     """
-    NestPost Model
+    Example Model
     
     The Post class represents an individual contribution or discussion within a group.
     
@@ -16,35 +16,23 @@ class NestPost(db.Model):
         id (db.Column): The primary key, an integer representing the unique identifier for the post.
         _first_name (db.Column): A string representing the first_name of the post.
         _last_name (db.Column): A Text blob representing the last_name of the post.
-        _user_id (db.Column): An integer representing the user who created the post.
-        _group_id (db.Column): An integer representing the group to which the post belongs.
-        _image_url (db.Column): A string representing the url path to the image contained in the post
     """
-    __tablename__ = 'nestPosts'
+    __tablename__ = 'Example'
 
     id = db.Column(db.Integer, primary_key=True)
     _first_name = db.Column(db.String(255), nullable=False)
     _last_name = db.Column(Text, nullable=False)
-    _user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    _group_id = db.Column(db.Integer, db.ForeignKey('groups.id'), nullable=False)
-    _image_url = db.Column(db.String(255), nullable=False)
 
-    def __init__(self, first_name, last_name, user_id, group_id, image_url):
+    def __init__(self, first_name, last_name):
         """
         Constructor, 1st step in object creation.
         
         Args:
             first_name (str): The first_name of the post.
             last_name (str): The last_name of the post.
-            user_id (int): The user who created the post.
-            group_id (int): The group to which the post belongs.
-            image_url (str): The url path to the image
         """
         self._first_name = first_name
         self._last_name = last_name
-        self._user_id = user_id
-        self._group_id = group_id
-        self._image_url = image_url
 
     def __repr__(self):
         """
@@ -54,7 +42,7 @@ class NestPost(db.Model):
         Returns:
             str: A text representation of how to create the object.
         """
-        return f"Post(id={self.id}, first_name={self._first_name}, last_name={self._last_name}, user_id={self._user_id}, group_id={self._group_id}, image_url={self._image_url})"
+        return f"Post(id={self.id}, first_name={self._first_name}, last_name={self._last_name})"
 
     def create(self):
         """
@@ -83,16 +71,11 @@ class NestPost(db.Model):
         Returns:
             dict: A dictionary containing the post data, including user and group names.
         """
-        user = User.query.get(self._user_id)
-        group = Group.query.get(self._group_id)
         data = {
             "id": self.id,
             "first_name": self._first_name,
             "last_name": self._last_name,
-            "user_name": user.name if user else None,
-            "group_name": group.name if group else None,
             # Review information as this may not work as this is a quick workaround
-            "image_url": self._image_url
         }
         return data
     
@@ -129,7 +112,7 @@ class NestPost(db.Model):
             db.session.rollback()
             raise e
 
-def initNestPosts():
+def initExamples():
     """
     The initPosts function creates the Post table and adds tester data to the table.
     
@@ -147,10 +130,10 @@ def initNestPosts():
         db.create_all()
         """Tester data for table"""
         
-        p1 = NestPost(first_name='Calculus Help', last_name='Need help with derivatives.')  
-        p2 = NestPost(first_name='Game Day', last_name='Who is coming to the game?')
-        p3 = NestPost(first_name='New Releases', last_name='What movies are you excited for?')
-        p4 = NestPost(first_name='Study Group', last_name='Meeting at the library.')
+        p1 = Example(first_name='Calculus Help', last_name='Need help with derivatives.')  
+        p2 = Example(first_name='Game Day', last_name='Who is coming to the game?')
+        p3 = Example(first_name='New Releases', last_name='What movies are you excited for?')
+        p4 = Example(first_name='Study Group', last_name='Meeting at the library.')
         
         for post in [p1, p2, p3, p4]:
             try:
