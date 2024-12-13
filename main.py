@@ -152,7 +152,7 @@ custom_cli = AppGroup('custom', help='Custom commands')
 # Define a command to run the data generation functions
 @custom_cli.command('generate_data')
 def generate_data():
-    # initUsers()
+    initUsers()
     # initSections()
     # initGroups()
     # initChannels()
