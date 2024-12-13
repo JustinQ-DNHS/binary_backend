@@ -37,11 +37,11 @@ from model.binaryLearningGame import initBinaryLearningGameScores
 
 # register URIs for api endpoints
 app.register_blueprint(messages_api) # Adi added this, messages for his website
+app.register_blueprint(group_api)
 app.register_blueprint(user_api)
 app.register_blueprint(pfp_api) 
 app.register_blueprint(post_api)
 app.register_blueprint(channel_api)
-app.register_blueprint(group_api)
 app.register_blueprint(section_api)
 # apis under development
 app.register_blueprint(binaryLearningGameScores_api)
@@ -145,11 +145,11 @@ custom_cli = AppGroup('custom', help='Custom commands')
 # Define a command to run the data generation functions
 @custom_cli.command('generate_data')
 def generate_data():
-    initUsers()
-    initSections()
-    initGroups()
-    initChannels()
-    initPosts()
+    # initUsers()
+    # initSections()
+    # initGroups()
+    # initChannels()
+    # initPosts()
     # New data being tested
     initBinaryLearningGameScores()
     
