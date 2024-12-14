@@ -65,7 +65,7 @@ def main():
             backup_database(app.config['SQLALCHEMY_DATABASE_URI'], app.config['SQLALCHEMY_BACKUP_URI'])
            
         except Exception as e:
-            print(f"An error occurred: {e}")
+            print(f"An error occurred in the first half: {e}")
             sys.exit(1)
         
     # Step 1: Build New schema and create test data 
