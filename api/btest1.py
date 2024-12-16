@@ -61,4 +61,4 @@ class GroupAPI:
             # Return a JSON restful response to the client
             return jsonify(allChats)
         
-    api.add_resource(_CRUD, '/car_chat')
+    api.add_resource(_CRUD, '/btest1')
