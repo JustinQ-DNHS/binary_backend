@@ -1,61 +1,91 @@
-from flask import Blueprint, request, jsonify
-from models.quizgrading import NestPost
-from sqlalchemy.exc import IntegrityError
-from __init__ import db
+import jwt
+from flask import Blueprint, request, jsonify, current_app, Response, g
+from flask_restful import Api, Resource  # used for REST API building
+from api.jwt_authorize import token_required
+from model.quizgrading import QuizGrading
+"""
+This Blueprint object is used to define APIs for the Post model.
+- Blueprint is used to modularize application files.
+- This Blueprint is registered to the Flask app in main.py.
+"""
+QuizScores_api = Blueprint('QuizScores_api', __name__, url_prefix='/api')
 
-# Create a Blueprint for this API
-quizgrading_bp = Blueprint('quizgrading', __name__)
+"""
+The Api object is connected to the Blueprint object to define the API endpoints.
+- The API object is used to add resources to the API.
+- The objects added are mapped to code that contains the actions for the API.
+- For more information, refer to the API docs: https://flask-restful.readthedocs.io/en/latest/api.html
+"""
+api = Api(QuizScores_api)
 
-@quizgrading_bp.route('/api/posts', methods=['GET'])
-def get_all_posts():
+class QuizScoresAPI:
     """
-    GET method to fetch all the posts in the database and return as JSON.
+    Define the API CRUD endpoints for the Post model.
+    There are four operations that correspond to common HTTP methods:
+    - post: create a new post
+    - get: read posts
+    - put: update a post
+    - delete: delete a post
     """
-    try:
-        posts = NestPost.query.all()  # Retrieve all posts from the database
-        posts_data = [post.read() for post in posts]  # Call the 'read' method to format data
-        return jsonify(posts_data), 200
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+    class _CRUD(Resource):
+        @token_required()
+        def post(self):
+            # Obtain the current user from the token required setting in the global context
+            current_user = g.current_user
+            # Obtain the request data sent by the RESTful client API
+            data = request.get_json()
+            # Create a new post object using the data from the request
+            post = NestPost(data['title'], data['content'], current_user.id, data['group_id'], data['image_url'])
+            # Save the post object using the Object Relational Mapper (ORM) method defined in the model
+            post.create()
+            # Return response to the client in JSON format, converting Python dictionaries to JSON format
+            return jsonify(post.read())
 
+        @token_required()
+        def get(self):
+            # Obtain the current user
+            current_user = g.current_user
+            # Find all the posts by the current user
+            posts = NestPost.query.filter(NestPost._user_id == current_user.id).all()
+            # Prepare a JSON list of all the posts, uses for loop shortcut called list comprehension
+            json_ready = [post.read() for post in posts]
+            # Return a JSON list, converting Python dictionaries to JSON format
+            return jsonify(json_ready)
 
-@quizgrading_bp.route('/api/posts', methods=['POST'])
-def create_post():
+        @token_required()
+        def put(self):
+            # Obtain the current user
+            current_user = g.current_user
+            # Obtain the request data
+            data = request.get_json()
+            # Find the current post from the database table(s)
+            post = NestPost.query.get(data['id'])
+            # Update the post
+            post._title = data['title']
+            post._content = data['content']
+            post._group_id = data['group_id']
+            post._image_url = data['image_url']
+            # Save the post
+            post.update()
+            # Return response
+            return jsonify(post.read())
+
+        @token_required()
+        def delete(self):
+            # Obtain the current user
+            current_user = g.current_user
+            # Obtain the request data
+            data = request.get_json()
+            # Find the current post from the database table(s)
+            post = NestPost.query.get(data['id'])
+            # Delete the post using the ORM method defined in the model
+            post.delete()
+            # Return response
+            return jsonify({"message": "Post deleted"})
+
     """
-    POST method to create a new post in the database. The request body should include:
-    - title
-    - content
-    - user_id
-    - group_id
-    - image_url
+    Map the _CRUD class to the API endpoints for /post.
+    - The API resource class inherits from flask_restful.Resource.
+    - The _CRUD class defines the HTTP methods for the API.
     """
-    try:
-        # Extract data from the request body
-        data = request.get_json()
-
-        # Check if all required fields are present
-        if not all(key in data for key in ['title', 'content', 'user_id', 'group_id', 'image_url']):
-            return jsonify({"error": "Missing required fields"}), 400
-
-        # Create a new NestPost object
-        new_post = NestPost(
-            title=data['title'],
-            content=data['content'],
-            user_id=data['user_id'],
-            group_id=data['group_id'],
-            image_url=data['image_url']
-        )
-
-        # Add and commit the new post to the database
-        new_post.create()
-        return jsonify(new_post.read()), 201  # Return the created post as JSON with a 201 status code
-
-    except IntegrityError as e:
-        db.session.rollback()  # Rollback in case of an error
-        return jsonify({"error": "Integrity error, likely a duplicate entry"}), 400
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-# Register the blueprint with the Flask app
-def register_quizgrading_api(app):
-    app.register_blueprint(quizgrading_bp)
+    api.add_resource(_CRUD, '/quizScores')
