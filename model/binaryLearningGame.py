@@ -1,38 +1,41 @@
 # post.py
-# post.py
 from sqlite3 import IntegrityError
 from sqlalchemy import Text
 from __init__ import app, db
 from model.user import User
-from model.group import Group
 
-class Example(db.Model):
+class binaryLearningGameScores(db.Model):
     """
-    Example Model
+    Binary Learning Game Scores Model
     
-    The Post class represents an individual contribution or discussion within a group.
+    The class represents an individual contribution or discussion within a group.
     
     Attributes:
         id (db.Column): The primary key, an integer representing the unique identifier for the post.
-        _first_name (db.Column): A string representing the first_name of the post.
-        _last_name (db.Column): A Text blob representing the last_name of the post.
     """
-    __tablename__ = 'Example'
+    __tablename__ = 'binaryLearningGameScores'
 
     id = db.Column(db.Integer, primary_key=True)
-    _first_name = db.Column(db.String(255), nullable=False)
-    _last_name = db.Column(Text, nullable=False)
+    _username = db.Column(db.String(255), nullable=False)
+    _user_id = db.Column(db.String(255), db.ForeignKey('users.id'), nullable=False)
+    _user_score = db.Column(db.Integer, nullable=False)
+    _user_difficulty = db.Column(db.String(255), nullable=False)
 
-    def __init__(self, first_name, last_name):
+    def __init__(self, username, user_id, user_score, user_difficulty):
         """
         Constructor, 1st step in object creation.
         
         Args:
-            first_name (str): The first_name of the post.
-            last_name (str): The last_name of the post.
+            title (str): The title of the post.
+            content (str): The content of the post.
+            user_id (int): The user who created the post.
+            group_id (int): The group to which the post belongs.
+            image_url (str): The url path to the image
         """
-        self._first_name = first_name
-        self._last_name = last_name
+        self._username = username
+        self._user_id = user_id
+        self._user_score = user_score
+        self._user_difficulty = user_difficulty
 
     def __repr__(self):
         """
@@ -42,7 +45,7 @@ class Example(db.Model):
         Returns:
             str: A text representation of how to create the object.
         """
-        return f"Post(id={self.id}, first_name={self._first_name}, last_name={self._last_name})"
+        return f"BinaryScore(id={self.id}, username={self._username}, user_id={self._user_id}, user_score={self._user_score}, user_difficulty={self._user_difficulty})"
 
     def create(self):
         """
@@ -71,11 +74,13 @@ class Example(db.Model):
         Returns:
             dict: A dictionary containing the post data, including user and group names.
         """
+        user = User.query.get(self._user_id)
         data = {
             "id": self.id,
-            "first_name": self._first_name,
-            "last_name": self._last_name,
-            # Review information as this may not work as this is a quick workaround
+            "username": self._username,
+            "user_id": self._user_id if user else None,
+            "user_score": self._user_score,
+            "user_difficulty": self._user_difficulty
         }
         return data
     
@@ -112,7 +117,7 @@ class Example(db.Model):
             db.session.rollback()
             raise e
 
-def initExamples():
+def initBinaryLearningGameScores():
     """
     The initPosts function creates the Post table and adds tester data to the table.
     
@@ -130,10 +135,10 @@ def initExamples():
         db.create_all()
         """Tester data for table"""
         
-        p1 = Example(first_name='Calculus Help', last_name='Need help with derivatives.')  
-        p2 = Example(first_name='Game Day', last_name='Who is coming to the game?')
-        p3 = Example(first_name='New Releases', last_name='What movies are you excited for?')
-        p4 = Example(first_name='Study Group', last_name='Meeting at the library.')
+        p1 = binaryLearningGameScores(username="JIM", user_id="None", user_score=130, user_difficulty="easy")
+        p2 = binaryLearningGameScores(username="TIM", user_id="None", user_score=120, user_difficulty="medium")
+        p3 = binaryLearningGameScores(username="BUM", user_id="None", user_score=150, user_difficulty="hard")
+        p4 = binaryLearningGameScores(username="TUM", user_id="None", user_score=30, user_difficulty="easy")
         
         for post in [p1, p2, p3, p4]:
             try:
@@ -142,4 +147,4 @@ def initExamples():
             except IntegrityError:
                 '''fails with bad or duplicate data'''
                 db.session.remove()
-                print(f"Records exist, duplicate email, or error: {post.uid}")
+                print(f"Records exist, duplicate email, or error: {post.user_id}")
