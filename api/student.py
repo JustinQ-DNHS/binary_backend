@@ -57,4 +57,4 @@ class StudentAPI:
     api.add_resource(_Weston, '/student/weston')
     api.add_resource(_Shaurya, '/student/shaurya')
     api.add_resource(_Rutvik, '/student/rutvik')
-    api.add_resource(_Rutvik, '/students')
+    api.add_resource(_Student, '/students')

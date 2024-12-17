@@ -4,6 +4,7 @@ from flask_cors import CORS
 # initialize a flask application (app)
 app = Flask(__name__)
 CORS(app, supports_credentials=True, origins='*')  # Allow all origins (*)
+CORS(app)  # Enable CORS for all routes
 
 # ... your existing Flask
 
@@ -39,6 +40,21 @@ def get_manahil():
         "Owns_Cars": ["2015-Fusion", "2011-Ranger", "2003-Excursion", "1997-F350", "1969-Cadillac"]
     })    
     return jsonify(InfoDb)
+
+@app.route('/calc-button', methods=['POST']) 
+def calc(): 
+    # Simulated Python code execution
+    try:
+        # Example logic: Execute and return the result of some code
+        result = 42  # Replace with the logic you want to execute
+        return jsonify({'success': True, 'result': result})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    
+        
 
 @app.route('/api/shriya')
 def get_shriya():
