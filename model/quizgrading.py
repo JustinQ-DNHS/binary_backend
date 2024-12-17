@@ -3,7 +3,7 @@ from __init__ import app, db
 from model.user import User
 
 class quizgrading(db.Model):
-    __tablename__ = 'binary_testing'
+    __tablename__ = 'quizgrading'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     _quizgrade = db.Column(db.Integer, nullable=False)
