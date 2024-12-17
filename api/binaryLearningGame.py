@@ -28,16 +28,17 @@ class BinaryLearningGameScoresAPI:
     - delete: delete a post
     """
     class _CRUD(Resource):
+        @token_required()
         def post(self):
-            # Obtain the current user from the token required setting in the global context
+            # Obtain the current user from the token
             current_user = g.current_user
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
             # Create a new post object using the data from the request
             post = binaryLearningGameScores(data['username'], current_user.id, data['score'], data['difficulty'])
-            # Save the post object using the Object Relational Mapper (ORM) method defined in the model
+            # Save the post object using the ORM method defined in the model
             post.create()
-            # Return response to the client in JSON format, converting Python dictionaries to JSON format
+            # Return response to the client in JSON format
             return jsonify(post.read())
 
         def get(self):
