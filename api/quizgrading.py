@@ -26,18 +26,17 @@ class GroupAPI:
             """
             Create a new group.
             """
-            print(request.get_json())
             # Obtain the current user from the token required setting in the global context
             current_user = g.current_user
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
-            print(data)
             # Create a new group object using the data from the request
             chat = quizgrading(data['message'], current_user.id)
             # Save the chat object using the Object Relational Mapper (ORM) method defined in the model
             chat.create()
             # Return response to the client in JSON format, converting Python dictionaries to JSON format
             return jsonify(chat.read())
+        
         def get(self):
             chats = quizgrading.query.all()
             allChats = []
