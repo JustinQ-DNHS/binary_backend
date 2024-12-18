@@ -31,7 +31,7 @@ from api.vote import vote_api
 from api.student import student_api
 # database Initialization functions
 from model.carChat import CarChat
-from model.quizgrading import quizgrading
+from model.quizgrading import initquizgrading
 from model.user import User, initUsers
 from model.section import Section, initSections
 from model.group import Group, initGroups
