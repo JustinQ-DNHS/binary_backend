@@ -77,11 +77,9 @@ class QuizCreation(db.Model):
         """
         
         data = {
-            "id": self.id,
-            "title": self._title,
-            "content": self._content,
-            "user_name": user.name if user else None,
-            "group_name": group.name if group else None,
+            "question": self._question
+            "answer": self._answer,
+            "quiz id": self._quiz_id,
             # Review information as this may not work as this is a quick workaround
             "image_url": self._image_url
         }
@@ -138,10 +136,9 @@ def initQuizCreation():
         db.create_all()
         """Tester data for table"""
         
-        p1 = QuizCreation(title='Calculus Help', content='Need help with derivatives.', user_id=1, group_id=1, image_url="toby1.png")  
-        p2 = QuizCreation(title='Game Day', content='Who is coming to the game?', user_id=2, group_id=2, image_url="toby2.png")
-        p3 = QuizCreation(title='New Releases', content='What movies are you excited for?', user_id=3, group_id=3, image_url="toby3.png")
-        p4 = QuizCreation(title='Study Group', content='Meeting at the library.', user_id=1, group_id=1, image_url="toby4.png")
+        p1 = QuizCreation(title='Question', content='Need help with derivatives.', user_id=1, group_id=1, image_url="toby1.png")  
+        p2 = QuizCreation(title='Answer', content='Who is coming to the game?', user_id=2, group_id=2, image_url="toby2.png")
+        p3 = QuizCreation(title='Group_Id', content='What movies are you excited for?', user_id=3, group_id=3, image_url="toby3.png")
         
         for post in [p1, p2, p3, p4]:
             try:

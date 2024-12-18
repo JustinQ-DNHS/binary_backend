@@ -1,15 +1,20 @@
-from flask import Blueprint, request, jsonify, g
-from flask_restful import Api, Resource
-from __init__ import app, db
-from model.newQuizCreation import QuizCreation  # Make sure this imports the correct model
+import jwt
+from flask import Blueprint, request, jsonify, current_app, Response, g
+from flask_restful import Api, Resource  # used for REST API building
+from datetime import datetime
+from __init__ import app
+from api.jwt_authorize import token_required
+from model.newQuizCreation import creation
+from model.user import User
+from model.section import Section
 
 # Blueprint setup for the API
-quiz_api = Blueprint('quiz_api', __name__, url_prefix='/api')
+quizCreation_api = Blueprint('quizcreation_api', __name__, url_prefix='/api')
 
 # API object setup
 api = Api(quiz_api)
 
-class QuizAPI:
+class QuizCreationAPI:
     """
     Define API endpoints for QuizCreation model.
     """
