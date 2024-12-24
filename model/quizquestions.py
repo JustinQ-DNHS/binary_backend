@@ -2,18 +2,34 @@ from sqlite3 import IntegrityError
 from __init__ import app, db
 from model.user import User
 
-class quizgrading(db.Model):
-    __tablename__ = 'quizgrading'
+class quizquestions(db.Model):
+    __tablename__ = 'quizquestions'
 
     id = db.Column(db.Integer, primary_key=True)
-    _quizgrade = db.Column(db.Integer, nullable=False)
-    _attempt = db.Column(db.Integer, nullable=False)
+    _q1 = db.Column(db.Integer, nullable=False)
+    _q2 = db.Column(db.Integer, nullable=False)
+    _q3 = db.Column(db.Integer, nullable=False)
+    _q4 = db.Column(db.Integer, nullable=False)
+    _q5 = db.Column(db.Integer, nullable=False)
+    _q6 = db.Column(db.Integer, nullable=False)
+    _q7 = db.Column(db.Integer, nullable=False)
+    _q8 = db.Column(db.Integer, nullable=False)
+    _q9 = db.Column(db.Integer, nullable=False)
+    _q10 = db.Column(db.Integer, nullable=False)
     _user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
-    def __init__(self, quizgrade, attempt, user_id):
+    def __init__(self, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, user_id):
 
-        self._quizgrade = quizgrade
-        self._attempt = attempt
+        self._q1 = q1
+        self._q2 = q2
+        self._q3 = q3
+        self._q4 = q4
+        self._q5 = q5
+        self._q6 = q6
+        self._q7 = q7
+        self._q8 = q8
+        self._q9 = q9
+        self._q10 = q10
         self._user_id = user_id
 
     def __repr__(self):
@@ -24,7 +40,7 @@ class quizgrading(db.Model):
         Returns:
             str: A text representation of how to create the object.
         """
-        return f"Post(id={self.id}, quizgrade={self._quizgrade}, attempt={self._attempt}, user_id={self._user_id})"
+        return f"Post(id={self.id}, q1={self._q1}, q2={self._q2}, q3={self._q3}, q4={self._q4}, q5={self._q5}, q6={self._q6}, q7={self._q7}, q8={self._q8}, q9={self._q9}, q10={self._q10} user_id={self._user_id})"
 
     def create(self):
         """
@@ -56,8 +72,16 @@ class quizgrading(db.Model):
         user = User.query.get(self._user_id)
         data = {
             "id": self.id,
-            "quizgrade": self._quizgrade,
-            "attempt": self._attempt,
+            "q1": self._q1,
+            "q2": self._q2,
+            "q3": self._q3,
+            "q4": self._q4,
+            "q5": self._q5,
+            "q6": self._q6,
+            "q7": self._q7,
+            "q8": self._q8,
+            "q9": self._q9,
+            "q10": self._q10,
             "user_name": user.name if user else None,
         }
         return data
@@ -95,7 +119,7 @@ class quizgrading(db.Model):
             db.session.rollback()
             raise e
 
-def initquizgrading():
+def initquizquestions():
     """
     The initPosts function creates the Post table and adds tester data to the table.
     
@@ -113,12 +137,9 @@ def initquizgrading():
         db.create_all()
         """Tester data for table"""
         
-        p1 = quizgrading(quizgrade=50, attempt=1, user_id=1)  
-        p2 = quizgrading(quizgrade=60, attempt=2, user_id=1)
-        p3 = quizgrading(quizgrade=70, attempt=3, user_id=1)
-        p4 = quizgrading(quizgrade=80, attempt=4, user_id=1)
+        p1 = quizquestions(q1='0', q2='0', q3='0',q4='0',q5='0',q6='0',q7='0',q8='0',q9='0',q10='0', user_id=1)  
         
-        for post in [p1, p2, p3, p4]:
+        for post in [p1]:
             try:
                 post.create()
                 print(f"Record created: {repr(post)}")
