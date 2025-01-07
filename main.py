@@ -25,7 +25,6 @@ from api.nestPost import nestPost_api # Justin added this, custom format for his
 from api.quizgrading import quizgrading_api
 from api.quizquestions import quizquestions_api
 from api.messages_api import messages_api # Adi added this, messages for his website
-from api.newQuizCreation import quizcreation
 # New API's being tested
 from api.general import general_api
 from api.binaryLearningGame import binaryLearningGameScores_api
@@ -41,7 +40,6 @@ from model.section import Section, initSections
 from model.group import Group, initGroups
 from model.channel import Channel, initChannels
 from model.post import Post, initPosts
-from model.newQuizCreation import quizCreation_api
 # under development
 from model.binaryLearningGame import initBinaryLearningGameScores
 # server only Views
