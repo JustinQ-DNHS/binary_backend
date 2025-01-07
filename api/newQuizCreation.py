@@ -88,4 +88,4 @@ class QuizCreationAPI:
     api.add_resource(_CRUD, '/quiz', '/quiz/<int:id>')  # Routes for single quiz creation, update, get, and delete
 
 # Register the blueprint with the app
-app.register_blueprint(quizCreation_api)
+#app.register_blueprint(quizCreation_api)
