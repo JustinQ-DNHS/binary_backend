@@ -41,15 +41,19 @@ def get_manahil():
     })    
     return jsonify(InfoDb)
 
-@app.route('/calc-button', methods=['POST']) 
-def calc(): 
-    # Simulated Python code execution
-    try:
-        # Example logic: Execute and return the result of some code
-        result = 42  # Replace with the logic you want to execute
-        return jsonify({'success': True, 'result': result})
-    except Exception as e:
-        return jsonify({'success': False, 'error': str(e)}), 500
+# Counter variable
+counter = {"value": 0}
+
+@app.route('/increment', methods=['POST'])
+def increment_counter():
+    """Increments the counter by 1."""
+    counter["value"] += 1
+    return jsonify(counter)
+
+@app.route('/get-counter', methods=['GET'])
+def get_counter():
+    """Returns the current counter value."""
+    return jsonify(counter)
 
 if __name__ == '__main__':
     app.run(debug=True)
