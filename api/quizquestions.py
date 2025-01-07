@@ -5,12 +5,13 @@ from datetime import datetime
 from __init__ import app
 from api.jwt_authorize import token_required
 from model.quizgrading import quizgrading
+from model.quizquestions import quizquestions
 from model.user import User
 from model.section import Section
 
-quizgrading_api = Blueprint('quizgrading_api', __name__, url_prefix='/api')
+quizquestions_api = Blueprint('quizquestions_api', __name__, url_prefix='/api')
 
-api = Api(quizgrading_api)
+api = Api(quizquestions_api)
 
 class GroupAPI:
     """
@@ -31,14 +32,14 @@ class GroupAPI:
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
             # Create a new group object using the data from the request
-            chat = quizgrading(data['message'], current_user.id)
+            chat = quizquestions(data['message'], current_user.id)
             # Save the chat object using the Object Relational Mapper (ORM) method defined in the model
             chat.create()
             # Return response to the client in JSON format, converting Python dictionaries to JSON format
             return jsonify(chat.read())
         
         def get(self):
-            chats = quizgrading.query.all()
+            chats = quizquestions.query.all()
             allChats = []
             for i in range(len(chats)):
                 allChats.append(chats[i].read())
@@ -46,4 +47,4 @@ class GroupAPI:
             # Return a JSON restful response to the client
             return jsonify(allChats)
         
-    api.add_resource(_CRUD, '/quizgrading')
+    api.add_resource(_CRUD, '/quizquestions')

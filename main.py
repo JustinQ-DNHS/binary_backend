@@ -23,16 +23,19 @@ from api.group import group_api
 from api.section import section_api
 from api.nestPost import nestPost_api # Justin added this, custom format for his website
 from api.quizgrading import quizgrading_api
+from api.quizquestions import quizquestions_api
 from api.messages_api import messages_api # Adi added this, messages for his website
 from api.newQuizCreation import quizcreation
 # New API's being tested
+from api.general import general_api
 from api.binaryLearningGame import binaryLearningGameScores_api
 
 from api.vote import vote_api
 from api.student import student_api
 # database Initialization functions
 from model.carChat import CarChat
-from model.quizgrading import quizgrading
+from model.quizgrading import initquizgrading
+from model.quizquestions import initquizquestions
 from model.user import User, initUsers
 from model.section import Section, initSections
 from model.group import Group, initGroups
@@ -55,7 +58,6 @@ app.register_blueprint(section_api)
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
 app.register_blueprint(quizgrading_api)
-app.register_blueprint(quizcreation)
 
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
