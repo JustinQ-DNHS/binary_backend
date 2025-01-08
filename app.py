@@ -42,18 +42,31 @@ def get_manahil():
     return jsonify(InfoDb)
 
 # Counter variable
-counter = {"value": 0}
+decimal = {"value": 0}
 
 @app.route('/increment', methods=['POST'])
 def increment_counter():
     """Increments the counter by 1"""
-    counter["value"] += 1
-    return jsonify(counter)
+    decimal["value"] += 1
+    return jsonify(decimal)
 
 @app.route('/get-counter', methods=['GET'])
 def get_counter():
+
+# Extract the integer value from the dictionary
+    decimal_extracted = decimal["value"]  # Get the integer from the dictionary
+    InfoDb = []
+    binary_variable = bin(decimal_extracted)  # Binary conversion (string with '0b' prefix)
+    octal_variable = oct(decimal_extracted)   # Octal conversion (string with '0o' prefix)
+    hexadecimal_variable = hex(decimal_extracted)  # Hexadecimal conversion (string with '0x' prefix)
+    InfoDb.append({
+        "decimal": decimal,
+        "binary": binary_variable,
+        "octal": octal_variable,
+        "hexadecimal": hexadecimal_variable
+    })
     """Returns the current counter value."""
-    return jsonify(counter)
+    return jsonify(InfoDb)
 
 if __name__ == '__main__':
     app.run(debug=True)
