@@ -46,7 +46,7 @@ counter = {"value": 0}
 
 @app.route('/increment', methods=['POST'])
 def increment_counter():
-    """Increments the counter by 1."""
+    """Increments the counter by 1"""
     counter["value"] += 1
     return jsonify(counter)
 
