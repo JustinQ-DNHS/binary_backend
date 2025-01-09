@@ -4,7 +4,6 @@ from model.user import User
 
 class quizquestions(db.Model):
     __tablename__ = 'quizquestions'
-
     id = db.Column(db.Integer, primary_key=True)
     _q1 = db.Column(db.Integer, nullable=False)
     _q2 = db.Column(db.Integer, nullable=False)
