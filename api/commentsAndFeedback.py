@@ -10,18 +10,18 @@ api = Api(commentsAndFeedback_api)
 class CommentsAndFeedpackAPI: 
     class _CRUD(Resource):
         @token_required()
+        # Fetches all comments upon a GET endpoint from the frontend and returns all the existing
+        # comments in a json format
         def get(self):
             comments = CommentsAndFeedback.query.all()
             json_ready = [comment.read() for comment in comments]
             return json_ready
         @token_required()
+        # Creates a new post object and adds it to the database, it then returns what it creates.
         def post(self):
             data = request.get_json()
-            # Create a new post object using the data from the request
             post = CommentsAndFeedback(data['title'], data['content'], 1, data['post_id'])
-            # Save the post object using the ORM method defined in the model
             post.create()
-            # Return response to the client in JSON format
             return jsonify(post.read())
         
     api.add_resource(_CRUD, '/comments')
