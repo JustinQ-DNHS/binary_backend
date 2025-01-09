@@ -80,15 +80,13 @@ class CommentsAndFeedback(db.Model):
             dict: A dictionary containing the post data, including user and group names.
         """
         user = User.query.get(self._user_id)
-        group = Group.query.get(self._group_id)
         data = {
             "id": self.id,
             "title": self._title,
             "content": self._content,
             "user_name": user.name if user else None,
-            "group_name": group.name if group else None,
             # Review information as this may not work as this is a quick workaround
-            "image_url": self._image_url
+            "post_id": self._post_id
         }
         return data
     
@@ -125,34 +123,34 @@ class CommentsAndFeedback(db.Model):
             db.session.rollback()
             raise e
 
-def initNestPosts():
-    """
-    The initPosts function creates the Post table and adds tester data to the table.
+# def initNestPosts():
+#     """
+#     The initPosts function creates the Post table and adds tester data to the table.
     
-    Uses:
-        The db ORM methods to create the table.
+#     Uses:
+#         The db ORM methods to create the table.
     
-    Instantiates:
-        Post objects with tester data.
+#     Instantiates:
+#         Post objects with tester data.
     
-    Raises:
-        IntegrityError: An error occurred when adding the tester data to the table.
-    """        
-    with app.app_context():
-        """Create database and tables"""
-        db.create_all()
-        """Tester data for table"""
+#     Raises:
+#         IntegrityError: An error occurred when adding the tester data to the table.
+#     """        
+#     with app.app_context():
+#         """Create database and tables"""
+#         db.create_all()
+#         """Tester data for table"""
         
-        p1 = NestPost(title='Calculus Help', content='Need help with derivatives.', user_id=1, group_id=1, image_url="toby1.png")  
-        p2 = NestPost(title='Game Day', content='Who is coming to the game?', user_id=2, group_id=2, image_url="toby2.png")
-        p3 = NestPost(title='New Releases', content='What movies are you excited for?', user_id=3, group_id=3, image_url="toby3.png")
-        p4 = NestPost(title='Study Group', content='Meeting at the library.', user_id=1, group_id=1, image_url="toby4.png")
+#         p1 = NestPost(title='Calculus Help', content='Need help with derivatives.', user_id=1, group_id=1, image_url="toby1.png")  
+#         p2 = NestPost(title='Game Day', content='Who is coming to the game?', user_id=2, group_id=2, image_url="toby2.png")
+#         p3 = NestPost(title='New Releases', content='What movies are you excited for?', user_id=3, group_id=3, image_url="toby3.png")
+#         p4 = NestPost(title='Study Group', content='Meeting at the library.', user_id=1, group_id=1, image_url="toby4.png")
         
-        for post in [p1, p2, p3, p4]:
-            try:
-                post.create()
-                print(f"Record created: {repr(post)}")
-            except IntegrityError:
-                '''fails with bad or duplicate data'''
-                db.session.remove()
-                print(f"Records exist, duplicate email, or error: {post.uid}")
+#         for post in [p1, p2, p3, p4]:
+#             try:
+#                 post.create()
+#                 print(f"Record created: {repr(post)}")
+#             except IntegrityError:
+#                 '''fails with bad or duplicate data'''
+#                 db.session.remove()
+#                 print(f"Records exist, duplicate email, or error: {post.uid}")
