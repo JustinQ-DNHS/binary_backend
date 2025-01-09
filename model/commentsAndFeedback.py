@@ -123,6 +123,7 @@ class CommentsAndFeedback(db.Model):
             db.session.rollback()
             raise e
 
+# No inital data currently, deemed unnecessary at the current moment due to the lack of need in testing
 # def initNestPosts():
 #     """
 #     The initPosts function creates the Post table and adds tester data to the table.
