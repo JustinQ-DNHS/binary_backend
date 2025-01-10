@@ -54,8 +54,6 @@ app.register_blueprint(channel_api)
 app.register_blueprint(section_api)
 <<<<<<< HEAD
 # apis under development
-app.register_blueprint(binaryLearningGameScores_api)
-app.register_blueprint(student_api)
 =======
 >>>>>>> 770e6cd (update stmh)
 app.register_blueprint(lgate_api)
