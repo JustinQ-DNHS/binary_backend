@@ -11,7 +11,7 @@ This Blueprint object is used to define APIs for the Post model.
 - Blueprint is used to modularize application files.
 - This Blueprint is registered to the Flask app in main.py.
 """
-lgate = Blueprint('lgate_api', __name__, url_prefix='/api')
+lgate_api = Blueprint('lgate_api', __name__, url_prefix='/api')
 
 """
 The Api object is connected to the Blueprint object to define the API endpoints.
@@ -19,7 +19,7 @@ The Api object is connected to the Blueprint object to define the API endpoints.
 - The objects added are mapped to code that contains the actions for the API.
 - For more information, refer to the API docs: https://flask-restful.readthedocs.io/en/latest/api.html
 """
-api = Api(lgate.api)
+api = Api(lgate_api)
 
 class GroupAPI:
     class _CRUD(Resource):
