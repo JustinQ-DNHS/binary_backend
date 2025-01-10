@@ -1,19 +1,39 @@
+# post.py
 from sqlite3 import IntegrityError
+from sqlalchemy import Text
 from __init__ import app, db
 from model.user import User
+from model.group import Group
 
-class quizgrading(db.Model):
-    __tablename__ = 'quizgrading'
+class LogicGates(db.Model):
+    """
+    LogicGates Model
+    
+    The Post class represents an individual contribution or discussion within a group.
+    
+    Attributes:
+        id (db.Column): The primary key, an integer representing the unique identifier for the post.
+        _title (db.Column): A string representing the title of the post.
+        _content (db.Column): A Text blob representing the content of the post.
+    """
+    __tablename__ = 'LogicGates'
 
     id = db.Column(db.Integer, primary_key=True)
-    _quizgrade = db.Column(db.Integer, nullable=False)
-    _attempt = db.Column(db.Integer, nullable=False)
+    _name = db.Column(db.String(255), nullable=False)
+    _score = db.Column(Text, nullable=False)
     _user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
-    def __init__(self, quizgrade, attempt, user_id):
-
-        self._quizgrade = quizgrade
-        self._attempt = attempt
+    def __init__(self, name, score, user_id):
+        """
+        Constructor, 1st step in object creation.
+        
+        Args:
+            title (str): The title of the post.
+            score (str): The score of the post.
+            user_id (int): The user who created the post.
+        """
+        self._name = name
+        self._score = score
         self._user_id = user_id
 
     def __repr__(self):
@@ -24,7 +44,7 @@ class quizgrading(db.Model):
         Returns:
             str: A text representation of how to create the object.
         """
-        return f"Post(id={self.id}, quizgrade={self._quizgrade}, attempt={self._attempt}, user_id={self._user_id})"
+        return f"Post(id={self.id}, name={self._name}, score={self._score}, user_id={self._user_id})"
 
     def create(self):
         """
@@ -56,9 +76,10 @@ class quizgrading(db.Model):
         user = User.query.get(self._user_id)
         data = {
             "id": self.id,
-            "quizgrade": self._quizgrade,
-            "attempt": self._attempt,
+            "name": self._name,
+            "score": self._score,
             "user_name": user.name if user else None,
+            # Review information as this may not work as this is a quick workaround
         }
         return data
     
@@ -95,7 +116,7 @@ class quizgrading(db.Model):
             db.session.rollback()
             raise e
 
-def initquizgrading():
+def initLogicGatess():
     """
     The initPosts function creates the Post table and adds tester data to the table.
     
@@ -113,12 +134,11 @@ def initquizgrading():
         db.create_all()
         """Tester data for table"""
         
-        p1 = quizgrading(quizgrade=50, attempt=1, user_id=1)  
-        p2 = quizgrading(quizgrade=60, attempt=2, user_id=1)
-        p3 = quizgrading(quizgrade=70, attempt=3, user_id=1)
-        p4 = quizgrading(quizgrade=80, attempt=4, user_id=1)
+        p1 = LogicGates(name='Lars', score='17/18', user_id=1)  
+        p2 = LogicGates(name='Rutvik', score='15/18', user_id=2)
+        p3 = LogicGates(name='Shaurya', score='18/18', user_id=3)
         
-        for post in [p1, p2, p3, p4]:
+        for post in [p1, p2, p3]:
             try:
                 post.create()
                 print(f"Record created: {repr(post)}")
