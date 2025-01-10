@@ -48,8 +48,6 @@ app.register_blueprint(post_api)
 app.register_blueprint(channel_api)
 app.register_blueprint(section_api)
 # apis under development
-app.register_blueprint(binaryLearningGameScores_api)
-app.register_blueprint(student_api)
 app.register_blueprint(binary_history_api)
 
 # Tell Flask-Login the view function name of your login route

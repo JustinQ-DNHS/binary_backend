@@ -12,15 +12,13 @@ BINARY_HISTORY = [
     {"id": 4, "event_date": "1964-01-01", "event_description": "ASCII (American Standard Code for Information Interchange) is introduced, using binary to represent characters."},
 ]
 
+# Define route for the blueprint
 @binary_history_api.route('/binary-history', methods=['GET'])
 def get_binary_history():
     """
     Endpoint to retrieve all binary history events (from static data).
     """
     return jsonify(BINARY_HISTORY), 200
-
-# Register the Blueprint
-app.register_blueprint(binary_history_api)
 
 if __name__ == '__main__':
     app.run(debug=True)
