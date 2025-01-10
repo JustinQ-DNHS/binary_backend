@@ -22,17 +22,13 @@ from api.channel import channel_api
 from api.group import group_api
 from api.section import section_api
 from api.nestPost import nestPost_api # Justin added this, custom format for his website
-<<<<<<< HEAD
 from api.binaryhistory import binary_history_api
 from api.lgate import lgate
-=======
-from api.quizgrading import quizgrading_api
-from api.quizquestions import quizquestions_api
 from api.lgate import lgate_api
->>>>>>> 58e8f1c (lgate rewrite)
 from api.messages_api import messages_api # Adi added this, messages for his website
 from api.carphoto import car_api
 from api.carChat import car_chat_api
+from api.binaryLearningGame import binaryLearningGameScores_api
 
 from api.vote import vote_api
 # database Initialization functions
@@ -55,8 +51,6 @@ app.register_blueprint(post_api)
 app.register_blueprint(channel_api)
 app.register_blueprint(section_api)
 # apis under development
-app.register_blueprint(binaryLearningGameScores_api)
-app.register_blueprint(student_api)
 
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
