@@ -134,9 +134,9 @@ def initLogicGatess():
         db.create_all()
         """Tester data for table"""
         
-        p1 = LogicGates(name='Lars', score='17/18', user_id=1)  
-        p2 = LogicGates(name='Rutvik', score='15/18', user_id=2)
-        p3 = LogicGates(name='Shaurya', score='18/18', user_id=3)
+        p1 = LogicGates(name='Landon', score='17/18', user_id=1)  
+        p2 = LogicGates(name='Rob', score='15/18', user_id=2)
+        p3 = LogicGates(name='Shawn', score='18/18', user_id=3)
         
         for post in [p1, p2, p3]:
             try:
