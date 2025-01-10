@@ -38,7 +38,7 @@ class lgateAPI:
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
             # Create a new post object using the data from the request
-            post = NestPost(data['name'], data['score'], current_user.id, data['group_id'], data['image_url'])
+            post = NestPost(data['name'], data['score'], current_user.id)
             # Save the post object using the Object Relational Mapper (ORM) method defined in the model
             post.create()
             # Return response to the client in JSON format, converting Python dictionaries to JSON format
@@ -89,4 +89,4 @@ class lgateAPI:
     - The API resource class inherits from flask_restful.Resource.
     - The _CRUD class defines the HTTP methods for the API.
     """
-    api.add_resource(_CRUD, '/lagate')
+    api.add_resource(_CRUD, '/lgate')
