@@ -28,7 +28,6 @@ from api.lgate import lgate_api
 from api.messages_api import messages_api # Adi added this, messages for his website
 from api.carphoto import car_api
 from api.carChat import car_chat_api
-from api.binaryLearningGame import binaryLearningGameScores_api
 
 from api.vote import vote_api
 # database Initialization functions
@@ -50,7 +49,7 @@ app.register_blueprint(pfp_api)
 app.register_blueprint(post_api)
 app.register_blueprint(channel_api)
 app.register_blueprint(section_api)
-# apis under development
+app.register_blueprint(lgate_api)
 
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
