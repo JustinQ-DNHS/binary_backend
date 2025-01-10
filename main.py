@@ -31,8 +31,6 @@ from api.binaryConverter import binaryConverter_api
 from api.vote import vote_api
 # database Initialization functions
 from model.carChat import CarChat
-from model.quizgrading import initquizgrading
-from model.quizquestions import quizquestions 
 from model.user import User, initUsers
 from model.section import Section, initSections
 from model.group import Group, initGroups
@@ -54,6 +52,7 @@ app.register_blueprint(section_api)
 # apis under development
 app.register_blueprint(quizCreation_api)
 app.register_blueprint(binaryConverter_api)
+app.register_blueprint(binary_history_api)
 
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"

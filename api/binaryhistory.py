@@ -1,11 +1,14 @@
-from flask import Flask, jsonify, Blueprint
+from flask import Blueprint, jsonify
+from flask_restful import Api, Resource  # Used for REST API building
 from flask_cors import CORS
+from __init__ import app  # Ensure __init__.py initializes your Flask app
 
-app = Flask(__name__)
+# Enable CORS for cross-origin access
+CORS(app)
 
-CORS(app)  # Enable CORS for cross-origin access
-
+# Blueprint for the API
 binary_history_api = Blueprint('binary_history_api', __name__, url_prefix='/api')
+api = Api(binary_history_api)  # Attach Flask-RESTful API to the Blueprint
 
 # Static binary history data
 BINARY_HISTORY = [
@@ -15,13 +18,24 @@ BINARY_HISTORY = [
     {"id": 4, "event_date": "1964-01-01", "event_description": "ASCII (American Standard Code for Information Interchange) is introduced, using binary to represent characters."},
 ]
 
-# Define route for the blueprint
-@binary_history_api.route('/binary-history', methods=['GET'])
-def get_binary_history():
+# Create a class for the Binary History API
+class BinaryHistoryAPI:
     """
-    Endpoint to retrieve all binary history events (from static data).
+    Define the API CRUD endpoints for Binary History.
     """
-    return jsonify(BINARY_HISTORY), 200
+
+    class _GetAll(Resource):
+        def get(self):
+            """
+            Retrieve all binary history events.
+            """
+            return jsonify(BINARY_HISTORY)  # Convert Python list to JSON and return it
+
+    # Add resource to the API
+    api.add_resource(_GetAll, '/binary-history')
+
+# Register the Blueprint with the app
+app.register_blueprint(binary_history_api)
 
 if __name__ == '__main__':
     app.run(debug=True)
