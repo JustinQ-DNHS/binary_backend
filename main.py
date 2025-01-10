@@ -25,6 +25,7 @@ from api.nestPost import nestPost_api # Justin added this, custom format for his
 from api.binaryhistory import binary_history_api
 from api.lgate import lgate
 from api.lgate import lgate_api
+from api.lgate import lgate_api
 from api.messages_api import messages_api # Adi added this, messages for his website
 from api.carphoto import car_api
 from api.carChat import car_chat_api
