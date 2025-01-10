@@ -21,7 +21,7 @@ The Api object is connected to the Blueprint object to define the API endpoints.
 """
 api = Api(lgate)
 
-class NestPostAPI:
+class lgateAPI:
     """
     Define the API CRUD endpoints for the Post model.
     There are four operations that correspond to common HTTP methods:
@@ -66,8 +66,6 @@ class NestPostAPI:
             # Update the post
             post._name = data['name']
             post._score = data['score']
-            post._group_id = data['group_id']
-            post._image_url = data['image_url']
             # Save the post
             post.update()
             # Return response
@@ -91,4 +89,4 @@ class NestPostAPI:
     - The API resource class inherits from flask_restful.Resource.
     - The _CRUD class defines the HTTP methods for the API.
     """
-    api.add_resource(_CRUD, '/nestPost')
+    api.add_resource(_CRUD, '/lagate')
