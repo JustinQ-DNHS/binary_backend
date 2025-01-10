@@ -11,7 +11,7 @@ This Blueprint object is used to define APIs for the Post model.
 - Blueprint is used to modularize application files.
 - This Blueprint is registered to the Flask app in main.py.
 """
-lgate = Blueprint('lgate', __name__, url_prefix='/api')
+lgate = Blueprint('lgate_api', __name__, url_prefix='/api')
 
 """
 The Api object is connected to the Blueprint object to define the API endpoints.
@@ -19,70 +19,40 @@ The Api object is connected to the Blueprint object to define the API endpoints.
 - The objects added are mapped to code that contains the actions for the API.
 - For more information, refer to the API docs: https://flask-restful.readthedocs.io/en/latest/api.html
 """
-api = Api(lgate)
+api = Api(lgate.api)
 
-class lgateAPI:
-    """
-    Define the API CRUD endpoints for the Post model.
-    There are four operations that correspond to common HTTP methods:
-    - post: create a new post
-    - get: read posts
-    - put: update a post
-    - delete: delete a post
-    """
+class GroupAPI:
     class _CRUD(Resource):
         @token_required()
         def post(self):
-            # Obtain the current user from the token required setting in the global context
+            """
+            Save quiz results from the frontend to the database.
+            """
             current_user = g.current_user
-            # Obtain the request data sent by the RESTful client API
-            data = request.get_json()
-            # Create a new post object using the data from the request
-            post = NestPost(data['name'], data['score'], current_user.id)
-            # Save the post object using the Object Relational Mapper (ORM) method defined in the model
-            post.create()
-            # Return response to the client in JSON format, converting Python dictionaries to JSON format
-            return jsonify(post.read())
+            data = request.get_json() 
 
-        @token_required()
+            if 'name' not in data or 'score' not in data:
+                return jsonify({"error": "Missing required fields: 'name' and 'score'"}), 400
+            
+            lgquiz = lgate(
+                user_id=current_user.id,
+                name=data['name'],
+                score=data['score']
+            )
+
+            try:
+                lgquiz.create()
+                return jsonify(lgquiz.read()), 201
+            except Exception as e:
+                return jsonify({"error": str(e)}), 500
+
         def get(self):
-            # Obtain the current user
+            """
+            Retrieve all quiz results for the authenticated user.
+            """
             current_user = g.current_user
-            # Find all the posts by the current user
-            posts = NestPost.query.filter(NestPost._user_id == current_user.id).all()
-            # Prepare a JSON list of all the posts, uses for loop shortcut called list comprehension
-            json_ready = [post.read() for post in posts]
-            # Return a JSON list, converting Python dictionaries to JSON format
-            return jsonify(json_ready)
-
-        @token_required()
-        def put(self):
-            # Obtain the current user
-            current_user = g.current_user
-            # Obtain the request data
-            data = request.get_json()
-            # Find the current post from the database table(s)
-            post = NestPost.query.get(data['id'])
-            # Update the post
-            post._name = data['name']
-            post._score = data['score']
-            # Save the post
-            post.update()
-            # Return response
-            return jsonify(post.read())
-
-        @token_required()
-        def delete(self):
-            # Obtain the current user
-            current_user = g.current_user
-            # Obtain the request data
-            data = request.get_json()
-            # Find the current post from the database table(s)
-            post = NestPost.query.get(data['id'])
-            # Delete the post using the ORM method defined in the model
-            post.delete()
-            # Return response
-            return jsonify({"message": "Post deleted"})
+            results = lgate.query.filter_by(user_id=current_user.id).all()
+            return jsonify([result.read() for result in results])
 
     """
     Map the _CRUD class to the API endpoints for /post.
