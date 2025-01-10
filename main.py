@@ -28,18 +28,20 @@ from api.messages_api import messages_api # Adi added this, messages for his web
 # New API's being tested
 from api.general import general_api
 from api.binaryLearningGame import binaryLearningGameScores_api
+from api.newQuizCreation import quizCreation_api
 
 from api.vote import vote_api
 from api.student import student_api
 # database Initialization functions
 from model.carChat import CarChat
 from model.quizgrading import initquizgrading
-from model.quizquestions import initquizquestions
+from model.quizquestions import quizquestions 
 from model.user import User, initUsers
 from model.section import Section, initSections
 from model.group import Group, initGroups
 from model.channel import Channel, initChannels
 from model.post import Post, initPosts
+from model.nestPost import initNestPosts
 # under development
 from model.binaryLearningGame import initBinaryLearningGameScores
 # server only Views
@@ -53,6 +55,7 @@ app.register_blueprint(post_api)
 app.register_blueprint(channel_api)
 app.register_blueprint(section_api)
 # apis under development
+app.register_blueprint(quizCreation_api)
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
 app.register_blueprint(quizgrading_api)
@@ -161,6 +164,7 @@ def generate_data():
         # initGroups()
         # initChannels()
         # initPosts()
+    initNestPosts()
     # New data being tested
     initBinaryLearningGameScores()
     
