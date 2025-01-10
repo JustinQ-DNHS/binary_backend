@@ -24,6 +24,7 @@ from api.section import section_api
 from api.nestPost import nestPost_api # Justin added this, custom format for his website
 from api.quizgrading import quizgrading_api
 from api.quizquestions import quizquestions_api
+from api.lgate import lgate
 from api.messages_api import messages_api # Adi added this, messages for his website
 from api.carphoto import car_api
 from api.carChat import car_chat_api
@@ -53,6 +54,7 @@ app.register_blueprint(section_api)
 # apis under development
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
+app.register_blueprint(lgate_api)
 
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
