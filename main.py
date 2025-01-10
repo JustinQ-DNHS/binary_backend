@@ -23,6 +23,7 @@ from api.group import group_api
 from api.section import section_api
 from api.nestPost import nestPost_api # Justin added this, custom format for his website
 from api.binaryhistory import binary_history_api
+from api.lgate import lgate
 from api.messages_api import messages_api # Adi added this, messages for his website
 from api.carphoto import car_api
 from api.carChat import car_chat_api
@@ -48,7 +49,8 @@ app.register_blueprint(post_api)
 app.register_blueprint(channel_api)
 app.register_blueprint(section_api)
 # apis under development
-app.register_blueprint(binary_history_api)
+app.register_blueprint(binaryLearningGameScores_api)
+app.register_blueprint(student_api)
 
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
