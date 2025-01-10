@@ -27,7 +27,7 @@ from api.messages_api import messages_api # Adi added this, messages for his web
 from api.carphoto import car_api
 from api.carChat import car_chat_api
 from api.newQuizCreation import quizCreation_api
-
+from api.binaryConverter import binaryConverter_api
 from api.vote import vote_api
 # database Initialization functions
 from model.carChat import CarChat

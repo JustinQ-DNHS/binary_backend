@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, Blueprint
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+CORS(app)  # Enable CORS for cross-origin access
 
 binary_history_api = Blueprint('binary_history_api', __name__, url_prefix='/api')
 
