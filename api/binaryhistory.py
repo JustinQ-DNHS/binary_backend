@@ -8,6 +8,7 @@ CORS(app)
 
 # Blueprint for the API
 binary_history_api = Blueprint('binary_history_api', __name__, url_prefix='/api')
+
 api = Api(binary_history_api)  # Attach Flask-RESTful API to the Blueprint
 
 # Static binary history data
@@ -33,9 +34,6 @@ class BinaryHistoryAPI:
 
     # Add resource to the API
     api.add_resource(_GetAll, '/binary-history')
-
-# Register the Blueprint with the app
-app.register_blueprint(binary_history_api)
 
 if __name__ == '__main__':
     app.run(debug=True)
