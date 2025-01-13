@@ -4,7 +4,7 @@ from sqlalchemy import Text
 from __init__ import app, db
 from model.user import User
 
-class binaryLearningGameScores(db.Model):
+class firstPlaceLeaderboard(db.Model):
     """
     Binary Learning Game Scores Model
     
@@ -13,15 +13,16 @@ class binaryLearningGameScores(db.Model):
     Attributes:
         id (db.Column): The primary key, an integer representing the unique identifier for the post.
     """
-    __tablename__ = 'binaryLearningGameScores'
+    __tablename__ = 'firstPlaceLeaderboard'
 
     id = db.Column(db.Integer, primary_key=True)
     _username = db.Column(db.String(255), nullable=False)
     _user_id = db.Column(db.String(255), db.ForeignKey('users.id'), nullable=False)
     _user_score = db.Column(db.Integer, nullable=False)
     _user_difficulty = db.Column(db.String(255), nullable=False)
+    _time_in_first_place = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, username, user_id, user_score, user_difficulty):
+    def __init__(self, username, user_id, user_score, user_difficulty, time_in_first_place ):
         """
         Constructor, 1st step in object creation.
         
@@ -36,6 +37,7 @@ class binaryLearningGameScores(db.Model):
         self._user_id = user_id
         self._user_score = user_score
         self._user_difficulty = user_difficulty
+        self._time_in_first_place = time_in_first_place
 
     def __repr__(self):
         """
@@ -45,7 +47,7 @@ class binaryLearningGameScores(db.Model):
         Returns:
             str: A text representation of how to create the object.
         """
-        return f"BinaryScore(id={self.id}, username={self._username}, user_id={self._user_id}, user_score={self._user_score}, user_difficulty={self._user_difficulty})"
+        return f"BinaryScore(id={self.id}, username={self._username}, user_id={self._user_id}, user_score={self._user_score}, user_difficulty={self._user_difficulty}, user_time_in_first_place={self._time_in_first_place})"
 
     def create(self):
         """
@@ -80,7 +82,8 @@ class binaryLearningGameScores(db.Model):
             "username": self._username,
             "user_id": self._user_id if user else None,
             "user_score": self._user_score,
-            "user_difficulty": self._user_difficulty
+            "user_difficulty": self._user_difficulty,
+            "user_time_in_first_place": self._time_in_first_place
         }
         return data
     
