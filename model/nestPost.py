@@ -4,47 +4,44 @@ from sqlalchemy import Text
 from __init__ import app, db
 from model.user import User
 from model.group import Group
+from __init__ import db
 
 class NestPost(db.Model):
-    """
-    NestPost Model
-    
-    The Post class represents an individual contribution or discussion within a group.
-    
-    Attributes:
-        id (db.Column): The primary key, an integer representing the unique identifier for the post.
-        _title (db.Column): A string representing the title of the post.
-        _content (db.Column): A Text blob representing the content of the post.
-        _user_id (db.Column): An integer representing the user who created the post.
-        _group_id (db.Column): An integer representing the group to which the post belongs.
-        _image_url (db.Column): A string representing the url path to the image contained in the post
-    """
     __tablename__ = 'nestPosts'
 
     id = db.Column(db.Integer, primary_key=True)
-    _title = db.Column(db.String(255), nullable=False)
-    _content = db.Column(Text, nullable=False)
-    _user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    _group_id = db.Column(db.Integer, db.ForeignKey('groups.id'), nullable=False)
-    _image_url = db.Column(db.String(255), nullable=False)
+    user_id = db.Column(db.Integer, nullable=False)
+    name = db.Column(db.String(100), nullable=False)
+    score = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, title, content, user_id, group_id, image_url):
-        """
-        Constructor, 1st step in object creation.
-        
-        Args:
-            title (str): The title of the post.
-            content (str): The content of the post.
-            user_id (int): The user who created the post.
-            group_id (int): The group to which the post belongs.
-            image_url (str): The url path to the image
-        """
-        self._title = title
-        self._content = content
-        self._user_id = user_id
-        self._group_id = group_id
-        self._image_url = image_url
+    def __init__(self, user_id, name, score):
+        self.user_id = user_id
+        self.name = name
+        self.score = score
 
+    def create(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def read(self):
+        return {
+            "id": self.id,
+            "user_id": self.user_id,
+            "name": self.name,
+            "score": self.score
+        }
+
+    def create(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def read(self):
+        return {
+            "id": self.id,
+            "user_id": self.user_id,
+            "name": self.name,
+            "score": self.score
+        }
     def __repr__(self):
         """
         The __repr__ method is a special method used to represent the object in a string format.

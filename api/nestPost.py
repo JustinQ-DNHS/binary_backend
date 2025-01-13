@@ -39,7 +39,7 @@ class NestPostAPI:
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
             # Create a new post object using the data from the request
-            post = NestPost(data['title'], data['content'], current_user.id, data['group_id'], data['image_url'])
+            post = NestPost(data['name'],data['title'], data['content'], current_user.id, data['group_id'], data['image_url'])
             # Save the post object using the Object Relational Mapper (ORM) method defined in the model
             post.create()
             # Return response to the client in JSON format, converting Python dictionaries to JSON format
@@ -95,11 +95,14 @@ class NestPostAPI:
 
 
 class NestPost(db.Model):
+    __tablename__ = 'nest_post'  # Explicit table name (optional)
+
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, nullable=False)
     name = db.Column(db.String(100), nullable=False)
     score = db.Column(db.Integer, nullable=False)
 
+    # ✅ Proper constructor to accept 'user_id', 'name', and 'score'
     def __init__(self, user_id, name, score):
         self.user_id = user_id
         self.name = name
