@@ -218,6 +218,7 @@ def backup_data():
 def restore_data_command():
     data = load_data_from_json()
     restore_data(data)
+
     
 # Register the custom command group with the Flask application
 app.cli.add_command(custom_cli)
