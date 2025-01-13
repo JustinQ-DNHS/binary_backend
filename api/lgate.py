@@ -18,11 +18,10 @@ class GroupAPI:
             current_user = g.current_user
             data = request.get_json()
 
-            # ✅ Validate input data
             if 'name' not in data or 'score' not in data:
                 return jsonify({"error": "Missing required fields: 'name' and 'score'"}), 400
 
-            # ✅ Create a new NestPost for Logic Gates Game
+            #  Create a new set for Logic Gates Game
             lgquiz = NestPost(
                 user_id=current_user.id,
                 name=data['name'],
@@ -32,7 +31,7 @@ class GroupAPI:
             try:
                 lgquiz.create()
 
-                # ✅ Return only serializable data
+                #  Return the given data
                 response_data = {
                     "id": lgquiz.id,
                     "user_id": lgquiz.user_id,
