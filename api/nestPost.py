@@ -5,6 +5,7 @@ from datetime import datetime
 from __init__ import app
 from api.jwt_authorize import token_required
 from model.nestPost import NestPost
+from __init__ import db
 
 """
 This Blueprint object is used to define APIs for the Post model.
@@ -91,4 +92,29 @@ class NestPostAPI:
     - The API resource class inherits from flask_restful.Resource.
     - The _CRUD class defines the HTTP methods for the API.
     """
-    api.add_resource(_CRUD, '/nestPost')
+
+
+class NestPost(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, nullable=False)
+    name = db.Column(db.String(100), nullable=False)
+    score = db.Column(db.Integer, nullable=False)
+
+    def __init__(self, user_id, name, score):
+        self.user_id = user_id
+        self.name = name
+        self.score = score
+
+    def create(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def read(self):
+        return {
+            "id": self.id,
+            "user_id": self.user_id,
+            "name": self.name,
+            "score": self.score
+        }
+    
+api.add_resource(NestPostAPI._CRUD, '/nestPost')
