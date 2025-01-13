@@ -28,9 +28,9 @@ from api.messages_api import messages_api # Adi added this, messages for his web
 # New API's being tested
 from api.general import general_api
 from api.binaryLearningGame import binaryLearningGameScores_api
-
 from api.vote import vote_api
 from api.student import student_api
+
 # database Initialization functions
 from model.carChat import CarChat
 from model.quizgrading import initquizgrading
@@ -42,6 +42,7 @@ from model.channel import Channel, initChannels
 from model.post import Post, initPosts
 # under development
 from model.binaryLearningGame import initBinaryLearningGameScores
+from model.firstPlaceLeaderboard import initFirstPlaceLeaderboard
 # server only Views
 
 # register URIs for api endpoints
@@ -164,6 +165,7 @@ def generate_data():
         # initChannels()
         # initPosts()
     # New data being tested
+    initFirstPlaceLeaderboard()
     initBinaryLearningGameScores()
     
 # Backup the old database

@@ -18,11 +18,9 @@ class firstPlaceLeaderboard(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     _username = db.Column(db.String(255), nullable=False)
     _user_id = db.Column(db.String(255), db.ForeignKey('users.id'), nullable=False)
-    _user_score = db.Column(db.Integer, nullable=False)
-    _user_difficulty = db.Column(db.String(255), nullable=False)
     _time_in_first_place = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, username, user_id, user_score, user_difficulty, time_in_first_place ):
+    def __init__(self, username, user_id, time_in_first_place ):
         """
         Constructor, 1st step in object creation.
         
@@ -35,8 +33,6 @@ class firstPlaceLeaderboard(db.Model):
         """
         self._username = username
         self._user_id = user_id
-        self._user_score = user_score
-        self._user_difficulty = user_difficulty
         self._time_in_first_place = time_in_first_place
 
     def __repr__(self):
@@ -47,7 +43,7 @@ class firstPlaceLeaderboard(db.Model):
         Returns:
             str: A text representation of how to create the object.
         """
-        return f"BinaryScore(id={self.id}, username={self._username}, user_id={self._user_id}, user_score={self._user_score}, user_difficulty={self._user_difficulty}, user_time_in_first_place={self._time_in_first_place})"
+        return f"BinaryScore(id={self.id}, username={self._username}, user_id={self._user_id}, user_time_in_first_place={self._time_in_first_place})"
 
     def create(self):
         """
@@ -120,7 +116,7 @@ class firstPlaceLeaderboard(db.Model):
             db.session.rollback()
             raise e
 
-def initBinaryLearningGameScores():
+def initFirstPlaceLeaderboard():
     """
     The initPosts function creates the Post table and adds tester data to the table.
     
@@ -138,10 +134,10 @@ def initBinaryLearningGameScores():
         db.create_all()
         """Tester data for table"""
         
-        p1 = binaryLearningGameScores(username="JIM", user_id="None", user_score=20, user_difficulty="easy")
-        p2 = binaryLearningGameScores(username="TIM", user_id="None", user_score=120, user_difficulty="medium")
-        p3 = binaryLearningGameScores(username="BUM", user_id="None", user_score=150, user_difficulty="hard")
-        p4 = binaryLearningGameScores(username="TUM", user_id="None", user_score=30, user_difficulty="easy")
+        p1 = firstPlaceLeaderboard(username="JIM", user_id="jim_is_the_best", time_in_first_place="10")
+        p2 = firstPlaceLeaderboard(username="TIM", user_id="tim_10", time_in_first_place="2")
+        p3 = firstPlaceLeaderboard(username="BUM", user_id="dum_bum", time_in_first_place="7")
+        p4 = firstPlaceLeaderboard(username="TUM", user_id="tum123", time_in_first_place="5")
         
         for post in [p1, p2, p3, p4]:
             try:
