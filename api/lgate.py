@@ -23,7 +23,7 @@ class GroupAPI:
         @token_required()
         def post(self):
             """
-            Save quiz results from the frontend to the database.
+            get the quiz data from the frontend
             """
             current_user = g.current_user
             data = request.get_json() 
@@ -46,7 +46,7 @@ class GroupAPI:
         @token_required()  
         def get(self):
             """
-            Retrieve all quiz results for the authenticated user.
+            Retrieve all quiz results for the authenticated user
             """
             current_user = g.current_user
             results = NestPost.query.filter_by(user_id=current_user.id).all() 
