@@ -33,7 +33,7 @@ binaryhistory = [
     {"id": 18, "event_year": "2000", "event_description": "The Y2K problem highlights the importance of binary in year representation and storage."},
     {"id": 19, "event_year": "2008", "event_description": "Bitcoin, based on binary and cryptographic principles, is introduced."},
     {"id": 20, "event_year": "2020", "event_description": "Quantum computing advancements begin to challenge traditional binary systems with qubits."}
-];
+]
 
 # Create a class for the Binary History API
 class BinaryHistoryAPI:
