@@ -30,9 +30,6 @@ from api.newQuizCreation import quizCreation_api
 from api.binaryConverter import binaryConverter_api
 from api.vote import vote_api
 # database Initialization functions
-from model.carChat import CarChat
-from model.quizgrading import initquizgrading
-from model.quizquestions import quizquestions 
 from model.user import User, initUsers
 from model.section import Section, initSections
 from model.group import Group, initGroups
@@ -41,6 +38,7 @@ from model.post import Post, initPosts
 from model.nestPost import initNestPosts
 # under development
 from model.binaryLearningGame import initBinaryLearningGameScores
+from model.binaryConverter import initBinaryConverter
 # server only Views
 
 # register URIs for api endpoints
@@ -162,6 +160,8 @@ def generate_data():
     initNestPosts()
     # New data being tested
     initBinaryLearningGameScores()
+    initBinaryConverter()
+    
     
 # Backup the old database
 def backup_database(db_uri, backup_uri):
