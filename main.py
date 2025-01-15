@@ -43,7 +43,7 @@ from model.channel import Channel, initChannels
 from model.post import Post, initPosts
 # under development
 from model.binaryLearningGame import initBinaryLearningGameScores
-from model.firstPlaceLeaderboard import initFirstPlaceLeaderboard
+from model.firstPlaceLeaderboard import firstPlaceLeaderboard, initFirstPlaceLeaderboard
 # server only Views
 
 # register URIs for api endpoints
@@ -217,7 +217,7 @@ def restore_data(data):
         _ = Group.restore(data['groups'], users)
         _ = Channel.restore(data['channels'])
         _ = Post.restore(data['posts'])
-    print("Data restored to the new database.")
+        _ = firstPlaceLeaderboard.restore(data['firstPlaceLeaderboard'])
 
 # Define a command to backup data
 @custom_cli.command('backup_data')

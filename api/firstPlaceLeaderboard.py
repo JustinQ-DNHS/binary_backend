@@ -35,7 +35,7 @@ class FirstPlaceLeaderboardAPI:
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
             # Create a new post object using the data from the request
-            time = firstPlaceLeaderboard(data['username'], current_user.id, data['score'], data['difficulty'])
+            time = firstPlaceLeaderboard(data['username'], current_user.id, data['time'])
             # Save the post object using the ORM method defined in the model
             time.create()
             # Return response to the client in JSON format

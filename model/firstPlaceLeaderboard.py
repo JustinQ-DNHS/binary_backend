@@ -114,6 +114,19 @@ class firstPlaceLeaderboard(db.Model):
             db.session.rollback()
             raise e
 
+    @staticmethod
+    def restore(data):
+        for firstPlaceLeaderboard_data in data:
+            _ = firstPlaceLeaderboard_data.pop('id', None)  # Remove 'id' from post_data
+            title = firstPlaceLeaderboard_data.get("title", None)
+            post = firstPlaceLeaderboard.query.filter_by(_title=title).first()
+            if post:
+                post.update(firstPlaceLeaderboard_data)
+            else:
+                post = firstPlaceLeaderboard(**firstPlaceLeaderboard_data)
+                post.update(firstPlaceLeaderboard_data)
+                post.create()
+
 def initFirstPlaceLeaderboard():
     """
     The initPosts function creates the Post table and adds tester data to the table.
