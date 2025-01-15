@@ -77,8 +77,6 @@ class firstPlaceLeaderboard(db.Model):
             "id": self.id,
             "username": self._username,
             "user_id": self._user_id if user else None,
-            "user_score": self._user_score,
-            "user_difficulty": self._user_difficulty,
             "user_time_in_first_place": self._time_in_first_place
         }
         return data

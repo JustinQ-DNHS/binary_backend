@@ -30,6 +30,7 @@ from api.general import general_api
 from api.binaryLearningGame import binaryLearningGameScores_api
 from api.vote import vote_api
 from api.student import student_api
+from api.firstPlaceLeaderboard import firstPlaceLeaderboard_api
 
 # database Initialization functions
 from model.carChat import CarChat
@@ -59,6 +60,7 @@ app.register_blueprint(student_api)
 app.register_blueprint(quizgrading_api)
 app.register_blueprint(quizquestions_api)
 app.register_blueprint(general_api)
+app.register_blueprint(firstPlaceLeaderboard_api)
 
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
