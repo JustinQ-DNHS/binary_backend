@@ -16,7 +16,7 @@ def test_lgate():
     return {"message": "Logic Gate API is working!"}
 
 lgate = [
-    { "name": "", "score": "3", "quiz_id": "1"},
+    { "name": "andre", "score": "3", "quiz_id": "1"},
 ]
 class lgateAPI:
     """
@@ -54,9 +54,10 @@ class lgateAPI:
         def get(self):
             """
             Retrieve all quizzes.
-            """
+            
             quizzes = lgate.query.all()
-            return jsonify([quiz.read() for quiz in quizzes])
+            """
+            return jsonify(lgate)
 
         @token_required
         def put(self):
