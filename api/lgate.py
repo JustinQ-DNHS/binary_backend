@@ -2,13 +2,17 @@ from flask import Blueprint, request, jsonify, current_app, Response, g
 from flask_restful import Api, Resource  # used for REST API building
 from __init__ import app
 from api.jwt_authorize import token_required
-from model.newlgate import lgate
+from model.lgatedata import lgate
 
 # Blueprint setup for the API
 lgate_api = Blueprint('lgate_api', __name__, url_prefix='/api')
 
 api = Api(lgate_api)
 
+# test data
+lgate = [
+    { "name": "", "score": "3", "quiz_id": "1"},
+]
 class lgateAPI:
     """
     Define API endpoints for lgate model.
@@ -25,14 +29,14 @@ class lgateAPI:
             # Validate required fields
             if not data:
                 return {'message': 'No input data provided'}, 400
-            if 'question' not in data or 'answer' not in data or 'quiz_id' not in data:
-                return {'message': 'Question, answer, and quiz_id are required'}, 400
+            if 'name' not in data or 'score' not in data or 'quiz_id' not in data:
+                return {'message': 'name, score, and quiz_id are required'}, 400
 
             try:
                 # Create new quiz
                 quiz = lgate(
-                    question=data['question'],
-                    answer=data['answer'],
+                    name=data['name'],
+                    score=data['score'],
                     quiz_id=data['quiz_id']
                 )
                 quiz.create()  # Using the create method defined in your model
@@ -55,8 +59,8 @@ class lgateAPI:
             Update an existing quiz by its ID.
             """
             data = request.get_json()
-            if 'id' not in data or 'question' not in data or 'answer' not in data:
-                return {'message': 'ID, question, and answer are required'}, 400
+            if 'id' not in data or 'name' not in data or 'score' not in data:
+                return {'message': 'ID, name, and score are required'}, 400
 
             quiz = lgate.query.get(data['id']).update()
             if not quiz:
