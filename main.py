@@ -42,6 +42,7 @@ from model.nestPost import initNestPosts
 # under development
 from model.binaryLearningGame import initBinaryLearningGameScores
 from model.binaryConverter import initBinaryConverter
+from model.lgatedata import lgate
 # server only Views
 
 # register URIs for api endpoints

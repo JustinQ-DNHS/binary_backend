@@ -6,28 +6,28 @@ class lgate(db.Model):
     """
     lgate Model
     
-    Represents a quiz with a question, answer, and a quiz_id associated with a user.
+    Represents a quiz with a question, score, and a quiz_id associated with a user.
     """
     __tablename__ = 'lgate'
 
     id = db.Column(db.Integer, primary_key=True)
-    question = db.Column(db.String(255), nullable=False)
-    answer = db.Column(db.String(255), nullable=False)
+    name = db.Column(db.String(255), nullable=False)
+    score = db.Column(db.String(255), nullable=False)
     quiz_id = db.Column(db.Integer, nullable=False)  # Remove ForeignKey for simplicity in SQLite
 
-    def __init__(self, question, answer, quiz_id):
+    def __init__(self, name, score, quiz_id):
         """
         Constructor for lgate.
         """
-        self.question = question
-        self.answer = answer
+        self.name = name
+        self.score = score
         self.quiz_id = quiz_id
 
     def __repr__(self):
         """
         Represents the lgate object as a string for debugging.
         """
-        return f"<lgate(id={self.id}, question='{self.question}', answer='{self.answer}', quiz_id={self.quiz_id})>"
+        return f"<lgate(id={self.id}, name='{self.name}', score='{self.score}', quiz_id={self.quiz_id})>"
 
     def create(self):
         """
@@ -46,8 +46,8 @@ class lgate(db.Model):
         """
         return {
             "id": self.id,
-            "question": self.question,
-            "answer": self.answer,
+            "name": self.name,
+            "score": self.score,
             "quiz_id": self.quiz_id
         }
 
@@ -84,13 +84,13 @@ def initlgate():
         db.create_all()  # Create the database and tables
 
         # Sample test data
-        quizzes = [
-            lgate(question="What is the capital of France?", answer="Paris", quiz_id=1),
-            lgate(question="What is 2 + 2?", answer="4", quiz_id=2),
-            lgate(question="Who wrote 'To Kill a Mockingbird'?", answer="Harper Lee", quiz_id=3)
+        lgate = [
+            lgate(name="Jake", score="3", quiz_id=1),
+            lgate(name="Josh", score="4", quiz_id=2),
+            lgate(name="Julia", score="5", quiz_id=3)
         ]
 
-        for quiz in quizzes:
+        for quiz in lgate:
             try:
                 quiz.create()
                 print(f"Created quiz: {quiz}")
