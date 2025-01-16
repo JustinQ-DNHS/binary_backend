@@ -5,11 +5,16 @@ from api.jwt_authorize import token_required
 from model.lgatedata import lgate
 
 # Blueprint setup for the API
-lgate_api = Blueprint('lgate_api', __name__, url_prefix='/api')
+lgate_api = Blueprint('lgate_api', __name__, url_prefix='/api/lgate')
 
 api = Api(lgate_api)
 
 # test data
+
+@lgate_api.route('/test', methods=['GET'])
+def test_lgate():
+    return {"message": "Logic Gate API is working!"}
+
 lgate = [
     { "name": "", "score": "3", "quiz_id": "1"},
 ]

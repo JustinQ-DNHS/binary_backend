@@ -28,6 +28,7 @@ from api.messages_api import messages_api # Adi added this, messages for his web
 from api.general import general_api
 from api.binaryLearningGame import binaryLearningGameScores_api
 from api.lgate import lgate_api
+from api.student import student_api
 
 from api.vote import vote_api
 # database Initialization functions
@@ -54,7 +55,6 @@ app.register_blueprint(section_api)
 # apis under development
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
-app.register_blueprint(quizgrading_api)
 app.register_blueprint(lgate_api)
 
 # Tell Flask-Login the view function name of your login route
