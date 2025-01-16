@@ -1,4 +1,5 @@
 from sqlite3 import IntegrityError
+from sqlalchemy import Text
 from __init__ import app, db
 from model.user import User
 
@@ -6,33 +7,15 @@ class quizquestions(db.Model):
     __tablename__ = 'quizquestions'
     
     id = db.Column(db.Integer, primary_key=True)
-    _q1 = db.Column(db.Integer, nullable=False)
-    _q2 = db.Column(db.Integer, nullable=False)
-    _q3 = db.Column(db.Integer, nullable=False)
-    _q4 = db.Column(db.Integer, nullable=False)
-    _q5 = db.Column(db.Integer, nullable=False)
-    _q6 = db.Column(db.Integer, nullable=False)
-    _q7 = db.Column(db.Integer, nullable=False)
-    _q8 = db.Column(db.Integer, nullable=False)
-    _q9 = db.Column(db.Integer, nullable=False)
-    _q10 = db.Column(db.Integer, nullable=False)
-    _user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    _question = db.Column(db.String(255), nullable=False)
+
     
-    def __init__(self, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, user_id):
-       self._q1 = q1
-       self._q2 = q2
-       self._q3 = q3
-       self._q4 = q4
-       self._q5 = q5
-       self._q6 = q6
-       self._q7 = q7
-       self._q8 = q8
-       self._q9 = q9
-       self._q10 = q10
-       self._user_id = user_id
+    def __init__(self, question):
+       self._question = question
 
 
-def __repr__(self):
+
+    def __repr__(self):
        """
        The __repr__ method is a special method used to represent the object in a string format.
        Called by the repr(post) built-in function, where post is an instance of the Post class.
@@ -40,10 +23,10 @@ def __repr__(self):
        Returns:
            str: A text representation of how to create the object.
        """
-       return f"Post(id={self.id}, q1={self._q1}, q2={self._q2}, q3={self._q3}, q4={self._q4}, q5={self._q5}, q6={self._q6}, q7={self._q7}, q8={self._q8}, q9={self._q9}, q10={self._q10} user_id={self._user_id})"
+       return f"Post(id={self.id}, q1={self._question})"
 
 
-def create(self):
+    def create(self):
        """
        The create method adds the object to the database and commits the transaction.
       
@@ -60,7 +43,7 @@ def create(self):
            db.session.rollback()
            raise e
       
-def read(self):
+    def read(self):
        """
        The read method retrieves the object data from the object's attributes and returns it as a dictionary.
       
@@ -70,24 +53,14 @@ def read(self):
        Returns:
            dict: A dictionary containing the post data, including user and group names.
        """
-       user = User.query.get(self._user_id)
        data = {
            "id": self.id,
-           "q1": self._q1,
-           "q2": self._q2,
-           "q3": self._q3,
-           "q4": self._q4,
-           "q5": self._q5,
-           "q6": self._q6,
-           "q7": self._q7,
-           "q8": self._q8,
-           "q9": self._q9,
-           "q10": self._q10,
-           "user_name": user.name if user else None,
+           "q1": self._question,
+
        }
        return data
   
-def update(self):
+    def update(self):
        """
        The update method commits the transaction to the database.
       
@@ -103,7 +76,7 @@ def update(self):
            db.session.rollback()
            raise e
   
-def delete(self):
+    def delete(self):
        """
        The delete method removes the object from the database and commits the transaction.
       
@@ -139,14 +112,17 @@ def initquizquestions():
        db.create_all()
        """Tester data for table"""
       
-       p1 = quizquestions(q1='0', q2='0', q3='0',q4='0',q5='0',q6='0',q7='0',q8='0',q9='0',q10='0', user_id=1) 
+       p1 = quizquestions(question="What is the capital of France?") 
+       p2 = quizquestions(question="What is the capital of Britain?") 
+       p3 = quizquestions(question="What is the capital of China?") 
+       p4 = quizquestions(question="What is the capital of India?") 
+       p5 = quizquestions(question="What is the capital of Japam?") 
       
-       for post in [p1]:
+       for question in [p1, p2, p3, p4, p5]:
            try:
-               post.create()
-               print(f"Record created: {repr(post)}")
+               question.create()
+               print(f"Record created: {repr(question)}")
            except IntegrityError:
                '''fails with bad or duplicate data'''
                db.session.remove()
-               print(f"Records exist, duplicate email, or error: {post.uid}")
 

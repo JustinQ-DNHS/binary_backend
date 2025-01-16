@@ -41,6 +41,7 @@ from model.channel import Channel, initChannels
 from model.post import Post, initPosts
 # under development
 from model.binaryLearningGame import initBinaryLearningGameScores
+from model.quizquestions import quizquestions, initquizquestions
 # server only Views
 
 # register URIs for api endpoints
@@ -163,6 +164,7 @@ def generate_data():
         # initPosts()
     # New data being tested
     initBinaryLearningGameScores()
+    initquizquestions()
     
 # Backup the old database
 def backup_database(db_uri, backup_uri):

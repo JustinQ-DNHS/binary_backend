@@ -1,10 +1,13 @@
-from flask import Blueprint, request, jsonify, current_app, Response, g
+from flask import Blueprint, request, jsonify, g
 from flask_restful import Api, Resource  # used for REST API building
-from datetime import datetime
 from api.jwt_authorize import token_required
-# from model.quizquestions import quizquestions
-from model.nestPost import NestPost
+from model.quizquestions import quizquestions
 
+"""
+This Blueprint object is used to define APIs for the Post model.
+- Blueprint is used to modularize application files.
+- This Blueprint is registered to the Flask app in main.py.
+"""
 quizquestions_api = Blueprint('quizquestions_api', __name__, url_prefix='/api')
 
 """
@@ -26,20 +29,44 @@ class quizquestionsAPI:
     """
     class _CRUD(Resource):
         @token_required()
-        def get(self):
-            # Find all the posts by the current user
-            # scores = quizquestions.query.all()
-            scores = NestPost.query.all()
-            # Prepare a JSON list of all the posts, uses for loop shortcut called list comprehension
-            json_ready = [score.read() for score in scores]
-            # Return a JSON list, converting Python dictionaries to JSON format
-            #return jsonify(json_ready)
-            return jsonify("Shriya is so cool")
+        def post(self):
+            # Obtain the current user from the token
+            current_user = g.current_user
+            # Obtain the request data sent by the RESTful client API
+            data = request.get_json()
+            # Create a new post object using the data from the request
+            post = quizquestions(data['question'])
+            # Save the post object using the ORM method defined in the model
+            post.create()
+            # Return response to the client in JSON format
+            return jsonify(post.read())
 
+        def get(self):
+            # Obtain the current user
+            # current_user = g.current_user
+            # Find all the posts by the current user
+            posts = quizquestions.query.all()
+            # Prepare a JSON list of all the posts, uses for loop shortcut called list comprehension
+            json_ready = [post.read() for post in posts]
+            # Return a JSON list, converting Python dictionaries to JSON format
+            return jsonify(json_ready)
+
+        @token_required()
+        def delete(self):
+            # Obtain the current user
+            current_user = g.current_user
+            # Obtain the request data
+            data = request.get_json()
+            # Find the current post from the database table(s)
+            post = quizquestions.query.get(data['id'])
+            # Delete the post using the ORM method defined in the model
+            post.delete()
+            # Return response
+            return jsonify({"message": "Post deleted"})
 
     """
     Map the _CRUD class to the API endpoints for /post.
     - The API resource class inherits from flask_restful.Resource.
     - The _CRUD class defines the HTTP methods for the API.
     """
-    api.add_resource(_CRUD, '/quizquestions/guizquestions')
+    api.add_resource(_CRUD, '/quizquestions')
