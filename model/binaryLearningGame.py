@@ -84,7 +84,7 @@ class binaryLearningGameScores(db.Model):
         }
         return data
     
-    def update(self):
+    def update(self, inputs):
         """
         The update method commits the transaction to the database.
         
@@ -94,11 +94,30 @@ class binaryLearningGameScores(db.Model):
         Raises:
             Exception: An error occurred when updating the object in the database.
         """
+        if not isinstance(inputs, dict):
+            return self
+
+        username = inputs.get("username", "")
+        user_id = inputs.get("user_id", "")
+        user_score = inputs.get("user_score", "")
+        user_difficulty = inputs.get("user_difficulty", "")
+
+        # Update table with new data
+        if username:
+            self._username = username
+        if user_id:
+            self._user_id = user_id
+        if user_score:
+            self._user_score = user_score
+        if user_difficulty:
+            self._user_difficulty = user_difficulty
+
         try:
             db.session.commit()
-        except Exception as e:
+        except IntegrityError:
             db.session.rollback()
-            raise e
+            return None
+        return self
     
     def delete(self):
         """
@@ -116,6 +135,22 @@ class binaryLearningGameScores(db.Model):
         except Exception as e:
             db.session.rollback()
             raise e
+
+    @staticmethod
+    def restore(data):
+        sections = {}
+        for section_data in data:
+            _ = section_data.pop('id', None)  # Remove 'id' from section_data
+            username = section_data.get("username", None)
+            section = binaryLearningGameScores.query.filter_by(_username=username).first()
+            print(section_data)
+            if section:
+                section.update(section_data)
+            else:
+                section = binaryLearningGameScores(**section_data)
+                section.create()        
+        db.session.commit()
+        return sections
 
 def initBinaryLearningGameScores():
     """
@@ -135,12 +170,11 @@ def initBinaryLearningGameScores():
         db.create_all()
         """Tester data for table"""
             
-        p1 = binaryLearningGameScores(username="JIM", user_id="None", user_score=130, user_difficulty="easy")
-        p2 = binaryLearningGameScores(username="TIM", user_id="None", user_score=120, user_difficulty="medium")
-        p3 = binaryLearningGameScores(username="BUM", user_id="None", user_score=150, user_difficulty="hard")
-        p4 = binaryLearningGameScores(username="TUM", user_id="None", user_score=30, user_difficulty="easy")
+        p1 = binaryLearningGameScores(username="JIM", user_id="1", user_score=10, user_difficulty="easy")
+        p2 = binaryLearningGameScores(username="TIM", user_id="2", user_score=20, user_difficulty="medium")
+        p3 = binaryLearningGameScores(username="BUM", user_id="3", user_score=30, user_difficulty="hard")
             
-        for post in [p1, p2, p3, p4]:
+        for post in [p1, p2, p3]:
             try:
                 post.create()
                 print(f"Record created: {repr(post)}")
