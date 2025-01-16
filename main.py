@@ -22,27 +22,24 @@ from api.channel import channel_api
 from api.group import group_api
 from api.section import section_api
 from api.nestPost import nestPost_api # Justin added this, custom format for his website
-from api.quizgrading import quizgrading_api
-from api.quizquestions import quizquestions_api
+from api.binaryhistory import binary_history_api
 from api.messages_api import messages_api # Adi added this, messages for his website
 # New API's being tested
 from api.general import general_api
 from api.binaryLearningGame import binaryLearningGameScores_api
-from api.lgate import lgate_api
 
 from api.vote import vote_api
-from api.student import student_api
 # database Initialization functions
 from model.carChat import CarChat
-from model.quizgrading import initquizgrading
-from model.quizquestions import initquizquestions
 from model.user import User, initUsers
 from model.section import Section, initSections
 from model.group import Group, initGroups
 from model.channel import Channel, initChannels
 from model.post import Post, initPosts
+from model.nestPost import initNestPosts
 # under development
 from model.binaryLearningGame import initBinaryLearningGameScores
+from model.binaryConverter import initBinaryConverter
 # server only Views
 
 # register URIs for api endpoints
@@ -57,7 +54,6 @@ app.register_blueprint(section_api)
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
 app.register_blueprint(quizgrading_api)
-app.register_blueprint(lgate_api)
 
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
@@ -163,8 +159,11 @@ def generate_data():
         # initGroups()
         # initChannels()
         # initPosts()
+    initNestPosts()
     # New data being tested
     initBinaryLearningGameScores()
+    initBinaryConverter()
+    
     
 # Backup the old database
 def backup_database(db_uri, backup_uri):
