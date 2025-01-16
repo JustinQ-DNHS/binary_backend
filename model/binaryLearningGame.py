@@ -129,4 +129,22 @@ def initBinaryLearningGameScores():
     
     Raises:
         IntegrityError: An error occurred when adding the tester data to the table.
-    """        
+    """
+    with app.app_context():
+        """Create database and tables"""
+    db.create_all()
+    """Tester data for table"""
+        
+    p1 = binaryLearningGameScores(username="JIM", user_id="None", user_score=130, user_difficulty="easy")
+    p2 = binaryLearningGameScores(username="TIM", user_id="None", user_score=120, user_difficulty="medium")
+    p3 = binaryLearningGameScores(username="BUM", user_id="None", user_score=150, user_difficulty="hard")
+    p4 = binaryLearningGameScores(username="TUM", user_id="None", user_score=30, user_difficulty="easy")
+        
+    for post in [p1, p2, p3, p4]:
+        try:
+            post.create()
+            print(f"Record created: {repr(post)}")
+        except IntegrityError:
+            '''fails with bad or duplicate data'''
+            db.session.remove()
+            print(f"Records exist, duplicate email, or error: {post.user_id}")
