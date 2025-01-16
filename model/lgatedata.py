@@ -1,28 +1,27 @@
 from sqlite3 import IntegrityError
 from sqlalchemy.exc import SQLAlchemyError
-from __init__ import app, db
+from __init__ import db
 
 class lgate(db.Model):
-    """
-    lgate Model
-    
-    Represents a quiz with a question, score, and a quiz_id associated with a user.
-    """
-    __tablename__ = 'lgate'
+    __tablename__ = 'lgate'  # Explicit table name
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255), nullable=False)
-    score = db.Column(db.String(255), nullable=False)
-    quiz_id = db.Column(db.Integer, nullable=False)  # Remove ForeignKey for simplicity in SQLite
+    name = db.Column(db.String(100), nullable=False)
+    score = db.Column(db.Integer, nullable=False)
+    quiz_id = db.Column(db.Integer, nullable=False)
 
     def __init__(self, name, score, quiz_id):
-        """
-        Constructor for lgate.
-        """
         self.name = name
         self.score = score
         self.quiz_id = quiz_id
 
+    def read(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'score': self.score,
+            'quiz_id': self.quiz_id
+        }
     def __repr__(self):
         """
         Represents the lgate object as a string for debugging.
