@@ -93,6 +93,10 @@ class lgateAPI:
             #     db.session.rollback()
             #     return {'message': f'Error deleting quiz: {str(e)}'}, 500
 
+@lgate_api.route('/', methods=['GET'])
+def index():
+    return jsonify({"message": "Logic Gate API Root is working!"})
+
     # Add resource endpoints to API
     api.add_resource(_CRUD, 'lgate')  # Routes for single quiz creation, update, get, and delete
 
