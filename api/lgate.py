@@ -16,7 +16,8 @@ def test_lgate():
     return {"message": "Logic Gate API is working!"}
 
 lgate = [
-    { "name": "andre", "score": "3", "quiz_id": "1"},
+    { "name": "andre", "score": "3", "quiz_id": 1},
+    { "name": "john", "score": "4", "quiz_id": 2}
 ]
 class lgateAPI:
     """
