@@ -14,11 +14,6 @@ api = Api(lgate_api)
 @lgate_api.route('/test', methods=['GET'])
 def test_lgate():
     return {"message": "Logic Gate API is working!"}
-
-lgate = [
-    { "name": "jay", "score": "3", "quiz_id": 1},
-    { "name": "john", "score": "4", "quiz_id": 2}
-]
 class lgateAPI:
     """
     Define API endpoints for lgate model.
