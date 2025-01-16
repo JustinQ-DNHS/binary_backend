@@ -2,32 +2,32 @@ from sqlite3 import IntegrityError
 from sqlalchemy.exc import SQLAlchemyError
 from __init__ import app, db
 
-class lgate(db.Model):
+class BinaryConverter (db.Model):
     """
-    lgate Model
+    BinaryConverter Model
     
     Represents a quiz with a question, answer, and a quiz_id associated with a user.
     """
-    __tablename__ = 'lgate'
+    __tablename__ = 'binaryConverter'
 
     id = db.Column(db.Integer, primary_key=True)
-    question = db.Column(db.String(255), nullable=False)
-    answer = db.Column(db.String(255), nullable=False)
+    binary = db.Column(db.String(255), nullable=False)
+    decimal = db.Column(db.String(255), nullable=False)
     quiz_id = db.Column(db.Integer, nullable=False)  # Remove ForeignKey for simplicity in SQLite
 
-    def __init__(self, question, answer, quiz_id):
+    def __init__(self, binary, decimal, quiz_id):
         """
-        Constructor for lgate.
+        Constructor for QuizCreation.
         """
-        self.question = question
-        self.answer = answer
+        self.binary = binary
+        self.decimal = decimal
         self.quiz_id = quiz_id
 
     def __repr__(self):
         """
-        Represents the lgate object as a string for debugging.
+        Represents the QuizCreation object as a string for debugging.
         """
-        return f"<lgate(id={self.id}, question='{self.question}', answer='{self.answer}', quiz_id={self.quiz_id})>"
+        return f"<QuizCreation(id={self.id}, question='{self.binary}', answer='{self.decimal}', quiz_id={self.quiz_id})>"
 
     def create(self):
         """
@@ -46,8 +46,8 @@ class lgate(db.Model):
         """
         return {
             "id": self.id,
-            "question": self.question,
-            "answer": self.answer,
+            "binary": self.binary,
+            "decimal": self.decimal,
             "quiz_id": self.quiz_id
         }
 
@@ -76,18 +76,18 @@ class lgate(db.Model):
             raise e
 
 
-def initlgate():
+def initBinaryConverter():
     """
-    Initializes the lgate table and inserts test data for development purposes.
+    Initializes the QuizCreation table and inserts test data for development purposes.
     """
     with app.app_context():
         db.create_all()  # Create the database and tables
 
         # Sample test data
         quizzes = [
-            lgate(question="What is the capital of France?", answer="Paris", quiz_id=1),
-            lgate(question="What is 2 + 2?", answer="4", quiz_id=2),
-            lgate(question="Who wrote 'To Kill a Mockingbird'?", answer="Harper Lee", quiz_id=3)
+            BinaryConverter(decimal="7777", binary="1111001100001", quiz_id=1),
+            BinaryConverter(decimal="2323", binary="100100010011", quiz_id=2),
+            BinaryConverter(decimal="932237", binary="11100011010001001101", quiz_id=3)
         ]
 
         for quiz in quizzes:
