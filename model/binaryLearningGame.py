@@ -139,16 +139,22 @@ class binaryLearningGameScores(db.Model):
     @staticmethod
     def restore(data):
         sections = {}
+        existing_sections = {section._username: section for section in binaryLearningGameScores.query.all()}
         for section_data in data:
             _ = section_data.pop('id', None)  # Remove 'id' from section_data
             username = section_data.get("username", None)
-            section = binaryLearningGameScores.query.filter_by(_username=username).first()
+            section = existing_sections.pop(username, None)
             print(section_data)
             if section:
                 section.update(section_data)
             else:
                 section = binaryLearningGameScores(**section_data)
-                section.create()        
+                section.create()
+        
+        # Remove any extra data that is not in the backup
+        for section in existing_sections.values():
+            db.session.delete(section)
+        
         db.session.commit()
         return sections
 
