@@ -3,7 +3,6 @@ from sqlite3 import IntegrityError
 from sqlalchemy import Text
 from __init__ import app, db
 from model.user import User
-from model.group import Group
 
 class CommentsAndFeedback(db.Model):
     """
@@ -23,10 +22,11 @@ class CommentsAndFeedback(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     _title = db.Column(db.String(255), nullable=False)
     _content = db.Column(Text, nullable=False)
-    _user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    # _user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     _post_id = db.Column(db.Integer, db.ForeignKey('groups.id'), nullable=False)
 
-    def __init__(self, title, content, user_id, post_id):
+    # def __init__(self, title, content, user_id, post_id):
+    def __init__(self, title, content, post_id):
         """
         Constructor, 1st step in object creation.
         
@@ -39,7 +39,7 @@ class CommentsAndFeedback(db.Model):
         """
         self._title = title
         self._content = content
-        self._user_id = user_id
+        # self._user_id = user_id
         self._post_id = post_id
 
     def __repr__(self):
@@ -50,7 +50,8 @@ class CommentsAndFeedback(db.Model):
         Returns:
             str: A text representation of how to create the object.
         """
-        return f"Post(id={self.id}, title={self._title}, content={self._content}, user_id={self._user_id}, post_id={self._post_id})"
+        # return f"Post(id={self.id}, title={self._title}, content={self._content}, user_id={self._user_id}, post_id={self._post_id})"
+        return f"Post(id={self.id}, title={self._title}, content={self._content}, post_id={self._post_id})"
 
     def create(self):
         """
@@ -79,18 +80,25 @@ class CommentsAndFeedback(db.Model):
         Returns:
             dict: A dictionary containing the post data, including user and group names.
         """
-        user = User.query.get(self._user_id)
+        # user = User.query.get(self._user_id)
         data = {
             "id": self.id,
             "title": self._title,
             "content": self._content,
-            "user_name": user.name if user else None,
+            # "user_name": user.name if user else None,
             # Review information as this may not work as this is a quick workaround
             "post_id": self._post_id
         }
         return data
     
-    def update(self):
+    def temp_update(self):
+        try:
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            raise e
+    
+    def update(self, inputs):
         """
         The update method commits the transaction to the database.
         
@@ -100,12 +108,32 @@ class CommentsAndFeedback(db.Model):
         Raises:
             Exception: An error occurred when updating the object in the database.
         """
+        if not isinstance(inputs, dict):
+            return self
+        
+        title = inputs.get("title", "")
+        content = inputs.get("content", "")
+        # user_name = inputs.get("user_name", "")
+        post_id = inputs.get("post_id", "")
+        
+        user_id = 1
+        
+        if title:
+            self._title = title
+        if content:
+            self._content = content
+        # if user_id: 
+        #     self._user_id = user_id
+        if post_id:
+            self._post_id = post_id
+        
         try:
             db.session.commit()
         except Exception as e:
             db.session.rollback()
             raise e
-    
+        return self
+        
     def delete(self):
         """
         The delete method removes the object from the database and commits the transaction.
@@ -122,36 +150,53 @@ class CommentsAndFeedback(db.Model):
         except Exception as e:
             db.session.rollback()
             raise e
+    
+    @staticmethod
+    def restore(data):
+        comments = {}
+        for comment_data in data:
+            _ = comment_data.pop('id', None)  # Remove 'id' from comment_data
+            title = comment_data.get("title", None)
+            channel = CommentsAndFeedback.query.filter_by(_title=title).first()
+            if channel:
+                channel.update(comment_data)
+            else:
+                channel = CommentsAndFeedback(**comment_data)
+                channel.create()
+        return comments
+    
 
-# No inital data currently, deemed unnecessary at the current moment due to the lack of need in testing
-# def initNestPosts():
-#     """
-#     The initPosts function creates the Post table and adds tester data to the table.
+def initComments():
+    """
+    The initPosts function creates the Post table and adds tester data to the table.
     
-#     Uses:
-#         The db ORM methods to create the table.
+    Uses:
+        The db ORM methods to create the table.
     
-#     Instantiates:
-#         Post objects with tester data.
+    Instantiates:
+        Post objects with tester data.
     
-#     Raises:
-#         IntegrityError: An error occurred when adding the tester data to the table.
-#     """        
-#     with app.app_context():
-#         """Create database and tables"""
-#         db.create_all()
-#         """Tester data for table"""
+    Raises:
+        IntegrityError: An error occurred when adding the tester data to the table.
+    """        
+    with app.app_context():
+        """Create database and tables"""
+        db.create_all()
+        """Tester data for table"""
         
-#         p1 = NestPost(title='Calculus Help', content='Need help with derivatives.', user_id=1, group_id=1, image_url="toby1.png")  
-#         p2 = NestPost(title='Game Day', content='Who is coming to the game?', user_id=2, group_id=2, image_url="toby2.png")
-#         p3 = NestPost(title='New Releases', content='What movies are you excited for?', user_id=3, group_id=3, image_url="toby3.png")
-#         p4 = NestPost(title='Study Group', content='Meeting at the library.', user_id=1, group_id=1, image_url="toby4.png")
+        # p1 = CommentsAndFeedback(title='Calculus Help', content='Need help with derivatives.', user_id=1, post_id=1)
+        # p2 = CommentsAndFeedback(title='Stats Help 2', content='Need help with life.', user_id=1, post_id=2)
+        # p3 = CommentsAndFeedback(title='Stats Help', content='Need help with finding proportion.', user_id=1, post_id=2)
+        # p4 = CommentsAndFeedback(title='Calculus Help 2', content='I got you bro', user_id=1, post_id=1)
+        p1 = CommentsAndFeedback(title='Calculus Help', content='Need help with derivatives.', post_id=1)
+        p2 = CommentsAndFeedback(title='Stats Help 2', content='Need help with life.', post_id=2)
+        p3 = CommentsAndFeedback(title='Stats Help', content='Need help with finding proportion.', post_id=2)
+        p4 = CommentsAndFeedback(title='Calculus Help 2', content='I got you bro', post_id=1)
         
-#         for post in [p1, p2, p3, p4]:
-#             try:
-#                 post.create()
-#                 print(f"Record created: {repr(post)}")
-#             except IntegrityError:
-#                 '''fails with bad or duplicate data'''
-#                 db.session.remove()
-#                 print(f"Records exist, duplicate email, or error: {post.uid}")
+        for comment in [p1, p2, p3, p4]:
+            try:
+                comment.create()
+                print(f"Record created: {repr(comment)}")
+            except IntegrityError:
+                '''fails with bad or duplicate data'''
+                db.session.remove()
