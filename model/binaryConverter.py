@@ -86,6 +86,7 @@ def initBinaryConverter():
         quizzes = [
             BinaryConverter(decimal="7777", binary="1111001100001"),
             BinaryConverter(decimal="2323", binary="100100010011"),
+            
         ]
 
         for quiz in quizzes:
