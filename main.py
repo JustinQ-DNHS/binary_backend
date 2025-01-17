@@ -29,7 +29,7 @@ from api.general import general_api
 from api.binaryLearningGame import binaryLearningGameScores_api
 from api.lgate import lgate_api
 from api.student import student_api
-
+from api.binaryConverter import binaryConverter_api
 from api.vote import vote_api
 # database Initialization functions
 from model.carChat import CarChat
@@ -56,7 +56,7 @@ app.register_blueprint(section_api)
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
 app.register_blueprint(lgate_api)
-
+app.register_blueprint(binaryConverter_api)
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
 

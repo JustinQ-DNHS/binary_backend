@@ -6,28 +6,28 @@ class BinaryConverter (db.Model):
     """
     BinaryConverter Model
     
-    Represents a quiz with a question, answer, and a quiz_id associated with a user.
+    Represents a quiz with a question and answer associated with a user.
     """
     __tablename__ = 'binaryConverter'
 
     id = db.Column(db.Integer, primary_key=True)
     binary = db.Column(db.String(255), nullable=False)
     decimal = db.Column(db.String(255), nullable=False)
-    quiz_id = db.Column(db.Integer, nullable=False)  # Remove ForeignKey for simplicity in SQLite
+     
 
-    def __init__(self, binary, decimal, quiz_id):
+    def __init__(self, binary, decimal, ):
         """
-        Constructor for QuizCreation.
+        Constructor for Binary.
         """
         self.binary = binary
         self.decimal = decimal
-        self.quiz_id = quiz_id
+        
 
     def __repr__(self):
         """
         Represents the QuizCreation object as a string for debugging.
         """
-        return f"<QuizCreation(id={self.id}, question='{self.binary}', answer='{self.decimal}', quiz_id={self.quiz_id})>"
+        return f"<QuizCreation(id={self.id}, question='{self.binary}', answer='{self.decimal})>"
 
     def create(self):
         """
@@ -48,7 +48,6 @@ class BinaryConverter (db.Model):
             "id": self.id,
             "binary": self.binary,
             "decimal": self.decimal,
-            "quiz_id": self.quiz_id
         }
 
     def update(self, data):
@@ -85,9 +84,8 @@ def initBinaryConverter():
 
         # Sample test data
         quizzes = [
-            BinaryConverter(decimal="7777", binary="1111001100001", quiz_id=1),
-            BinaryConverter(decimal="2323", binary="100100010011", quiz_id=2),
-            BinaryConverter(decimal="932237", binary="11100011010001001101", quiz_id=3)
+            BinaryConverter(decimal="7777", binary="1111001100001"),
+            BinaryConverter(decimal="2323", binary="100100010011"),
         ]
 
         for quiz in quizzes:
