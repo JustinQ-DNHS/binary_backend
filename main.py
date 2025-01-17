@@ -157,7 +157,7 @@ custom_cli = AppGroup('custom', help='Custom commands')
 def generate_data():
     initUsers()
     initSections()
-        # initGroups()
+    # initGroups()
     # initPosts()
     # New data being tested
     initBinaryLearningGameScores()
