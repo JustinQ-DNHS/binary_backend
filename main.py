@@ -42,7 +42,7 @@ from model.nestPost import initNestPosts
 # under development
 from model.binaryLearningGame import initBinaryLearningGameScores
 from model.binaryConverter import initBinaryConverter
-from model.lgatedata import lgate
+from model.lgatedata import initlgate
 # server only Views
 
 # register URIs for api endpoints
@@ -166,6 +166,7 @@ def generate_data():
     # New data being tested
     initBinaryLearningGameScores()
     initBinaryConverter()
+    initlgate()
     
     
 # Backup the old database

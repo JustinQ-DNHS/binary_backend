@@ -11,7 +11,7 @@ api = Api(lgate_api)
 # Wrap DB initialization in app context
 with app.app_context():
     if not lgate.query.first():
-        sample_quiz = lgate(name="Basic Logic Gate Quiz", score=0, quiz_id=1)
+        sample_quiz = lgate(name="Sample Quiz", score=0, quiz_id=1)
         db.session.add(sample_quiz)
         db.session.commit()
 

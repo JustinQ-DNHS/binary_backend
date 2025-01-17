@@ -1,6 +1,6 @@
 from sqlite3 import IntegrityError
 from sqlalchemy.exc import SQLAlchemyError
-from __init__ import db
+from __init__ import app, db
 
 class lgate(db.Model):
     __tablename__ = 'lgate'  # Explicit table name
@@ -15,18 +15,11 @@ class lgate(db.Model):
         self.score = score
         self.quiz_id = quiz_id
 
-    def read(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'score': self.score,
-            'quiz_id': self.quiz_id
-        }
     def __repr__(self):
         """
         Represents the lgate object as a string for debugging.
         """
-        return f"<lgate(id={self.id}, name='{self.name}', score='{self.score}', quiz_id={self.quiz_id})>"
+        return f"<lgateQuizCreation(id={self.id}, name='{self.name}', score='{self.score}', quiz_id={self.quiz_id})>"
 
     def create(self):
         """
@@ -83,13 +76,13 @@ def initlgate():
         db.create_all()  # Create the database and tables
 
         # Sample test data
-        lgate = [
+        quizzes = [
             lgate(name="Jake", score="3", quiz_id=1),
             lgate(name="Josh", score="4", quiz_id=2),
             lgate(name="Julia", score="5", quiz_id=3)
         ]
 
-        for quiz in lgate:
+        for quiz in quizzes:
             try:
                 quiz.create()
                 print(f"Created quiz: {quiz}")
