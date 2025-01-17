@@ -27,16 +27,6 @@ class BinaryHistoryAPI:
             post.create()
             # Return response to the client in JSON format, converting Python dictionaries to JSON format
             return jsonify(post.read())
-
-        
-        def get(self):
-            # Find all the posts by the current user
-            posts = BinaryHistory.query.filter(BinaryHistory._user_id == current_user.id).all()
-            # Prepare a JSON list of all the posts, uses for loop shortcut called list comprehension
-            json_ready = [post.read() for post in posts]
-            # Return a JSON list, converting Python dictionaries to JSON format
-            return jsonify(json_ready)
-
         
         def put(self):
             # Obtain the request data
