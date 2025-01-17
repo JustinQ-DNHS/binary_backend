@@ -8,18 +8,16 @@ class lgate(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     score = db.Column(db.Integer, nullable=False)
-    quiz_id = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, name, score, quiz_id):
+    def __init__(self, name, score):
         self.name = name
         self.score = score
-        self.quiz_id = quiz_id
 
     def __repr__(self):
         """
         Represents the lgate object as a string for debugging.
         """
-        return f"<lgateQuizCreation(id={self.id}, name='{self.name}', score='{self.score}', quiz_id={self.quiz_id})>"
+        return f"<lgateQuizCreation(id={self.id}, name='{self.name}', score='{self.score})>"
 
     def create(self):
         """
@@ -40,7 +38,6 @@ class lgate(db.Model):
             "id": self.id,
             "name": self.name,
             "score": self.score,
-            "quiz_id": self.quiz_id
         }
 
     def update(self, data):
@@ -77,9 +74,8 @@ def initlgate():
 
         # Sample test data
         quizzes = [
-            lgate(name="Jake", score="3", quiz_id=1),
-            lgate(name="Josh", score="4", quiz_id=2),
-            lgate(name="Julia", score="5", quiz_id=3)
+            lgate(name="Jake", score="3"),
+            lgate(name="Josh", score="4")
         ]
 
         for quiz in quizzes:
