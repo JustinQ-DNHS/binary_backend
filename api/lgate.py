@@ -1,23 +1,23 @@
 from flask import Blueprint, request, jsonify, current_app, Response, g
-from flask_restful import Api, Resource  # used for REST API building
-from __init__ import app
+from flask_restful import Api, Resource
+from __init__ import app, db  # Ensure db is imported
 from api.jwt_authorize import token_required
 from model.lgatedata import lgate
 
 # Blueprint setup for the API
 lgate_api = Blueprint('lgate_api', __name__, url_prefix='/api/lgate')
-
 api = Api(lgate_api)
 
-# test data
+# Wrap DB initialization in app context
+with app.app_context():
+    if not lgate.query.first():
+        sample_quiz = lgate(name="Sample Quiz", score=0, quiz_id=1)
+        db.session.add(sample_quiz)
+        db.session.commit()
 
 @lgate_api.route('/test', methods=['GET'])
 def test_lgate():
     return {"message": "Logic Gate API is working!"}
-
-lgate = [
-    { "name": "andre", "score": "3", "quiz_id": "1"},
-]
 class lgateAPI:
     """
     Define API endpoints for lgate model.

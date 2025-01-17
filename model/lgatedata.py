@@ -3,22 +3,14 @@ from sqlalchemy.exc import SQLAlchemyError
 from __init__ import app, db
 
 class lgate(db.Model):
-    """
-    lgate Model
-    
-    Represents a quiz with a question, score, and a quiz_id associated with a user.
-    """
-    __tablename__ = 'lgate'
+    __tablename__ = 'lgate'  # Explicit table name
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255), nullable=False)
-    score = db.Column(db.String(255), nullable=False)
-    quiz_id = db.Column(db.Integer, nullable=False)  # Remove ForeignKey for simplicity in SQLite
+    name = db.Column(db.String(100), nullable=False)
+    score = db.Column(db.Integer, nullable=False)
+    quiz_id = db.Column(db.Integer, nullable=False)
 
     def __init__(self, name, score, quiz_id):
-        """
-        Constructor for lgate.
-        """
         self.name = name
         self.score = score
         self.quiz_id = quiz_id
@@ -27,7 +19,7 @@ class lgate(db.Model):
         """
         Represents the lgate object as a string for debugging.
         """
-        return f"<lgate(id={self.id}, name='{self.name}', score='{self.score}', quiz_id={self.quiz_id})>"
+        return f"<lgateQuizCreation(id={self.id}, name='{self.name}', score='{self.score}', quiz_id={self.quiz_id})>"
 
     def create(self):
         """
@@ -84,13 +76,13 @@ def initlgate():
         db.create_all()  # Create the database and tables
 
         # Sample test data
-        lgate = [
+        quizzes = [
             lgate(name="Jake", score="3", quiz_id=1),
             lgate(name="Josh", score="4", quiz_id=2),
             lgate(name="Julia", score="5", quiz_id=3)
         ]
 
-        for quiz in lgate:
+        for quiz in quizzes:
             try:
                 quiz.create()
                 print(f"Created quiz: {quiz}")
