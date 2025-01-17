@@ -20,7 +20,6 @@ General Process outline:
   - Transform Data: the API to JSON format understood by the new project.
 2. New schema.  The schema is created in "this" new database.
 3. Load Data: The bulk load API in "this" project inserts the data using required business logic.
-
 """
 import shutil
 import sys
