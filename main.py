@@ -39,9 +39,10 @@ from model.group import Group, initGroups
 from model.channel import Channel, initChannels
 from model.post import Post, initPosts
 from model.nestPost import initNestPosts
-# under development
+from model.binaryhistory import BinaryHistory, initBinaryHistory
 from model.binaryLearningGame import initBinaryLearningGameScores
 from model.binaryConverter import initBinaryConverter
+from model.lgatedata import initlgate
 # server only Views
 
 # register URIs for api endpoints
@@ -52,6 +53,7 @@ app.register_blueprint(pfp_api)
 app.register_blueprint(post_api)
 app.register_blueprint(channel_api)
 app.register_blueprint(section_api)
+app.register_blueprint(binary_history_api)
 # apis under development
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
@@ -156,6 +158,7 @@ custom_cli = AppGroup('custom', help='Custom commands')
 # Define a command to run the data generation functions
 @custom_cli.command('generate_data')
 def generate_data():
+    initBinaryHistory()
     initUsers()
         # initSections()
         # initGroups()
@@ -165,6 +168,7 @@ def generate_data():
     # New data being tested
     initBinaryLearningGameScores()
     initBinaryConverter()
+    initlgate()
     
     
 # Backup the old database
