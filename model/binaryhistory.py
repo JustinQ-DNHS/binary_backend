@@ -70,7 +70,47 @@ class BinaryHistory (db.Model):
         except SQLAlchemyError as e:
             db.session.rollback()
             raise e
+    
+    @staticmethod
+    def restore(data):
+        """
+        Restores data into the binaryHistory table from a given list of dictionaries.
+        If an event with the same description and year exists, it skips adding or updates it.
+        Args:
+            data (list of dict): List of dictionaries with "year" and "description".
+        """
+        restored_count = 0
+        skipped_count = 0
 
+        for item in data:
+            year = item.get("year")
+            description = item.get("description")
+            
+            # Check if both fields are provided
+            if not year or not description:
+                print(f"Invalid data: {item}")
+                continue
+            
+            # Check if the record already exists in the database
+            existing_event = BinaryHistory.query.filter_by(year=year, description=description).first()
+            
+            if existing_event:
+                print(f"Skipped: {existing_event}")
+                skipped_count += 1
+                continue
+            
+            # Add a new record if it doesn't exist
+            try:
+                new_event = BinaryHistory(year=year, description=description)
+                db.session.add(new_event)
+                db.session.commit()
+                print(f"Restored: {new_event}")
+                restored_count += 1
+            except SQLAlchemyError as e:
+                db.session.rollback()
+                print(f"Failed to restore: {item}, Error: {e}")
+        
+        print(f"Restored: {restored_count}, Skipped: {skipped_count}")
 
 def initBinaryHistory():
     """
@@ -101,6 +141,11 @@ def initBinaryHistory():
             BinaryHistory(description="The Y2K problem highlights the importance of binary in year representation and storage.", year="2000"),
             BinaryHistory(description="Bitcoin, based on binary and cryptographic principles, is introduced.", year="2008")
         ]
+
+# to add to the database via postman, run main.py, go to postman, then select post, body, and then raw
+# enter this link next to the post method: http://127.0.0.1:8887/api/binary-history
+# in the blank body, enter data in JSON format, here is an example (based off the data above):
+# {"description": "Quantum computing advancements begin to challenge traditional binary systems with qubits.", "year": "2020"}
 
         # Add each event to the database
         for event in events:

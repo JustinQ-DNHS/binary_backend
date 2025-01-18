@@ -27,7 +27,6 @@ from api.messages_api import messages_api # Adi added this, messages for his web
 # New API's being tested
 from api.general import general_api
 from api.binaryLearningGame import binaryLearningGameScores_api
-from api.lgate import lgate_api
 from api.student import student_api
 from api.binaryConverter import binaryConverter_api
 from api.vote import vote_api
@@ -42,7 +41,6 @@ from model.nestPost import initNestPosts
 from model.binaryhistory import BinaryHistory, initBinaryHistory
 from model.binaryLearningGame import initBinaryLearningGameScores
 from model.binaryConverter import initBinaryConverter
-from model.lgatedata import initlgate
 # server only Views
 
 # register URIs for api endpoints
@@ -57,7 +55,6 @@ app.register_blueprint(binary_history_api)
 # apis under development
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
-app.register_blueprint(lgate_api)
 app.register_blueprint(binaryConverter_api)
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
@@ -167,9 +164,7 @@ def generate_data():
     initNestPosts()
     # New data being tested
     initBinaryLearningGameScores()
-    initBinaryConverter()
-    initlgate()
-    
+    initBinaryConverter()  
     
 # Backup the old database
 def backup_database(db_uri, backup_uri):
