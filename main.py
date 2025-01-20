@@ -55,7 +55,7 @@ app.register_blueprint(binary_history_api)
 # apis under development
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
-app.register_blueprint(binaryConverter_api)
+app.register_blueprint(binary_converter_api)
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
 
