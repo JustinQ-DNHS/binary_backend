@@ -30,6 +30,7 @@ from api.binaryLearningGame import binaryLearningGameScores_api
 from api.student import student_api
 from api.binaryConverter import binary_converter_api
 from api.vote import vote_api
+from api.lgate import lgate_api
 # database Initialization functions
 from model.carChat import CarChat
 from model.user import User, initUsers
@@ -41,6 +42,7 @@ from model.nestPost import initNestPosts
 from model.binaryhistory import BinaryHistory, initBinaryHistory
 from model.binaryLearningGame import initBinaryLearningGameScores
 from model.binaryConverter import initBinaryConverter
+from model.lgatedata import initlgate
 # server only Views
 
 # register URIs for api endpoints
@@ -56,6 +58,7 @@ app.register_blueprint(binary_history_api)
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
 app.register_blueprint(binary_converter_api)
+app.register_blueprint(lgate_api)
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
 
@@ -165,6 +168,7 @@ def generate_data():
     # New data being tested
     initBinaryLearningGameScores()
     initBinaryConverter()  
+    initlgate()
     
 # Backup the old database
 def backup_database(db_uri, backup_uri):
