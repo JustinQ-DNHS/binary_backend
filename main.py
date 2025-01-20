@@ -31,7 +31,7 @@ from api.binaryLearningGame import binaryLearningGameScores_api
 from api.student import student_api
 from api.binaryConverter import binary_converter_api
 from api.vote import vote_api
-from api.lgate import lgate_api
+
 # database Initialization functions
 from model.carChat import CarChat
 from model.user import User, initUsers
