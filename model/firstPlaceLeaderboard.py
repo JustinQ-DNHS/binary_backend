@@ -113,19 +113,16 @@ class firstPlaceLeaderboard(db.Model):
         except Exception as e:
             db.session.rollback()
             raise e
-
+        
     @staticmethod
     def restore(data):
-        for firstPlaceLeaderboard_data in data:
-            _ = firstPlaceLeaderboard_data.pop('id', None)  # Remove 'id' from post_data
-            title = firstPlaceLeaderboard_data.get("title", None)
-            post = firstPlaceLeaderboard.query.filter_by(_title=title).first()
-            if post:
-                post.update(firstPlaceLeaderboard_data)
-            else:
-                post = firstPlaceLeaderboard(**firstPlaceLeaderboard_data)
-                post.update(firstPlaceLeaderboard_data)
-                post.create()
+        restored_time = {}
+        for firstPLaceLeaderboard_data in data:
+            time = firstPlaceLeaderboard(firstPLaceLeaderboard_data['username'], firstPLaceLeaderboard_data['user_id'], firstPLaceLeaderboard_data['time_in_first_place'])
+            time.create()
+            restored_time[time.id] = time
+        return restored_time
+        
 
 def initFirstPlaceLeaderboard():
     """
