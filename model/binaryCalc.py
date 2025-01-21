@@ -13,16 +13,16 @@ class binaryCalc(db.Model):
    Attributes:
        id (db.Column): The primary key, an integer representing the unique identifier for the post.
    """
-    __tablename__ = 'binaryCalcValue'
+__tablename__ = 'binaryCalcValue'
 
 
-    id = db.Column(db.Integer, primary_key=True)
-    _user_id = db.Column(db.String(255), db.ForeignKey('users.id'), nullable=False)
-    _binary_value = db.Column(db.Integer, nullable=False)
-    _decimal_value = db.Column(db.Integer, nullable=False)
+id = db.Column(db.Integer, primary_key=True)
+_user_id = db.Column(db.String(255), db.ForeignKey('users.id'), nullable=False)
+_binary_value = db.Column(db.Integer, nullable=False)
+_decimal_value = db.Column(db.Integer, nullable=False)
 
 
-   def __init__(self, user_id, binary_value, decimal_value):
+def __init__(self, user_id, binary_value, decimal_value):
        """
        Constructor, 1st step in object creation.
       
@@ -38,7 +38,7 @@ class binaryCalc(db.Model):
        self._decimal_value = decimal_value
 
 
-   def __repr__(self):
+def __repr__(self):
        """
        The __repr__ method is a special method used to represent the object in a string format.
        Called by the repr(post) built-in function, where post is an instance of the Post class.
@@ -49,7 +49,7 @@ class binaryCalc(db.Model):
        return f"BinaryScore(id={self.id},user_id={self._user_id}, binary_value={self._binary_value}, decimal_value={self._decimal_value})"
 
 
-   def create(self):
+def create(self):
        """
        The create method adds the object to the database and commits the transaction.
       
@@ -66,7 +66,7 @@ class binaryCalc(db.Model):
            db.session.rollback()
            raise e
       
-   def read(self):
+def read(self):
        """
        The read method retrieves the object data from the object's attributes and returns it as a dictionary.
       
@@ -85,7 +85,7 @@ class binaryCalc(db.Model):
        }
        return data
   
-   def update(self):
+def update(self):
        """
        The update method commits the transaction to the database.
       
@@ -101,7 +101,7 @@ class binaryCalc(db.Model):
            db.session.rollback()
            raise e
   
-   def delete(self):
+def delete(self):
        """
        The delete method removes the object from the database and commits the transaction.
       
@@ -119,7 +119,7 @@ class binaryCalc(db.Model):
            raise e
 
 
-    def initBinaryCalc():
+def initBinaryCalc():
         """
         The initPosts function creates the Post table and adds tester data to the table.
         
@@ -132,15 +132,15 @@ class binaryCalc(db.Model):
         Raises:
             IntegrityError: An error occurred when adding the tester data to the table.
         """       
-            with app.app_context():
+        with app.app_context():
             """Create database and tables"""
-                db.create_all()
+            db.create_all()
             """Tester data for table"""
             
-                p1 = binaryCalc(user_id="1", binary_value=1, decimal_value=1)
-                p2 = binaryCalc(user_id="2", binary_value=11, decimal_value=3)
-                p3 = binaryCalc(user_id="3", binary_value=111, decimal_value=7)
-                p4 = binaryCalc(user_id="4", binary_value=1111, decimal_value=15)
+            p1 = binaryCalc(user_id="1", binary_value=1, decimal_value=1)
+            p2 = binaryCalc(user_id="2", binary_value=11, decimal_value=3)
+            p3 = binaryCalc(user_id="3", binary_value=111, decimal_value=7)
+            p4 = binaryCalc(user_id="4", binary_value=1111, decimal_value=15)
             
             for post in [p1, p2, p3, p4]:
                 try:
