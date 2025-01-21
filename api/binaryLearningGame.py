@@ -59,18 +59,11 @@ class BinaryLearningGameScoresAPI:
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
             # Find the section to update
-            section = BinaryLearningGameScores.query.get(data['id'])
-            if section is None:
-                return {'message': 'Section not found'}, 404
-            # Update the section object using the data from the request
-            section._user_score = data['user_score']
-            section._user_difficulty = data['user_difficulty']
+            updatedScoreData = BinaryLearningGameScores.query.get(data['id'])
             # Save the section object using the Object Relational Mapper (ORM) method defined in the model
-            section.update()
-            # Convert Python object to JSON format 
-            json_ready = section.read()
+            updatedScoreData.update({'user_score': data['user_score'], 'user_difficulty': data['user_difficulty']})
             # Return a JSON restful response to the client
-            return jsonify(json_ready)
+            return jsonify(updatedScoreData.read())
 
         @token_required()
         def delete(self):

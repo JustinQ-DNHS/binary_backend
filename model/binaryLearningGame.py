@@ -97,16 +97,9 @@ class BinaryLearningGameScores(db.Model):
         if not isinstance(inputs, dict):
             return self
 
-        username = inputs.get("username", "")
-        user_id = inputs.get("user_id", "")
         user_score = inputs.get("user_score", "")
         user_difficulty = inputs.get("user_difficulty", "")
 
-        # Update table with new data
-        if username:
-            self._username = username
-        if user_id:
-            self._user_id = user_id
         if user_score:
             self._user_score = user_score
         if user_difficulty:
@@ -114,9 +107,9 @@ class BinaryLearningGameScores(db.Model):
 
         try:
             db.session.commit()
-        except IntegrityError:
+        except Exception as e:
             db.session.rollback()
-            return None
+            raise e
         return self
     
     def delete(self):
