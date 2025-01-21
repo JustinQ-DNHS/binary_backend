@@ -37,7 +37,7 @@ from model.section import Section, initSections
 from model.group import Group, initGroups
 from model.channel import Channel, initChannels
 from model.post import Post, initPosts
-from model.binaryLearningGame import initBinaryLearningGameScores, binaryLearningGameScores
+from model.binaryLearningGame import initBinaryLearningGameScores, BinaryLearningGameScores
 # under development
 # server only Views
 
@@ -182,7 +182,7 @@ def extract_data():
         data['groups'] = [group.read() for group in Group.query.all()]
         data['channels'] = [channel.read() for channel in Channel.query.all()]
         data['posts'] = [post.read() for post in Post.query.all()]
-        data['scores'] = [score.read() for score in binaryLearningGameScores.query.all()]
+        data['scores'] = [score.read() for score in BinaryLearningGameScores.query.all()]
     return data
 
 # Save extracted data to JSON files
@@ -210,7 +210,7 @@ def restore_data(data):
         _ = Group.restore(data['groups'], users)
         _ = Channel.restore(data['channels'])
         _ = Post.restore(data['posts'])
-        _ = binaryLearningGameScores.restore(data['scores'])
+        _ = BinaryLearningGameScores.restore(data['scores'])
     print("Data restored to the new database.")
 
 # Define a command to backup data

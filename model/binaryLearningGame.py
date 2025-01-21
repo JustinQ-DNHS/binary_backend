@@ -4,7 +4,7 @@ from sqlalchemy import Text
 from __init__ import app, db
 from model.user import User
 
-class binaryLearningGameScores(db.Model):
+class BinaryLearningGameScores(db.Model):
     """
     Binary Learning Game Scores Model
     
@@ -139,7 +139,7 @@ class binaryLearningGameScores(db.Model):
     @staticmethod
     def restore(data):
         sections = {}
-        existing_sections = {section._username: section for section in binaryLearningGameScores.query.all()}
+        existing_sections = {section._username: section for section in BinaryLearningGameScores.query.all()}
         for section_data in data:
             _ = section_data.pop('id', None)  # Remove 'id' from section_data
             username = section_data.get("username", None)
@@ -148,7 +148,7 @@ class binaryLearningGameScores(db.Model):
             if section:
                 section.update(section_data)
             else:
-                section = binaryLearningGameScores(**section_data)
+                section = BinaryLearningGameScores(**section_data)
                 section.create()
         
         # Remove any extra data that is not in the backup
@@ -176,9 +176,9 @@ def initBinaryLearningGameScores():
         db.create_all()
         """Tester data for table"""
             
-        p1 = binaryLearningGameScores(username="JIM", user_id="1", user_score=10, user_difficulty="easy")
-        p2 = binaryLearningGameScores(username="TIM", user_id="2", user_score=20, user_difficulty="medium")
-        p3 = binaryLearningGameScores(username="BUM", user_id="3", user_score=30, user_difficulty="hard")
+        p1 = BinaryLearningGameScores(username="JIM", user_id="1", user_score=10, user_difficulty="easy")
+        p2 = BinaryLearningGameScores(username="TIM", user_id="2", user_score=20, user_difficulty="medium")
+        p3 = BinaryLearningGameScores(username="BUM", user_id="3", user_score=30, user_difficulty="hard")
             
         for post in [p1, p2, p3]:
             try:

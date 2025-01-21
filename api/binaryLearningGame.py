@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify, g
 from flask_restful import Api, Resource  # used for REST API building
 from api.jwt_authorize import token_required
-from model.binaryLearningGame import binaryLearningGameScores
+from model.binaryLearningGame import BinaryLearningGameScores
 
 """
 This Blueprint object is used to define APIs for the Post model.
@@ -35,7 +35,7 @@ class BinaryLearningGameScoresAPI:
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
             # Create a new post object using the data from the request
-            post = binaryLearningGameScores(data['username'], current_user.id, data['score'], data['difficulty'])
+            post = BinaryLearningGameScores(data['username'], current_user.id, data['score'], data['difficulty'])
             # Save the post object using the ORM method defined in the model
             post.create()
             # Return response to the client in JSON format
@@ -45,10 +45,31 @@ class BinaryLearningGameScoresAPI:
             # Obtain the current user
             # current_user = g.current_user
             # Find all the posts by the current user
-            posts = binaryLearningGameScores.query.all()
+            posts = BinaryLearningGameScores.query.all()
             # Prepare a JSON list of all the posts, uses for loop shortcut called list comprehension
             json_ready = [post.read() for post in posts]
             # Return a JSON list, converting Python dictionaries to JSON format
+            return jsonify(json_ready)
+        
+        @token_required()
+        def put(self):
+            """
+            Update a section.
+            """
+            # Obtain the request data sent by the RESTful client API
+            data = request.get_json()
+            # Find the section to update
+            section = BinaryLearningGameScores.query.get(data['id'])
+            if section is None:
+                return {'message': 'Section not found'}, 404
+            # Update the section object using the data from the request
+            section._user_score = data['user_score']
+            section._user_difficulty = data['user_difficulty']
+            # Save the section object using the Object Relational Mapper (ORM) method defined in the model
+            section.update()
+            # Convert Python object to JSON format 
+            json_ready = section.read()
+            # Return a JSON restful response to the client
             return jsonify(json_ready)
 
         @token_required()
@@ -58,7 +79,7 @@ class BinaryLearningGameScoresAPI:
             # Obtain the request data
             data = request.get_json()
             # Find the current post from the database table(s)
-            post = binaryLearningGameScores.query.get(data['id'])
+            post = BinaryLearningGameScores.query.get(data['id'])
             # Delete the post using the ORM method defined in the model
             post.delete()
             # Return response
