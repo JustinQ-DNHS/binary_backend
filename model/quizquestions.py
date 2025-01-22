@@ -116,7 +116,7 @@ def initquizquestions():
        p2 = quizquestions(question="What is the capital of Britain?") 
        p3 = quizquestions(question="What is the capital of China?") 
        p4 = quizquestions(question="What is the capital of India?") 
-       p5 = quizquestions(question="What is the capital of Japam?") 
+       p5 = quizquestions(question="What is the capital of Japan?") 
       
        for question in [p1, p2, p3, p4, p5]:
            try:

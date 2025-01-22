@@ -42,6 +42,7 @@ from model.post import Post, initPosts
 # under development
 from model.binaryLearningGame import initBinaryLearningGameScores
 from model.quizquestions import quizquestions, initquizquestions
+from model.quizgrading import quizgrading, initquizgrading
 # server only Views
 
 # register URIs for api endpoints
@@ -165,6 +166,7 @@ def generate_data():
     # New data being tested
     initBinaryLearningGameScores()
     initquizquestions()
+    initquizgrading()
     
 # Backup the old database
 def backup_database(db_uri, backup_uri):
