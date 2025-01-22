@@ -28,6 +28,7 @@ class BinaryLearningGameScoresAPI:
     - delete: delete a post
     """
     class _CRUD(Resource):
+        
         @token_required()
         def post(self):
             # Obtain the current user from the token
@@ -40,7 +41,8 @@ class BinaryLearningGameScoresAPI:
             post.create()
             # Return response to the client in JSON format
             return jsonify(post.read())
-
+        
+        @token_required()
         def get(self):
             # Obtain the current user
             # current_user = g.current_user
@@ -51,7 +53,7 @@ class BinaryLearningGameScoresAPI:
             # Return a JSON list, converting Python dictionaries to JSON format
             return jsonify(json_ready)
         
-        @token_required()
+        @token_required("Admin")
         def put(self):
             """
             Update a section.

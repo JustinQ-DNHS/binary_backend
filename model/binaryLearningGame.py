@@ -166,18 +166,18 @@ def initBinaryLearningGameScores():
     """
     with app.app_context():
         """Create database and tables"""
-        db.create_all()
-        """Tester data for table"""
+        # db.create_all()
+        # """Tester data for table"""
             
-        p1 = BinaryLearningGameScores(username="JIM", user_id="1", user_score=10, user_difficulty="easy")
-        p2 = BinaryLearningGameScores(username="TIM", user_id="2", user_score=20, user_difficulty="medium")
-        p3 = BinaryLearningGameScores(username="BUM", user_id="3", user_score=30, user_difficulty="hard")
+        # p1 = BinaryLearningGameScores(username="JIM", user_id="1", user_score=10, user_difficulty="easy")
+        # p2 = BinaryLearningGameScores(username="TIM", user_id="2", user_score=20, user_difficulty="medium")
+        # p3 = BinaryLearningGameScores(username="BUM", user_id="3", user_score=30, user_difficulty="hard")
             
-        for post in [p1, p2, p3]:
-            try:
-                post.create()
-                print(f"Record created: {repr(post)}")
-            except IntegrityError:
-                '''fails with bad or duplicate data'''
-                db.session.remove()
-                print(f"Records exist, duplicate email, or error: {post.user_id}")
+        # for post in [p1, p2, p3]:
+        #     try:
+        #         post.create()
+        #         print(f"Record created: {repr(post)}")
+        #     except IntegrityError:
+        #         '''fails with bad or duplicate data'''
+        #         db.session.remove()
+        #         print(f"Records exist, duplicate email, or error: {post.user_id}")
