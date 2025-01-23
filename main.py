@@ -17,43 +17,60 @@ from __init__ import app, db, login_manager  # Key Flask objects
 # API endpoints
 from api.user import user_api 
 from api.pfp import pfp_api
-from api.nestImg import nestImg_api # Justin added this, custom format for his website
 from api.post import post_api
 from api.channel import channel_api
 from api.group import group_api
 from api.section import section_api
 from api.nestPost import nestPost_api # Justin added this, custom format for his website
+from api.binaryhistory import binary_history_api
 from api.messages_api import messages_api # Adi added this, messages for his website
-from api.carphoto import car_api
-from api.carChat import car_chat_api
+from api.binaryLearningGame import binaryLearningGameScores_api
+# New API's being tested
+from api.commentsAndFeedback import commentsAndFeedback_api
 
 from api.vote import vote_api
+from api.lgate import lgate_api
+# New API's being tested
+from api.general import general_api
+from api.binaryLearningGame import binaryLearningGameScores_api
+from api.student import student_api
+from api.binaryConverter import binary_converter_api
+from api.vote import vote_api
+
 # database Initialization functions
+from model.quizgrading import quizgrading
 from model.carChat import CarChat
 from model.user import User, initUsers
 from model.section import Section, initSections
 from model.group import Group, initGroups
 from model.channel import Channel, initChannels
 from model.post import Post, initPosts
-from model.nestPost import NestPost, initNestPosts # Justin added this, custom format for his website
-from model.vote import Vote, initVotes
+from model.binaryLearningGame import initBinaryLearningGameScores, BinaryLearningGameScores
+# under development
+from model.nestPost import initNestPosts
+from model.binaryhistory import BinaryHistory, initBinaryHistory
+from model.binaryLearningGame import initBinaryLearningGameScores
+from model.binaryConverter import initBinaryConverter
+from model.lgatedata import initlgate
 # server only Views
 
 # register URIs for api endpoints
 app.register_blueprint(messages_api) # Adi added this, messages for his website
+app.register_blueprint(group_api)
 app.register_blueprint(user_api)
 app.register_blueprint(pfp_api) 
 app.register_blueprint(post_api)
 app.register_blueprint(channel_api)
-app.register_blueprint(group_api)
 app.register_blueprint(section_api)
-app.register_blueprint(car_chat_api)
-# Added new files to create nestPosts, uses a different format than Mortensen and didn't want to touch his junk
-app.register_blueprint(nestPost_api)
-app.register_blueprint(nestImg_api)
-app.register_blueprint(vote_api)
-app.register_blueprint(car_api)
+app.register_blueprint(binary_history_api)
+# apis under development
+app.register_blueprint(binaryLearningGameScores_api)
+app.register_blueprint(student_api)
+app.register_blueprint(quizgrading_api)
+app.register_blueprint(commentsAndFeedback_api)
 
+app.register_blueprint(binary_converter_api)
+app.register_blueprint(lgate_api)
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
 
@@ -153,13 +170,17 @@ custom_cli = AppGroup('custom', help='Custom commands')
 # Define a command to run the data generation functions
 @custom_cli.command('generate_data')
 def generate_data():
+    initBinaryHistory()
     initUsers()
-    initSections()
-    initGroups()
-    initChannels()
-    initPosts()
+        # initSections()
+        # initGroups()
+        # initChannels()
+        # initPosts()
     initNestPosts()
-    initVotes()
+    # New data being tested
+    initBinaryLearningGameScores()
+    initBinaryConverter()  
+    initlgate()
     
 # Backup the old database
 def backup_database(db_uri, backup_uri):
@@ -181,6 +202,7 @@ def extract_data():
         data['groups'] = [group.read() for group in Group.query.all()]
         data['channels'] = [channel.read() for channel in Channel.query.all()]
         data['posts'] = [post.read() for post in Post.query.all()]
+        data['scores'] = [score.read() for score in BinaryLearningGameScores.query.all()]
     return data
 
 # Save extracted data to JSON files
@@ -195,7 +217,7 @@ def save_data_to_json(data, directory='backup'):
 # Load data from JSON files
 def load_data_from_json(directory='backup'):
     data = {}
-    for table in ['users', 'sections', 'groups', 'channels', 'posts']:
+    for table in ['users', 'sections', 'groups', 'channels', 'posts', 'scores']:
         with open(os.path.join(directory, f'{table}.json'), 'r') as f:
             data[table] = json.load(f)
     return data
@@ -208,6 +230,7 @@ def restore_data(data):
         _ = Group.restore(data['groups'], users)
         _ = Channel.restore(data['channels'])
         _ = Post.restore(data['posts'])
+        _ = BinaryLearningGameScores.restore(data['scores'])
     print("Data restored to the new database.")
 
 # Define a command to backup data
