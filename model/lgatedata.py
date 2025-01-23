@@ -2,6 +2,7 @@ from sqlite3 import IntegrityError
 from sqlalchemy.exc import SQLAlchemyError
 from __init__ import app, db
 
+
 class lgate(db.Model):
     __tablename__ = 'lgate'
 
