@@ -1,54 +1,64 @@
-from flask import Flask, jsonify, Blueprint, request
-from flask_cors import CORS
-from flask_restful import Api, Resource
-from __init__ import app, db
-from sqlalchemy.exc import SQLAlchemyError
-from api.jwt_authorize import token_required
+from flask import Blueprint, request, jsonify, current_app, Response, g
+from flask_restful import Api, Resource  # Used for REST API building
+from __init__ import app  # Ensure __init__.py initializes your Flask app
 from model.binaryConverter import BinaryConverter
-# Initialize Flask app
-app = Flask(__name__)
 
-# Enable CORS for cross-origin access
-CORS(app)
+# Blueprint for the API
+binary_converter_api = Blueprint('binary_converter_api', __name__, url_prefix='/api')
 
-# Create the blueprint
-binaryConverter_api = Blueprint('BinaryConverter_api', __name__, url_prefix='/api')
+api = Api(binary_converter_api)  # Attach Flask-RESTful API to the Blueprint
 
-# Sample binary data
-BINARY_CONVERTER = [
-    {"binary": "1111001100001", "decimal": 7777},
-    {"binary": "100100010011", "decimal": 2323},
-    {"binary": "11100011010001001101", "decimal": 932237},
-]
+class BinaryConverterAPI:
+    """
+    Define the API CRUD endpoints for the Post model.
+    There are four operations that correspond to common HTTP methods:
+    - post: create a new post
+    - get: read posts
+    - put: update a post
+    - delete: delete a post
+    """
+    class _CRUD(Resource):
+        def post(self):
+            # Obtain the request data sent by the RESTful client API
+            data = request.get_json()
+            # Create a new post object using the data from the request
+            post = BinaryConverter(data['binary'], data['decimal'])
+            # Save the post object using the Object Relational Mapper (ORM) method defined in the model
+            post.create()
+            # Return response to the client in JSON format, converting Python dictionaries to JSON format
+            return jsonify(post.read())
 
-# Move the route to the blueprint
-@binaryConverter_api.route('/binaryConverter', methods=['GET', 'POST'])
-def binary_converter():
-    if request.method == 'GET':
-        """
-        Endpoint to retrieve all binary history events (from static data).
-        """
-        return jsonify(BINARY_CONVERTER), 200
+        
+        def put(self):
+            # Obtain the request data
+            data = request.get_json()
+            # Find the current post from the database table(s)
+            post = BinaryConverter.query.get(data['id'])
+            # Update the post
+            post._decimal = data['decimal']
+            post._binary = data['binary']
+            # Save the post
+            post.update()
+            # Return response
+            return jsonify(post.read())
 
-    if request.method == 'POST':
-        """
-        Endpoint to add a new binary conversion to the history.
-        """
-        data = request.json  # Parse incoming JSON
-        binary_input = data.get('binary')
+        
+        def delete(self):
+            # Obtain the request data
+            data = request.get_json()
+            # Find the current post from the database table(s)
+            post = BinaryConverter.query.get(data['id'])
+            # Delete the post using the ORM method defined in the model
+            post.delete()
+            # Return response
+            return jsonify({"message": "Post deleted"})
 
-        # Validate binary input
-        if binary_input and all(char in '01' for char in binary_input):
-            decimal_value = int(binary_input, 2)  # Convert binary to decimal
-            new_entry = {"binary": binary_input, "decimal": decimal_value}
-            BINARY_CONVERTER.append(new_entry)  # Add to history
-            return jsonify(new_entry), 201  # Return the newly added entry
-        else:
-            return {"error": "Invalid binary input. Only 0s and 1s are allowed."}, 400
-
-# Register the blueprint with the app
-app.register_blueprint(binaryConverter_api)
-
-# Start the app on the desired host and port
+    """
+    Map the _CRUD class to the API endpoints for /post.
+    - The API resource class inherits from flask_restful.Resource.
+    - The _CRUD class defines the HTTP methods for the API.
+    """
+    api.add_resource(_CRUD, '/binary-converter')
+    
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=8887)
+    app.run(debug=True)
