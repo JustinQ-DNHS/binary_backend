@@ -24,6 +24,11 @@ from api.section import section_api
 from api.nestPost import nestPost_api # Justin added this, custom format for his website
 from api.binaryhistory import binary_history_api
 from api.messages_api import messages_api # Adi added this, messages for his website
+from api.binaryLearningGame import binaryLearningGameScores_api
+# New API's being tested
+from api.commentsAndFeedback import commentsAndFeedback_api
+
+from api.vote import vote_api
 from api.lgate import lgate_api
 # New API's being tested
 from api.general import general_api
@@ -33,12 +38,15 @@ from api.binaryConverter import binary_converter_api
 from api.vote import vote_api
 
 # database Initialization functions
+from model.quizgrading import quizgrading
 from model.carChat import CarChat
 from model.user import User, initUsers
 from model.section import Section, initSections
 from model.group import Group, initGroups
 from model.channel import Channel, initChannels
 from model.post import Post, initPosts
+from model.binaryLearningGame import initBinaryLearningGameScores, BinaryLearningGameScores
+# under development
 from model.nestPost import initNestPosts
 from model.binaryhistory import BinaryHistory, initBinaryHistory
 from model.binaryLearningGame import initBinaryLearningGameScores
@@ -58,6 +66,9 @@ app.register_blueprint(binary_history_api)
 # apis under development
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
+app.register_blueprint(quizgrading_api)
+app.register_blueprint(commentsAndFeedback_api)
+
 app.register_blueprint(binary_converter_api)
 app.register_blueprint(lgate_api)
 # Tell Flask-Login the view function name of your login route
@@ -191,6 +202,7 @@ def extract_data():
         data['groups'] = [group.read() for group in Group.query.all()]
         data['channels'] = [channel.read() for channel in Channel.query.all()]
         data['posts'] = [post.read() for post in Post.query.all()]
+        data['scores'] = [score.read() for score in BinaryLearningGameScores.query.all()]
     return data
 
 # Save extracted data to JSON files
@@ -205,7 +217,7 @@ def save_data_to_json(data, directory='backup'):
 # Load data from JSON files
 def load_data_from_json(directory='backup'):
     data = {}
-    for table in ['users', 'sections', 'groups', 'channels', 'posts']:
+    for table in ['users', 'sections', 'groups', 'channels', 'posts', 'scores']:
         with open(os.path.join(directory, f'{table}.json'), 'r') as f:
             data[table] = json.load(f)
     return data
@@ -218,6 +230,7 @@ def restore_data(data):
         _ = Group.restore(data['groups'], users)
         _ = Channel.restore(data['channels'])
         _ = Post.restore(data['posts'])
+        _ = BinaryLearningGameScores.restore(data['scores'])
     print("Data restored to the new database.")
 
 # Define a command to backup data
