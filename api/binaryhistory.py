@@ -18,6 +18,18 @@ class BinaryHistoryAPI:
     - delete: delete a post
     """
     class _CRUD(Resource):
+        def get(self):
+            try:
+                # Query all entries in the BinaryHistory table
+                entries = BinaryHistory.query.all()
+                # Convert the entries to a list of dictionaries
+                results = [entry.read() for entry in entries]
+                # Return the list of results in JSON format
+                return jsonify(results)
+            except Exception as e:
+                # Return an error message in case of failure
+                return jsonify({"error": str(e)}), 500
+        
         def post(self):
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
@@ -34,8 +46,8 @@ class BinaryHistoryAPI:
             # Find the current post from the database table(s)
             post = BinaryHistory.query.get(data['id'])
             # Update the post
-            post._year = data['year']
-            post._description = data['description']
+            post.year = data['year']
+            post.description = data['description']
             # Save the post
             post.update()
             # Return response
