@@ -38,8 +38,6 @@ from api.binaryConverter import binary_converter_api
 from api.vote import vote_api
 
 # database Initialization functions
-from model.quizgrading import quizgrading
-from model.carChat import CarChat
 from model.user import User, initUsers
 from model.section import Section, initSections
 from model.group import Group, initGroups
@@ -66,7 +64,6 @@ app.register_blueprint(binary_history_api)
 # apis under development
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
-app.register_blueprint(quizgrading_api)
 app.register_blueprint(commentsAndFeedback_api)
 
 app.register_blueprint(binary_converter_api)
