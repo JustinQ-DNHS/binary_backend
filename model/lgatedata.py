@@ -3,7 +3,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from __init__ import app, db
 
 class lgate(db.Model):
-    __tablename__ = 'lgate'  # Explicit table name
+    __tablename__ = 'lgate'
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)

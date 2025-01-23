@@ -19,7 +19,6 @@ class LGateAPI:
     """
     class _CRUD(Resource):
         def post(self):
-            # Obtain the request data sent by the RESTful client API
             data = request.get_json()
             # Create a new post object using the data from the request
             post = lgate(data['name'], data['score'])
@@ -27,6 +26,16 @@ class LGateAPI:
             post.create()
             # Return response to the client in JSON format, converting Python dictionaries to JSON format
             return jsonify(post.read())
+        
+        def get(self):
+            # Obtain the current user
+            # current_user = g.current_user
+            # Find all the posts by the current user
+            posts = lgate.query.all()
+            # Prepare a JSON list of all the posts, uses for loop shortcut called list comprehension
+            json_ready = [post.read() for post in posts]
+            # Return a JSON list, converting Python dictionaries to JSON format
+            return jsonify(json_ready)
         
         def put(self):
             # Obtain the request data
@@ -57,7 +66,7 @@ class LGateAPI:
     - The API resource class inherits from flask_restful.Resource.
     - The _CRUD class defines the HTTP methods for the API.
     """
-    api.add_resource(_CRUD, '/l')
+    api.add_resource(_CRUD, '/lgate')
     
 if __name__ == '__main__':
     app.run(debug=True)
