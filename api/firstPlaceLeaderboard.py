@@ -37,15 +37,11 @@ class FirstPlaceLeaderboardAPI:
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
             # Create a new post object using the data from the request
-            time = firstPlaceLeaderboard(data['username'], current_user.id, data["time"], data['games_played'], data['average_score'], data['wins'], data['losses'], datetime.datetime.now(), data['highest_score'])
+            time = firstPlaceLeaderboard(data['username'], current_user.id, data['games_played'], data['average_score'], data['wins'], data['losses'], datetime.datetime.now(), data['highest_score'])
             # Save the post object using the ORM method defined in the model
             time.create()
-            # Find all the posts by the current user
-            scores = binaryLearningGameScores.query.all()
-            # Prepare a JSON list of all the posts, uses for loop shortcut called list comprehension
-            json_ready = [score.read() for score in scores]
-            # Return a JSON list, converting Python dictionaries to JSON format
-            return jsonify(json_ready)
+
+            return jsonify(time.read())
 
         def get(self):
             # Obtain the current user
@@ -58,8 +54,6 @@ class FirstPlaceLeaderboardAPI:
             return jsonify(json_ready)
         
         def put(self):
-            # Obtain the current user
-            current_user = g.current_user
             # Obtain the request data
             data = request.get_json()
             # Find the current post from the database table(s)
