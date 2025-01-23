@@ -57,7 +57,7 @@ class LGateAPI:
     - The API resource class inherits from flask_restful.Resource.
     - The _CRUD class defines the HTTP methods for the API.
     """
-    api.add_resource(_CRUD, '/lgate')
+    api.add_resource(_CRUD, '/l')
     
 if __name__ == '__main__':
     app.run(debug=True)
