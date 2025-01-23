@@ -2,6 +2,8 @@ from flask import Blueprint, request, jsonify, g
 from flask_restful import Api, Resource  # used for REST API building
 from api.jwt_authorize import token_required
 from model.firstPlaceLeaderboard import firstPlaceLeaderboard
+from model.binaryLearningGame import binaryLearningGameScores
+import datetime
 
 """
 This Blueprint object is used to define APIs for the Post model.
@@ -35,11 +37,15 @@ class FirstPlaceLeaderboardAPI:
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
             # Create a new post object using the data from the request
-            time = firstPlaceLeaderboard(data['username'], current_user.id, data['time'])
+            time = firstPlaceLeaderboard(data['username'], current_user.id, data["time"], data['games_played'], data['average_score'], data['wins'], data['losses'], datetime.datetime.now(), data['highest_score'])
             # Save the post object using the ORM method defined in the model
             time.create()
-            # Return response to the client in JSON format
-            return jsonify(time.read())
+            # Find all the posts by the current user
+            scores = binaryLearningGameScores.query.all()
+            # Prepare a JSON list of all the posts, uses for loop shortcut called list comprehension
+            json_ready = [score.read() for score in scores]
+            # Return a JSON list, converting Python dictionaries to JSON format
+            return jsonify(json_ready)
 
         def get(self):
             # Obtain the current user
@@ -50,7 +56,19 @@ class FirstPlaceLeaderboardAPI:
             json_ready = [time.read() for time in times]
             # Return a JSON list, converting Python dictionaries to JSON format
             return jsonify(json_ready)
-
+        
+        def put(self):
+            # Obtain the current user
+            current_user = g.current_user
+            # Obtain the request data
+            data = request.get_json()
+            # Find the current post from the database table(s)
+            time = firstPlaceLeaderboard.query.get(data['id'])
+            # Update the post using the ORM method defined in the model
+            time.update(data)
+            # Return response
+            return jsonify(time.read())
+        
         @token_required()
         def delete(self):
             # Obtain the current user
