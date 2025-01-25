@@ -105,9 +105,13 @@ class Section(db.Model):
     def restore(data):
         sections = {}
         for section_data in data:
+            # print(section_data)
             _ = section_data.pop('id', None)  # Remove 'id' from section_data
+            # print(_)
             name = section_data.get("name", None)
+            # print(name)
             section = Section.query.filter_by(_name=name).first()
+            # print(section)
             if section:
                 section.update(section_data)
             else:
