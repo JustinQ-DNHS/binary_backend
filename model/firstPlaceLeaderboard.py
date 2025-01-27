@@ -20,11 +20,11 @@ class firstPlaceLeaderboard(db.Model):
     _username = db.Column(db.String(255), nullable=False)
     _user_id = db.Column(db.String(255), db.ForeignKey('users.id'), nullable=False)
     _games_played = db.Column(db.Integer, nullable=False)  
-    _average_score = db.Column(db.Integer, nullable=False)  # New attribute
-    _wins = db.Column(db.Integer, nullable=False)  # New attribute
-    _losses = db.Column(db.Integer, nullable=False) # New attribute
-    _last_played = db.Column(db.DateTime, nullable=True)  # New attribute
-    _highest_score = db.Column(db.Integer, nullable=False)  # New attribute
+    _average_score = db.Column(db.Integer, nullable=False) 
+    _wins = db.Column(db.Integer, nullable=False)  
+    _losses = db.Column(db.Integer, nullable=False) 
+    _last_played = db.Column(db.DateTime, nullable=True)  
+    _highest_score = db.Column(db.Integer, nullable=False)  
 
     def __init__(self, username, user_id, games_played, average_score, wins, losses, last_played, highest_score):
         """
