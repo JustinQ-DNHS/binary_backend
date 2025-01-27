@@ -31,7 +31,7 @@ from api.commentsAndFeedback import commentsAndFeedback_api
 from api.vote import vote_api
 from api.lgate import lgate_api
 # New API's being tested
-from api.general import general_api
+# from api.general import general_api
 from api.binaryLearningGame import binaryLearningGameScores_api
 from api.student import student_api
 from api.binaryConverter import binary_converter_api
