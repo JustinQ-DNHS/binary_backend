@@ -1,44 +1,54 @@
 from flask import Blueprint, request, jsonify, current_app, Response, g
 from flask_restful import Api, Resource  # Used for REST API building
-from __init__ import app  # Ensure __init__.py initializes your Flask app
+from __init__ import app, db # Ensure __init__.py initializes your Flask app
 from model.binaryCalc import binaryCalc
-
+from flask_cors import CORS
+CORS(app)
 
 # Blueprint for the API
 binary_calc_api = Blueprint('binary_calc_api', __name__, url_prefix='/api')
 
 api = Api(binary_calc_api)  # Attach Flask-RESTful API to the Blueprint
 
+decimal = {"value": 0}
 
+def calculate_conversions(value):
+    """Helper function to calculate binary, octal, and hexadecimal."""
+    return {
+        "binary": bin(value)[2:].zfill(8),  # Binary with 8 bits
+        "octal": oct(value)[2:],  # Octal representation
+        "hexadecimal": hex(value)[2:].upper(),  # Hexadecimal representation
+        "decimal": value,  # Decimal value
+    }
 class binaryCalcAPI:
-    # Counter variable
-    decimal = {"value": 0}
 
-
-    # Endpoint to increment the counter
     @app.route('/increment', methods=['POST'])
     def increment_counter():
-        """Increments the counter by 1"""
         decimal["value"] += 1
-        return jsonify(decimal)
+        conversions = calculate_conversions(decimal["value"])
+        return jsonify(conversions)
 
-
-    # Endpoint to get the current counter value and its conversions
+    @app.route('/reset', methods=['POST'])
+    def reset_decimal():
+        """Reset the decimal value to 0."""
+        try:
+            decimal["value"] = 0
+            conversions = calculate_conversions(decimal["value"])
+            return jsonify(conversions), 200
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+    
     @app.route('/get-counter', methods=['GET'])
     def get_counter():
-        """Returns the current counter value and its conversions."""
-        decimal_value = decimal["value"]
-        binary_value = bin(decimal_value)[2:]  # Binary conversion without '0b'
-        octal_value = oct(decimal_value)[2:]   # Octal conversion without '0o'
-        hexadecimal_value = hex(decimal_value)[2:].upper()  # Hexadecimal without '0x'
-
-        return jsonify({
-            "decimal": decimal_value,
-            "binary": binary_value,
-            "octal": octal_value,
-            "hexadecimal": hexadecimal_value
-        })
-
+        conversions = calculate_conversions(decimal["value"])
+        return jsonify(conversions)
+    
+    @app.route('/decrement', methods=['POST'])
+    def decrement_counter():
+        """Decrements the counter by 1."""
+        decimal["value"] -= 1
+        conversions = calculate_conversions(decimal["value"])
+        return jsonify(conversions)
 
     # Endpoint to add a new binary calculation
     @app.route('/calculations', methods=['POST'])
@@ -93,6 +103,7 @@ class binaryCalcAPI:
             return jsonify({"message": "Calculation deleted successfully"}), 200
         except Exception as e:
             return jsonify({"error": str(e)}), 500
+        
 
 
     # Endpoint to initialize the database with sample data
