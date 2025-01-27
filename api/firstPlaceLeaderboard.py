@@ -37,19 +37,20 @@ class FirstPlaceLeaderboardAPI:
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
             # Create a new post object using the data from the request
-            time = firstPlaceLeaderboard(data['username'], current_user.id, data['games_played'], data['average_score'], data['wins'], data['losses'], datetime.datetime.now(), data['highest_score'])
+            post = firstPlaceLeaderboard(data['username'], current_user.id, data['games_played'], data['average_score'], data['wins'], data['losses'], datetime.datetime.now().strftime(format), data['highest_score'])
+            format= "%Y-%m-%d %H:%M:%S"
             # Save the post object using the ORM method defined in the model
-            time.create()
+            post.create()
 
-            return jsonify(time.read())
+            return jsonify(post.read())
 
         def get(self):
             # Obtain the current user
             # current_user = g.current_user
             # Find all the posts by the current user
-            times = firstPlaceLeaderboard.query.all()
+            posts = firstPlaceLeaderboard.query.all()
             # Prepare a JSON list of all the posts, uses for loop shortcut called list comprehension
-            json_ready = [time.read() for time in times]
+            json_ready = [post.read() for post in posts]
             # Return a JSON list, converting Python dictionaries to JSON format
             return jsonify(json_ready)
         
@@ -57,11 +58,11 @@ class FirstPlaceLeaderboardAPI:
             # Obtain the request data
             data = request.get_json()
             # Find the current post from the database table(s)
-            time = firstPlaceLeaderboard.query.get(data['id'])
+            post = firstPlaceLeaderboard.query.get(data['id'])
             # Update the post using the ORM method defined in the model
-            time.update(data)
+            post.update(data)
             # Return response
-            return jsonify(time.read())
+            return jsonify(post.read())
         
         @token_required()
         def delete(self):
@@ -70,9 +71,9 @@ class FirstPlaceLeaderboardAPI:
             # Obtain the request data
             data = request.get_json()
             # Find the current post from the database table(s)
-            time = firstPlaceLeaderboard.query.get(data['id'])
+            post = firstPlaceLeaderboard.query.get(data['id'])
             # Delete the post using the ORM method defined in the model
-            time.delete()
+            post.delete()
             # Return response
             return jsonify({"message": "Post deleted"})
 
