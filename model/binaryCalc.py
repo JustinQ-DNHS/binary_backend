@@ -10,7 +10,6 @@ class binaryCalc(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     _user_id = db.Column(db.String(255), db.ForeignKey('users.id'), nullable=False)
-    _binary_value = db.Column(db.Integer, nullable=False)
     _decimal_value = db.Column(db.Integer, nullable=False)
 
 
@@ -26,7 +25,6 @@ class binaryCalc(db.Model):
            image_url (str): The url path to the image
        """
        self._user_id = user_id
-       self._binary_value = binary_value
        self._decimal_value = decimal_value
 
 
@@ -38,7 +36,7 @@ class binaryCalc(db.Model):
        Returns:
            str: A text representation of how to create the object.
        """
-       return f"BinaryScore(id={self.id},user_id={self._user_id}, binary_value={self._binary_value}, decimal_value={self._decimal_value})"
+       return f"Binary(id={self.id},user_id={self._user_id}, binary_value={self._binary_value})"
 
 
     def create(self):
@@ -72,7 +70,6 @@ class binaryCalc(db.Model):
        data = {
            "id": self.id,
            "user_id": self._user_id if user else None,
-           "binary_value": self._binary_value,
            "decimal_value": self._decimal_value
        }
        return data
@@ -128,10 +125,10 @@ def initBinaryCalc():
         db.create_all()
         """Tester data for table"""
         
-        p1 = binaryCalc(user_id="1", binary_value=1, decimal_value=1)
-        p2 = binaryCalc(user_id="2", binary_value=11, decimal_value=3)
-        p3 = binaryCalc(user_id="3", binary_value=111, decimal_value=7)
-        p4 = binaryCalc(user_id="4", binary_value=1111, decimal_value=15)
+        p1 = binaryCalc(user_id="1", decimal_value=1)
+        p2 = binaryCalc(user_id="2", decimal_value=3)
+        p3 = binaryCalc(user_id="3", decimal_value=7)
+        p4 = binaryCalc(user_id="4", decimal_value=15)
         
         for post in [p1, p2, p3, p4]:
             try:
