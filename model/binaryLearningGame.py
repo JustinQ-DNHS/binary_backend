@@ -4,7 +4,7 @@ from sqlalchemy import Text
 from __init__ import app, db
 from model.user import User
 
-class binaryLearningGameScores(db.Model):
+class BinaryLearningGameScores(db.Model):
     """
     Binary Learning Game Scores Model
     
@@ -84,7 +84,7 @@ class binaryLearningGameScores(db.Model):
         }
         return data
     
-    def update(self):
+    def update(self, inputs):
         """
         The update method commits the transaction to the database.
         
@@ -94,11 +94,23 @@ class binaryLearningGameScores(db.Model):
         Raises:
             Exception: An error occurred when updating the object in the database.
         """
+        if not isinstance(inputs, dict):
+            return self
+
+        user_score = inputs.get("user_score", "")
+        user_difficulty = inputs.get("user_difficulty", "")
+
+        if user_score:
+            self._user_score = user_score
+        if user_difficulty:
+            self._user_difficulty = user_difficulty
+
         try:
             db.session.commit()
         except Exception as e:
             db.session.rollback()
             raise e
+        return self
     
     def delete(self):
         """
@@ -117,6 +129,28 @@ class binaryLearningGameScores(db.Model):
             db.session.rollback()
             raise e
 
+    @staticmethod
+    def restore(data):
+        sections = {}
+        existing_sections = {section._username: section for section in BinaryLearningGameScores.query.all()}
+        for section_data in data:
+            _ = section_data.pop('id', None)  # Remove 'id' from section_data
+            username = section_data.get("username", None)
+            section = existing_sections.pop(username, None)
+            print(section_data)
+            if section:
+                section.update(section_data)
+            else:
+                section = BinaryLearningGameScores(**section_data)
+                section.create()
+        
+        # Remove any extra data that is not in the backup
+        for section in existing_sections.values():
+            db.session.delete(section)
+        
+        db.session.commit()
+        return sections
+
 def initBinaryLearningGameScores():
     """
     The initPosts function creates the Post table and adds tester data to the table.
@@ -129,22 +163,21 @@ def initBinaryLearningGameScores():
     
     Raises:
         IntegrityError: An error occurred when adding the tester data to the table.
-    """        
+    """
     with app.app_context():
         """Create database and tables"""
-        db.create_all()
-        """Tester data for table"""
-        
-        p1 = binaryLearningGameScores(username="JIM", user_id="None", user_score=130, user_difficulty="easy")
-        p2 = binaryLearningGameScores(username="TIM", user_id="None", user_score=120, user_difficulty="medium")
-        p3 = binaryLearningGameScores(username="BUM", user_id="None", user_score=150, user_difficulty="hard")
-        p4 = binaryLearningGameScores(username="TUM", user_id="None", user_score=30, user_difficulty="easy")
-        
-        for post in [p1, p2, p3, p4]:
-            try:
-                post.create()
-                print(f"Record created: {repr(post)}")
-            except IntegrityError:
-                '''fails with bad or duplicate data'''
-                db.session.remove()
-                print(f"Records exist, duplicate email, or error: {post.user_id}")
+        # db.create_all()
+        # """Tester data for table"""
+            
+        # p1 = BinaryLearningGameScores(username="JIM", user_id="1", user_score=10, user_difficulty="easy")
+        # p2 = BinaryLearningGameScores(username="TIM", user_id="2", user_score=20, user_difficulty="medium")
+        # p3 = BinaryLearningGameScores(username="BUM", user_id="3", user_score=30, user_difficulty="hard")
+            
+        # for post in [p1, p2, p3]:
+        #     try:
+        #         post.create()
+        #         print(f"Record created: {repr(post)}")
+        #     except IntegrityError:
+        #         '''fails with bad or duplicate data'''
+        #         db.session.remove()
+        #         print(f"Records exist, duplicate email, or error: {post.user_id}")
