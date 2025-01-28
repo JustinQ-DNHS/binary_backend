@@ -18,6 +18,15 @@ class BinaryConverterAPI:
     - delete: delete a post
     """
     class _CRUD(Resource):
+        def get(self):
+            # Obtain the current user
+            # current_user = g.current_user
+            # Find all the posts by the current user
+            posts = BinaryConverter.query.all()
+            # Prepare a JSON list of all the posts, uses for loop shortcut called list comprehension
+            json_ready = [post.read() for post in posts]
+            # Return a JSON list, converting Python dictionaries to JSON format
+            return jsonify(json_ready)
         def post(self):
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
