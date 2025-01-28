@@ -36,6 +36,8 @@ from api.binaryLearningGame import binaryLearningGameScores_api
 from api.student import student_api
 from api.binaryConverter import binary_converter_api
 from api.vote import vote_api
+from api.binaryCalc import binary_calc_api
+from model.binaryCalc import binaryCalc, initBinaryCalc
 
 # database Initialization functions
 from model.user import User, initUsers
@@ -65,7 +67,7 @@ app.register_blueprint(binary_history_api)
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
 app.register_blueprint(commentsAndFeedback_api)
-
+app.register_blueprint(binary_calc_api)
 app.register_blueprint(binary_converter_api)
 app.register_blueprint(lgate_api)
 # Tell Flask-Login the view function name of your login route
@@ -178,6 +180,7 @@ def generate_data():
     initBinaryLearningGameScores()
     initBinaryConverter()  
     initlgate()
+    initBinaryCalc()
     
 # Backup the old database
 def backup_database(db_uri, backup_uri):
@@ -200,6 +203,7 @@ def extract_data():
         data['channels'] = [channel.read() for channel in Channel.query.all()]
         data['posts'] = [post.read() for post in Post.query.all()]
         data['scores'] = [score.read() for score in BinaryLearningGameScores.query.all()]
+        data['binary_calc'] = [binary_calc.read() for binary_calc in binaryCalc.query.all()]
     return data
 
 # Save extracted data to JSON files
@@ -214,7 +218,7 @@ def save_data_to_json(data, directory='backup'):
 # Load data from JSON files
 def load_data_from_json(directory='backup'):
     data = {}
-    for table in ['users', 'sections', 'groups', 'channels', 'posts', 'scores']:
+    for table in ['users', 'sections', 'groups', 'channels', 'posts', 'scores', 'binary_calc']:
         with open(os.path.join(directory, f'{table}.json'), 'r') as f:
             data[table] = json.load(f)
     return data
@@ -228,6 +232,7 @@ def restore_data(data):
         _ = Channel.restore(data['channels'])
         _ = Post.restore(data['posts'])
         _ = BinaryLearningGameScores.restore(data['scores'])
+        _ = binaryCalc.restore(data['binary_calc'])
     print("Data restored to the new database.")
 
 # Define a command to backup data
