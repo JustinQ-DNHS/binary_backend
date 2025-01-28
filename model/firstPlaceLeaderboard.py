@@ -4,7 +4,7 @@ from sqlalchemy import Text
 from __init__ import app, db
 from model.user import User
 
-class BinaryLearningGameScores(db.Model):
+class firstPlaceLeaderboard(db.Model):
     """
     Binary Learning Game Scores Model
     
@@ -13,15 +13,18 @@ class BinaryLearningGameScores(db.Model):
     Attributes:
         id (db.Column): The primary key, an integer representing the unique identifier for the post.
     """
-    __tablename__ = 'binaryLearningGameScores'
+    __tablename__ = 'firstPlaceLeaderboard'
 
     id = db.Column(db.Integer, primary_key=True)
     _username = db.Column(db.String(255), nullable=False)
     _user_id = db.Column(db.String(255), db.ForeignKey('users.id'), nullable=False)
-    _user_score = db.Column(db.Integer, nullable=False)
-    _user_difficulty = db.Column(db.String(255), nullable=False)
+    _games_played = db.Column(db.Integer, nullable=False)  
+    _average_score = db.Column(db.Integer, nullable=False) 
+    _wins = db.Column(db.Integer, nullable=False)  
+    _losses = db.Column(db.Integer, nullable=False) 
+    _highest_score = db.Column(db.Integer, nullable=False)  
 
-    def __init__(self, username, user_id, user_score, user_difficulty):
+    def __init__(self, username, user_id, games_played, average_score, wins, losses, highest_score):
         """
         Constructor, 1st step in object creation.
         
@@ -34,8 +37,11 @@ class BinaryLearningGameScores(db.Model):
         """
         self._username = username
         self._user_id = user_id
-        self._user_score = user_score
-        self._user_difficulty = user_difficulty
+        self._games_played = games_played
+        self._average_score = average_score
+        self._wins = wins
+        self._losses = losses
+        self._highest_score = highest_score
 
     def __repr__(self):
         """
@@ -45,7 +51,7 @@ class BinaryLearningGameScores(db.Model):
         Returns:
             str: A text representation of how to create the object.
         """
-        return f"BinaryScore(id={self.id}, username={self._username}, user_id={self._user_id}, user_score={self._user_score}, user_difficulty={self._user_difficulty})"
+        return f"BinaryScore(id={self.id}, username={self._username}, user_id={self._user_id}, games_played={self._games_played}, average_score={self._average_score}, wins={self._wins}, losses={self._losses}, highest_score={self._highest_score})"
 
     def create(self):
         """
@@ -79,8 +85,11 @@ class BinaryLearningGameScores(db.Model):
             "id": self.id,
             "username": self._username,
             "user_id": self._user_id if user else None,
-            "user_score": self._user_score,
-            "user_difficulty": self._user_difficulty
+            "user_games_played": self._games_played,
+            "average_score": self._average_score,
+            "wins": self._wins,
+            "losses": self._losses,
+            "highest_score": self._highest_score
         }
         return data
     
@@ -94,16 +103,26 @@ class BinaryLearningGameScores(db.Model):
         Raises:
             Exception: An error occurred when updating the object in the database.
         """
+
         if not isinstance(inputs, dict):
             return self
+        
+        games_played = inputs.get('games_played')
+        average_score = inputs.get('average_score')
+        wins = inputs.get('wins')
+        losses = inputs.get('losses')
+        highest_score = inputs.get('highest_score')
 
-        user_score = inputs.get("user_score", "")
-        user_difficulty = inputs.get("user_difficulty", "")
-
-        if user_score:
-            self._user_score = user_score
-        if user_difficulty:
-            self._user_difficulty = user_difficulty
+        if (games_played):
+            self._games_played = games_played
+        if (average_score):
+            self._average_score = average_score
+        if (wins):
+            self._wins = wins
+        if (losses):
+            self._losses = losses
+        if (highest_score):
+            self._highest_score = highest_score
 
         try:
             db.session.commit()
@@ -128,30 +147,38 @@ class BinaryLearningGameScores(db.Model):
         except Exception as e:
             db.session.rollback()
             raise e
-
+        
     @staticmethod
     def restore(data):
         sections = {}
-        existing_sections = {section._username: section for section in BinaryLearningGameScores.query.all()}
+        existing_sections = {section._username: section for section in firstPlaceLeaderboard.query.all()}
         for section_data in data:
-            _ = section_data.pop('id', None)  # Remove 'id' from section_data
+            _ = section_data.pop('id', None)
             username = section_data.get("username", None)
             section = existing_sections.pop(username, None)
-            print(section_data)
             if section:
                 section.update(section_data)
             else:
-                section = BinaryLearningGameScores(**section_data)
+                section = firstPlaceLeaderboard(
+                    username=section_data.get('username'),
+                    user_id=section_data.get('user_id'),
+                    games_played=section_data.get('games_played'),
+                    average_score=section_data.get('average_score'),
+                    wins=section_data.get('wins'),
+                    losses=section_data.get('losses'),
+                    highest_score=section_data.get('highest_score')
+                )
                 section.create()
-        
-        # Remove any extra data that is not in the backup
+            
         for section in existing_sections.values():
             db.session.delete(section)
         
         db.session.commit()
         return sections
 
-def initBinaryLearningGameScores():
+
+
+def initFirstPlaceLeaderboard():
     """
     The initPosts function creates the Post table and adds tester data to the table.
     
@@ -163,21 +190,24 @@ def initBinaryLearningGameScores():
     
     Raises:
         IntegrityError: An error occurred when adding the tester data to the table.
-    """
+    """        
     with app.app_context():
         """Create database and tables"""
-        # db.create_all()
-        # """Tester data for table"""
-            
-        # p1 = BinaryLearningGameScores(username="JIM", user_id="1", user_score=10, user_difficulty="easy")
-        # p2 = BinaryLearningGameScores(username="TIM", user_id="2", user_score=20, user_difficulty="medium")
-        # p3 = BinaryLearningGameScores(username="BUM", user_id="3", user_score=30, user_difficulty="hard")
-            
-        # for post in [p1, p2, p3]:
-        #     try:
-        #         post.create()
-        #         print(f"Record created: {repr(post)}")
-        #     except IntegrityError:
-        #         '''fails with bad or duplicate data'''
-        #         db.session.remove()
-        #         print(f"Records exist, duplicate email, or error: {post.user_id}")
+        db.create_all()
+        """Tester data for table"""
+
+        format = "%Y-%m-%d %H:%M:%S"
+
+        p1 = firstPlaceLeaderboard(username="JIM", user_id="jim_is_the_best", games_played="5", average_score="5.0", wins="3", losses="2", highest_score="10")
+        p2 = firstPlaceLeaderboard(username="TIM", user_id="tim_10", games_played="3", average_score="3.0", wins="2", losses="1", highest_score="5")
+        p3 = firstPlaceLeaderboard(username="BUM", user_id="dum_bum", games_played="7", average_score="4.0", wins="4", losses="3", highest_score="7")
+        p4 = firstPlaceLeaderboard(username="TUM", user_id="tum123", games_played="4", average_score="4.5", wins="3", losses="1", highest_score="8")
+        
+        for post in [p1, p2, p3, p4]:
+            try:
+                post.create()
+                print(f"Record created: {repr(post)}")
+            except IntegrityError:
+                '''fails with bad or duplicate data'''
+                db.session.remove()
+                print(f"Records exist, duplicate email, or error: {post.user_id}")
