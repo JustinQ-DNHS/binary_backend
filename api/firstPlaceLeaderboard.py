@@ -77,42 +77,9 @@ class FirstPlaceLeaderboardAPI:
             # Return response
             return jsonify({"message": "Post deleted"})
 
-# New Resource for User CRUD
-class UserAPI:
-    class _CRUD(Resource):
-        def post(self):
-            data = request.get_json()
-            
-            # Validation
-            name = data.get('name')
-            password = data.get('password')
-            uid = data.get('uid')
-            
-            if not name or len(name) < 2:
-                return {'message': 'Name must be at least 2 characters'}, 400
-            if not uid or len(uid) < 2:
-                return {'message': 'User ID must be at least 2 characters'}, 400
-
-            # Check for existing user
-            if User.query.filter_by(_uid=uid).first():
-                return {'message': f'User ID {uid} already exists'}, 400
-
-            # Create user
-            user = User(name=name, uid=uid, password=password)
-            user.create()
-            return jsonify(user.read())
-
-        @token_required()
-        def get(self):
-            current_user = g.current_user
-            users = User.query.all()
-            json_ready = [user.read() for user in users]
-            return jsonify(json_ready)
-
     """
     Map the _CRUD class to the API endpoints for /post.
     - The API resource class inherits from flask_restful.Resource.
     - The _CRUD class defines the HTTP methods for the API.
     """
     api.add_resource(_CRUD, '/firstPlaceLeaderboard')
-    api.add_resource(_CRUD, '/user')
