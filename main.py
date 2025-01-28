@@ -205,6 +205,7 @@ def extract_data():
         data['comments'] = [comment.read() for comment in CommentsAndFeedback.query.all()]
         data['scores'] = [score.read() for score in BinaryLearningGameScores.query.all()]
         data['convertions'] = [convert.read() for convert in BinaryConverter.query.all()]
+        data['history'] = [history.read() for history in BinaryHistory.query.all()]
     return data
 
 # Save extracted data to JSON files
@@ -220,7 +221,7 @@ def save_data_to_json(data, directory='backup'):
 # Load data from JSON files
 def load_data_from_json(directory='backup'):
     data = {}
-    for table in ['users', 'sections', 'groups', 'channels', 'posts', 'comments', 'scores', 'convertions']:
+    for table in ['users', 'sections', 'groups', 'channels', 'posts', 'comments', 'scores', 'convertions', 'history']:
         with open(os.path.join(directory, f'{table}.json'), 'r') as f:
             data[table] = json.load(f)
     return data
@@ -236,6 +237,7 @@ def restore_data(data):
         _ = CommentsAndFeedback.restore(data['comments'])
         _ = BinaryLearningGameScores.restore(data['scores'])
         _ = BinaryConverter.restore(data['convertions'])
+        _ = BinaryHistory.restore(data['history'])
     print("Data restored to the new database.")
 
 # Define a command to backup data
