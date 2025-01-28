@@ -22,8 +22,16 @@ class CommentsAndFeedpackAPI:
         def post(self):
             # current_user = g.current_user
             data = request.get_json()
+            # Create an empty array to append each hex code to
+            hex_translate = []
+            # Goes through each character and converts it to hex
+            for i in range(len(data["post_id"])):
+                hex_translate.append(hex(ord(data["post_id"][i]))[2:])
+            # final_post_id = []
+            # for i in range(len(hex_translate)):
+            #     final_post_id.append(chr(int(hex_translate[i], 16)))
             # comment = CommentsAndFeedback(data['title'], data['content'], current_user.id, data['post_id'])
-            comment = CommentsAndFeedback(data['title'], data['content'], data['post_id'])
+            comment = CommentsAndFeedback(data['title'], data['content'], ''.join(hex_translate))
             comment.create()
             return jsonify(comment.read())
         
