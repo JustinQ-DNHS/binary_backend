@@ -23,7 +23,8 @@ class CommentsAndFeedback(db.Model):
     _title = db.Column(db.String(255), nullable=False)
     _content = db.Column(Text, nullable=False)
     # _user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    _post_id = db.Column(db.Integer, db.ForeignKey('groups.id'), nullable=False)
+    # _post_id = db.Column(db.String(255), nullable=False, unique=True)
+    _post_id = db.Column(db.String(255), nullable=False)
 
     # def __init__(self, title, content, user_id, post_id):
     def __init__(self, title, content, post_id):
@@ -188,10 +189,10 @@ def initComments():
         # p2 = CommentsAndFeedback(title='Stats Help 2', content='Need help with life.', user_id=1, post_id=2)
         # p3 = CommentsAndFeedback(title='Stats Help', content='Need help with finding proportion.', user_id=1, post_id=2)
         # p4 = CommentsAndFeedback(title='Calculus Help 2', content='I got you bro', user_id=1, post_id=1)
-        p1 = CommentsAndFeedback(title='Calculus Help', content='Need help with derivatives.', post_id=1)
-        p2 = CommentsAndFeedback(title='Stats Help 2', content='Need help with life.', post_id=2)
-        p3 = CommentsAndFeedback(title='Stats Help', content='Need help with finding proportion.', post_id=2)
-        p4 = CommentsAndFeedback(title='Calculus Help 2', content='I got you bro', post_id=1)
+        p1 = CommentsAndFeedback(title='Calculus Help', content='Need help with derivatives.', post_id="73616d706c65706174686e616d65")
+        p2 = CommentsAndFeedback(title='Stats Help 2', content='Need help with life.', post_id="73616d706c65706174686e616d66")
+        p3 = CommentsAndFeedback(title='Stats Help', content='Need help with finding proportion.', post_id="73616d706c65706174686e616d67")
+        p4 = CommentsAndFeedback(title='Calculus Help 2', content='I got you bro', post_id="73616d706c65706174686e616d68")
         
         for comment in [p1, p2, p3, p4]:
             try:
