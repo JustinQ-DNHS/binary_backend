@@ -101,30 +101,6 @@ class binaryCalcAPI:
             db.session.rollback()
             return jsonify({"error": f"Failed to update counter: {str(e)}"}), 500
 
-    # Endpoint to add a new binary calculation
-    @app.route('/calculations', methods=['POST'])
-    def add_calculation():
-        """Adds a new binary calculation."""
-        data = request.json
-        user_id = data.get('user_id')
-        binary_value = data.get('binary_value')
-
-        # Validate binary input
-        if not binary_value or not isinstance(binary_value, int):
-            return jsonify({"error": "Invalid binary value. Must be an integer."}), 400
-
-        # Convert binary to decimal
-        decimal_value = int(str(binary_value), 2)
-
-        # Create a new binaryCalc record
-        new_calc = binaryCalc(user_id=user_id, binary_value=binary_value, decimal_value=decimal_value)
-        try:
-            new_calc.create()
-            return jsonify(new_calc.read()), 201
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
-
-
     # Endpoint to retrieve all calculations
     @app.route('/calculations', methods=['GET'])
     def get_calculations():
