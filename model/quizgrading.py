@@ -6,15 +6,13 @@ class quizgrading(db.Model):
     __tablename__ = 'quizgrading'
 
     id = db.Column(db.Integer, primary_key=True)
-    _quizgrade = db.Column(db.Integer, nullable=False)
-    _attempt = db.Column(db.Integer, nullable=False)
-    _user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    _quizgrade = db.Column(db.String, nullable=False)
+    _attempt = db.Column(db.String, nullable=False)
 
-    def __init__(self, quizgrade, attempt, user_id):
+    def __init__(self, quizgrade, attempt):
 
         self._quizgrade = quizgrade
         self._attempt = attempt
-        self._user_id = user_id
 
     def __repr__(self):
         """
@@ -24,7 +22,7 @@ class quizgrading(db.Model):
         Returns:
             str: A text representation of how to create the object.
         """
-        return f"Post(id={self.id}, quizgrade={self._quizgrade}, attempt={self._attempt}, user_id={self._user_id})"
+        return f"<quizgrading(id={self.id}, quizgrade={self._quizgrade}, attempt={self._attempt})>"
 
     def create(self):
         """
@@ -53,12 +51,10 @@ class quizgrading(db.Model):
         Returns:
             dict: A dictionary containing the post data, including user and group names.
         """
-        user = User.query.get(self._user_id)
         data = {
             "id": self.id,
             "quizgrade": self._quizgrade,
             "attempt": self._attempt,
-            "user_name": user.name if user else None,
         }
         return data
     
@@ -113,16 +109,17 @@ def initquizgrading():
         db.create_all()
         """Tester data for table"""
         
-        p1 = quizgrading(quizgrade=50, attempt=1, user_id=1)  
-        p2 = quizgrading(quizgrade=60, attempt=2, user_id=1)
-        p3 = quizgrading(quizgrade=70, attempt=3, user_id=1)
-        p4 = quizgrading(quizgrade=80, attempt=4, user_id=1)
-        
-        for post in [p1, p2, p3, p4]:
+        entries = [
+            quizgrading(quizgrade=50, attempt=1),  
+            quizgrading(quizgrade=60, attempt=2),
+            quizgrading(quizgrade=70, attempt=3),
+            quizgrading(quizgrade=80, attempt=4)
+        ]
+        for entry in entries:
             try:
-                post.create()
-                print(f"Record created: {repr(post)}")
+                db.session.add(entry)
+                db.session.commit()
             except IntegrityError:
                 '''fails with bad or duplicate data'''
-                db.session.remove()
-                print(f"Records exist, duplicate email, or error: {post.uid}")
+                db.session.rollback()
+                print(f"Record creation failed: {entry}")
