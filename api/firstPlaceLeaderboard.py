@@ -3,7 +3,7 @@ from flask_restful import Api, Resource  # used for REST API building
 from api.jwt_authorize import token_required
 from model.firstPlaceLeaderboard import firstPlaceLeaderboard
 from model.binaryLearningGame import binaryLearningGameScores
-import datetime
+from model.user import User
 
 """
 This Blueprint object is used to define APIs for the Post model.
@@ -37,7 +37,7 @@ class FirstPlaceLeaderboardAPI:
             # Obtain the request data sent by the RESTful client API
             data = request.get_json()
             # Create a new post object using the data from the request
-            post = firstPlaceLeaderboard(data['username'], current_user.id, data['games_played'], data['average_score'], data['wins'], data['losses'], datetime.datetime.now().strftime(format), data['highest_score'])
+            post = firstPlaceLeaderboard(data['username'], current_user.id, data['games_played'], data['average_score'], data['wins'], data['losses'], data['highest_score'])
             format= "%Y-%m-%d %H:%M:%S"
             # Save the post object using the ORM method defined in the model
             post.create()
@@ -77,9 +77,42 @@ class FirstPlaceLeaderboardAPI:
             # Return response
             return jsonify({"message": "Post deleted"})
 
+# New Resource for User CRUD
+class UserAPI:
+    class _CRUD(Resource):
+        def post(self):
+            data = request.get_json()
+            
+            # Validation
+            name = data.get('name')
+            password = data.get('password')
+            uid = data.get('uid')
+            
+            if not name or len(name) < 2:
+                return {'message': 'Name must be at least 2 characters'}, 400
+            if not uid or len(uid) < 2:
+                return {'message': 'User ID must be at least 2 characters'}, 400
+
+            # Check for existing user
+            if User.query.filter_by(_uid=uid).first():
+                return {'message': f'User ID {uid} already exists'}, 400
+
+            # Create user
+            user = User(name=name, uid=uid, password=password)
+            user.create()
+            return jsonify(user.read())
+
+        @token_required()
+        def get(self):
+            current_user = g.current_user
+            users = User.query.all()
+            json_ready = [user.read() for user in users]
+            return jsonify(json_ready)
+
     """
     Map the _CRUD class to the API endpoints for /post.
     - The API resource class inherits from flask_restful.Resource.
     - The _CRUD class defines the HTTP methods for the API.
     """
     api.add_resource(_CRUD, '/firstPlaceLeaderboard')
+    api.add_resource(_CRUD, '/user')

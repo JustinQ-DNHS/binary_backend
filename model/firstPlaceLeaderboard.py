@@ -1,7 +1,6 @@
 # post.py
 from sqlite3 import IntegrityError
 from sqlalchemy import Text
-import datetime
 from __init__ import app, db
 from model.user import User
 
@@ -23,10 +22,9 @@ class firstPlaceLeaderboard(db.Model):
     _average_score = db.Column(db.Integer, nullable=False) 
     _wins = db.Column(db.Integer, nullable=False)  
     _losses = db.Column(db.Integer, nullable=False) 
-    _last_played = db.Column(db.String(255), nullable=True)  
     _highest_score = db.Column(db.Integer, nullable=False)  
 
-    def __init__(self, username, user_id, games_played, average_score, wins, losses, last_played, highest_score):
+    def __init__(self, username, user_id, games_played, average_score, wins, losses, highest_score):
         """
         Constructor, 1st step in object creation.
         
@@ -43,7 +41,6 @@ class firstPlaceLeaderboard(db.Model):
         self._average_score = average_score
         self._wins = wins
         self._losses = losses
-        self._last_played = last_played
         self._highest_score = highest_score
 
     def __repr__(self):
@@ -54,7 +51,7 @@ class firstPlaceLeaderboard(db.Model):
         Returns:
             str: A text representation of how to create the object.
         """
-        return f"BinaryScore(id={self.id}, username={self._username}, user_id={self._user_id}, games_played={self._games_played}, average_score={self._average_score}, wins={self._wins}, losses={self._losses}, last_played={self._last_played}, highest_score={self._highest_score})"
+        return f"BinaryScore(id={self.id}, username={self._username}, user_id={self._user_id}, games_played={self._games_played}, average_score={self._average_score}, wins={self._wins}, losses={self._losses}, highest_score={self._highest_score})"
 
     def create(self):
         """
@@ -92,7 +89,6 @@ class firstPlaceLeaderboard(db.Model):
             "average_score": self._average_score,
             "wins": self._wins,
             "losses": self._losses,
-            "last_played": self._last_played,
             "highest_score": self._highest_score
         }
         return data
@@ -115,7 +111,6 @@ class firstPlaceLeaderboard(db.Model):
         average_score = inputs.get('average_score')
         wins = inputs.get('wins')
         losses = inputs.get('losses')
-        last_played = inputs.get('last_played')
         highest_score = inputs.get('highest_score')
 
         if (games_played):
@@ -126,8 +121,6 @@ class firstPlaceLeaderboard(db.Model):
             self._wins = wins
         if (losses):
             self._losses = losses
-        if (last_played):
-            self._last_played = last_played
         if (highest_score):
             self._highest_score = highest_score
 
@@ -173,7 +166,6 @@ class firstPlaceLeaderboard(db.Model):
                     average_score=section_data.get('average_score'),
                     wins=section_data.get('wins'),
                     losses=section_data.get('losses'),
-                    last_played=section_data.get('last_played'),
                     highest_score=section_data.get('highest_score')
                 )
                 section.create()
@@ -183,6 +175,7 @@ class firstPlaceLeaderboard(db.Model):
         
         db.session.commit()
         return sections
+
 
 
 def initFirstPlaceLeaderboard():
@@ -205,10 +198,10 @@ def initFirstPlaceLeaderboard():
 
         format = "%Y-%m-%d %H:%M:%S"
 
-        p1 = firstPlaceLeaderboard(username="JIM", user_id="jim_is_the_best", games_played="5", average_score="5.0", wins="3", losses="2", last_played=datetime.datetime.now().strftime(format), highest_score="10")
-        p2 = firstPlaceLeaderboard(username="TIM", user_id="tim_10", games_played="3", average_score="3.0", wins="2", losses="1", last_played=datetime.datetime.now().strftime(format), highest_score="5")
-        p3 = firstPlaceLeaderboard(username="BUM", user_id="dum_bum", games_played="7", average_score="4.0", wins="4", losses="3", last_played=datetime.datetime.now().strftime(format), highest_score="7")
-        p4 = firstPlaceLeaderboard(username="TUM", user_id="tum123", games_played="4", average_score="4.5", wins="3", losses="1", last_played=datetime.datetime.now().strftime(format), highest_score="8")
+        p1 = firstPlaceLeaderboard(username="JIM", user_id="jim_is_the_best", games_played="5", average_score="5.0", wins="3", losses="2", highest_score="10")
+        p2 = firstPlaceLeaderboard(username="TIM", user_id="tim_10", games_played="3", average_score="3.0", wins="2", losses="1", highest_score="5")
+        p3 = firstPlaceLeaderboard(username="BUM", user_id="dum_bum", games_played="7", average_score="4.0", wins="4", losses="3", highest_score="7")
+        p4 = firstPlaceLeaderboard(username="TUM", user_id="tum123", games_played="4", average_score="4.5", wins="3", losses="1", highest_score="8")
         
         for post in [p1, p2, p3, p4]:
             try:
