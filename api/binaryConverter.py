@@ -42,7 +42,7 @@ class BinaryConverterAPI:
             # Return response
             return jsonify(post.read())
         
-         def get(self):
+        def get(self):
             try:
                 # Query all entries in the BinaryHistory table
                 entries = BinaryConverter.query.all()
