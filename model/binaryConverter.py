@@ -74,6 +74,25 @@ class BinaryConverter (db.Model):
             db.session.rollback()
             raise e
 
+    @staticmethod
+    def restore(data):
+        existing_sections = {section.id: section for section in BinaryConverter.query.all()}
+        for section_data in data:
+            _ = section_data.pop('id', None)  # Remove 'id' from section_data
+            binary = section_data.get("binary", None)
+            section = existing_sections.pop(binary, None)
+            if section:
+                section.update(section_data)
+            else:
+                section = BinaryConverter(**section_data)
+                section.create()
+        
+        # Remove any extra data that is not in the backup
+        for section in existing_sections.values():
+            db.session.delete(section)
+        
+        db.session.commit()
+        return existing_sections
 
 def initBinaryConverter():
     """
