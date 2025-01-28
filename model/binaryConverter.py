@@ -2,32 +2,32 @@ from sqlite3 import IntegrityError
 from sqlalchemy.exc import SQLAlchemyError
 from __init__ import app, db
 
-class QuizCreation(db.Model):
+class BinaryConverter (db.Model):
     """
-    QuizCreation Model
+    BinaryConverter Model
     
-    Represents a quiz with a question, answer, and a quiz_id associated with a user.
+    Represents a quiz with a question and answer associated with a user.
     """
-    __tablename__ = 'quizCreation'
+    __tablename__ = 'binaryConverter'
 
     id = db.Column(db.Integer, primary_key=True)
-    question = db.Column(db.String(255), nullable=False)
-    answer = db.Column(db.String(255), nullable=False)
-    quiz_id = db.Column(db.Integer, nullable=False)  # Remove ForeignKey for simplicity in SQLite
+    binary = db.Column(db.String(255), nullable=False)
+    decimal = db.Column(db.String(255), nullable=False)
+     
 
-    def __init__(self, question, answer, quiz_id):
+    def __init__(self, binary, decimal, ):
         """
-        Constructor for QuizCreation.
+        Constructor for Binary.
         """
-        self.question = question
-        self.answer = answer
-        self.quiz_id = quiz_id
+        self.binary = binary
+        self.decimal = decimal
+        
 
     def __repr__(self):
         """
         Represents the QuizCreation object as a string for debugging.
         """
-        return f"<QuizCreation(id={self.id}, question='{self.question}', answer='{self.answer}', quiz_id={self.quiz_id})>"
+        return f"<QuizCreation(id={self.id}, question='{self.binary}', answer='{self.decimal})>"
 
     def create(self):
         """
@@ -46,9 +46,8 @@ class QuizCreation(db.Model):
         """
         return {
             "id": self.id,
-            "question": self.question,
-            "answer": self.answer,
-            "quiz_id": self.quiz_id
+            "binary": self.binary,
+            "decimal": self.decimal,
         }
 
     def update(self, data):
@@ -76,7 +75,7 @@ class QuizCreation(db.Model):
             raise e
 
 
-def initQuizCreation():
+def initBinaryConverter():
     """
     Initializes the QuizCreation table and inserts test data for development purposes.
     """
@@ -85,9 +84,9 @@ def initQuizCreation():
 
         # Sample test data
         quizzes = [
-            QuizCreation(question="What is the capital of France?", answer="Paris", quiz_id=1),
-            QuizCreation(question="What is 2 + 2?", answer="4", quiz_id=2),
-            QuizCreation(question="Who wrote 'To Kill a Mockingbird'?", answer="Harper Lee", quiz_id=3)
+            BinaryConverter(decimal="7777", binary="1111001100001"),
+            BinaryConverter(decimal="2323", binary="100100010011"),
+            
         ]
 
         for quiz in quizzes:
