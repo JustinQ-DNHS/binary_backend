@@ -137,7 +137,6 @@ class BinaryLearningGameScores(db.Model):
             _ = section_data.pop('id', None)  # Remove 'id' from section_data
             username = section_data.get("username", None)
             section = existing_sections.pop(username, None)
-            print(section_data)
             if section:
                 section.update(section_data)
             else:

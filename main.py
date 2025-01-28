@@ -45,11 +45,13 @@ from model.channel import Channel, initChannels
 from model.post import Post, initPosts
 from model.binaryLearningGame import initBinaryLearningGameScores, BinaryLearningGameScores
 # under development
+from model.commentsAndFeedback import CommentsAndFeedback, initComments
 from model.nestPost import initNestPosts
 from model.binaryhistory import BinaryHistory, initBinaryHistory
 from model.binaryLearningGame import initBinaryLearningGameScores
-from model.binaryConverter import initBinaryConverter
+from model.binaryConverter import BinaryConverter, initBinaryConverter
 from model.lgatedata import initlgate
+
 # server only Views
 
 # register URIs for api endpoints
@@ -169,7 +171,8 @@ custom_cli = AppGroup('custom', help='Custom commands')
 def generate_data():
     initBinaryHistory()
     initUsers()
-        # initSections()
+    initSections()
+    initComments()
         # initGroups()
         # initChannels()
         # initPosts()
@@ -199,7 +202,10 @@ def extract_data():
         data['groups'] = [group.read() for group in Group.query.all()]
         data['channels'] = [channel.read() for channel in Channel.query.all()]
         data['posts'] = [post.read() for post in Post.query.all()]
+        data['comments'] = [comment.read() for comment in CommentsAndFeedback.query.all()]
         data['scores'] = [score.read() for score in BinaryLearningGameScores.query.all()]
+        data['convertions'] = [convert.read() for convert in BinaryConverter.query.all()]
+        data['history'] = [history.read() for history in BinaryHistory.query.all()]
     return data
 
 # Save extracted data to JSON files
@@ -209,12 +215,13 @@ def save_data_to_json(data, directory='backup'):
     for table, records in data.items():
         with open(os.path.join(directory, f'{table}.json'), 'w') as f:
             json.dump(records, f)
+            print(f'Backed up {table} to {directory}')
     print(f"Data backed up to {directory} directory.")
 
 # Load data from JSON files
 def load_data_from_json(directory='backup'):
     data = {}
-    for table in ['users', 'sections', 'groups', 'channels', 'posts', 'scores']:
+    for table in ['users', 'sections', 'groups', 'channels', 'posts', 'comments', 'scores', 'convertions', 'history']:
         with open(os.path.join(directory, f'{table}.json'), 'r') as f:
             data[table] = json.load(f)
     return data
@@ -227,7 +234,10 @@ def restore_data(data):
         _ = Group.restore(data['groups'], users)
         _ = Channel.restore(data['channels'])
         _ = Post.restore(data['posts'])
+        _ = CommentsAndFeedback.restore(data['comments'])
         _ = BinaryLearningGameScores.restore(data['scores'])
+        _ = BinaryConverter.restore(data['convertions'])
+        _ = BinaryHistory.restore(data['history'])
     print("Data restored to the new database.")
 
 # Define a command to backup data
@@ -240,6 +250,7 @@ def backup_data():
 # Define a command to restore data
 @custom_cli.command('restore_data')
 def restore_data_command():
+    # Calls the load_data_from_json() function, this function opens the backup folder and spits out the data stored within
     data = load_data_from_json()
     restore_data(data)
     
