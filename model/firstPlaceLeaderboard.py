@@ -153,28 +153,23 @@ class firstPlaceLeaderboard(db.Model):
         sections = {}
         existing_sections = {section._username: section for section in firstPlaceLeaderboard.query.all()}
         for section_data in data:
-            _ = section_data.pop('id', None)
+            _ = section_data.pop('id', None)  # Remove 'id' from section_data
             username = section_data.get("username", None)
             section = existing_sections.pop(username, None)
+            print(section_data)
             if section:
                 section.update(section_data)
             else:
-                section = firstPlaceLeaderboard(
-                    username=section_data.get('username'),
-                    user_id=section_data.get('user_id'),
-                    games_played=section_data.get('games_played'),
-                    average_score=section_data.get('average_score'),
-                    wins=section_data.get('wins'),
-                    losses=section_data.get('losses'),
-                    highest_score=section_data.get('highest_score')
-                )
+                section = firstPlaceLeaderboard(**section_data)
                 section.create()
-            
+        
+        # Remove any extra data that is not in the backup
         for section in existing_sections.values():
             db.session.delete(section)
         
         db.session.commit()
         return sections
+
 
 
 

@@ -71,9 +71,6 @@ app.register_blueprint(commentsAndFeedback_api)
 app.register_blueprint(binary_calc_api)
 app.register_blueprint(binary_converter_api)
 app.register_blueprint(lgate_api)
-app.register_blueprint(quizgrading_api)
-app.register_blueprint(quizquestions_api)
-app.register_blueprint(general_api)
 app.register_blueprint(firstPlaceLeaderboard_api)
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
@@ -209,7 +206,7 @@ def extract_data():
         data['channels'] = [channel.read() for channel in Channel.query.all()]
         data['posts'] = [post.read() for post in Post.query.all()]
         data['scores'] = [score.read() for score in BinaryLearningGameScores.query.all()]
-        data['binary_calc'] = [binary_calc.read() for binary_calc in binaryCalc.query.all()]
+
         data['firstPlaceLeaderboard'] = [time.read() for time in firstPlaceLeaderboard.query.all()]
     return data
 
@@ -225,7 +222,7 @@ def save_data_to_json(data, directory='backup'):
 # Load data from JSON files
 def load_data_from_json(directory='backup'):
     data = {}
-    for table in ['users', 'sections', 'groups', 'channels', 'posts', 'firstPlaceLeaderboard', 'scores', 'binary_calc']:
+    for table in ['users', 'sections', 'groups', 'channels', 'posts', 'firstPlaceLeaderboard', 'scores']:
         with open(os.path.join(directory, f'{table}.json'), 'r') as f:
             data[table] = json.load(f)
     return data
@@ -239,7 +236,6 @@ def restore_data(data):
         _ = Channel.restore(data['channels'])
         _ = Post.restore(data['posts'])
         _ = BinaryLearningGameScores.restore(data['scores'])
-        _ = binaryCalc.restore(data['binary_calc'])
         _ = firstPlaceLeaderboard.restore(data['firstPlaceLeaderboard'])
 
 # Define a command to backup data

@@ -2,7 +2,6 @@ from flask import Blueprint, request, jsonify, g
 from flask_restful import Api, Resource  # used for REST API building
 from api.jwt_authorize import token_required
 from model.firstPlaceLeaderboard import firstPlaceLeaderboard
-from model.binaryLearningGame import binaryLearningGameScores
 from model.user import User
 
 """
