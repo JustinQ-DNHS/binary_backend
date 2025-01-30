@@ -28,7 +28,6 @@ from api.carphoto import car_api
 from api.carChat import car_chat_api
 from api.newQuizCreation import quizCreation_api
 from api.binaryConverter import binaryConverter_api
-from api.quizgrading import quizgrading_api
 from api.vote import vote_api
 # database Initialization functions
 from model.carChat import CarChat
@@ -40,7 +39,6 @@ from model.post import Post, initPosts
 from model.nestPost import initNestPosts
 # under development
 from model.binaryLearningGame import initBinaryLearningGameScores
-from model.quizgrading import initquizgrading
 # server only Views
 
 # register URIs for api endpoints
@@ -55,7 +53,6 @@ app.register_blueprint(section_api)
 app.register_blueprint(quizCreation_api)
 app.register_blueprint(binaryConverter_api)
 app.register_blueprint(binary_history_api)
-app.register_blueprint(quizgrading_api)
 
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
