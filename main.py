@@ -26,7 +26,6 @@ from api.quizgrading import quizgrading_api
 from api.messages_api import messages_api # Adi added this, messages for his website
 # New API's being tested
 from api.general import general_api
-from api.quizquestions import quizquestions_api
 from api.binaryLearningGame import binaryLearningGameScores_api
 
 from api.vote import vote_api
@@ -40,7 +39,6 @@ from model.channel import Channel, initChannels
 from model.post import Post, initPosts
 # under development
 from model.binaryLearningGame import initBinaryLearningGameScores
-from model.quizquestions import quizquestions, initquizquestions
 from model.quizgrading import initquizgrading
 # server only Views
 
@@ -56,7 +54,6 @@ app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
 app.register_blueprint(quizgrading_api)
 # API's following this are under development
-app.register_blueprint(quizquestions_api)
 
 # Tell Flask-Login the view function name of your login route
 login_manager.login_view = "login"
