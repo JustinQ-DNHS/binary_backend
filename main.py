@@ -27,6 +27,7 @@ from api.messages_api import messages_api # Adi added this, messages for his web
 from api.binaryLearningGame import binaryLearningGameScores_api
 # New API's being tested
 from api.commentsAndFeedback import commentsAndFeedback_api
+from api.firstPlaceLeaderboard import firstPlaceLeaderboard_api
 
 from api.vote import vote_api
 from api.lgate import lgate_api
@@ -51,6 +52,7 @@ from model.binaryhistory import BinaryHistory, initBinaryHistory
 from model.binaryLearningGame import initBinaryLearningGameScores
 from model.binaryConverter import BinaryConverter, initBinaryConverter
 from model.lgatedata import initlgate
+from model.firstPlaceLeaderboard import firstPlaceLeaderboard, initFirstPlaceLeaderboard
 
 # server only Views
 
@@ -67,6 +69,7 @@ app.register_blueprint(binary_history_api)
 app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
 app.register_blueprint(commentsAndFeedback_api)
+app.register_blueprint(firstPlaceLeaderboard_api)
 
 app.register_blueprint(binary_converter_api)
 app.register_blueprint(lgate_api)
@@ -181,6 +184,8 @@ def generate_data():
     initBinaryLearningGameScores()
     initBinaryConverter()  
     initlgate()
+    initFirstPlaceLeaderboard()
+
     
 # Backup the old database
 def backup_database(db_uri, backup_uri):
@@ -206,6 +211,8 @@ def extract_data():
         data['scores'] = [score.read() for score in BinaryLearningGameScores.query.all()]
         data['convertions'] = [convert.read() for convert in BinaryConverter.query.all()]
         data['history'] = [history.read() for history in BinaryHistory.query.all()]
+        data['firstPlaceLeaderboard'] = [time.read() for time in firstPlaceLeaderboard.query.all()]
+
     return data
 
 # Save extracted data to JSON files
@@ -238,6 +245,8 @@ def restore_data(data):
         _ = BinaryLearningGameScores.restore(data['scores'])
         _ = BinaryConverter.restore(data['convertions'])
         _ = BinaryHistory.restore(data['history'])
+        _ = firstPlaceLeaderboard.restore(data['firstPlaceLeaderboard'])
+
     print("Data restored to the new database.")
 
 # Define a command to backup data
