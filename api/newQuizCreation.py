@@ -46,8 +46,9 @@ class QuizCreationAPI:
             """
             Retrieve all quizzes.
             """
-            quizzes = QuizCreation.query.all()
-            return jsonify([quiz.read() for quiz in quizzes])
+            # quizzes = QuizCreation.query.all()
+            # json_ready = [quiz.read() for quiz in quizzes]
+            return jsonify("I'm a stupid ass quizzes")
 
         @token_required
         def put(self):
@@ -85,7 +86,7 @@ class QuizCreationAPI:
             #     return {'message': f'Error deleting quiz: {str(e)}'}, 500
 
     # Add resource endpoints to API
-    api.add_resource(_CRUD, '/quiz', '/quiz/<int:id>')  # Routes for single quiz creation, update, get, and delete
+    api.add_resource(_CRUD, '/quiz')  # Routes for single quiz creation, update, get, and delete
 
 # Register the blueprint with the app
 #app.register_blueprint(quizCreation_api)
