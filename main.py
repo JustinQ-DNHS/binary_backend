@@ -28,6 +28,8 @@ from api.binaryLearningGame import binaryLearningGameScores_api
 # New API's being tested
 from api.commentsAndFeedback import commentsAndFeedback_api
 from api.firstPlaceLeaderboard import firstPlaceLeaderboard_api
+from api.quizgrading import quizgrading_api
+
 
 from api.vote import vote_api
 from api.lgate import lgate_api
@@ -53,6 +55,8 @@ from model.binaryLearningGame import initBinaryLearningGameScores
 from model.binaryConverter import BinaryConverter, initBinaryConverter
 from model.lgatedata import initlgate
 from model.firstPlaceLeaderboard import firstPlaceLeaderboard, initFirstPlaceLeaderboard
+from model.quizgrading import quizgrading, initquizgrading
+
 
 # server only Views
 
@@ -70,6 +74,7 @@ app.register_blueprint(binaryLearningGameScores_api)
 app.register_blueprint(student_api)
 app.register_blueprint(commentsAndFeedback_api)
 app.register_blueprint(firstPlaceLeaderboard_api)
+app.register_blueprint(quizgrading_api)
 
 app.register_blueprint(binary_converter_api)
 app.register_blueprint(lgate_api)
@@ -185,6 +190,7 @@ def generate_data():
     initBinaryConverter()  
     initlgate()
     initFirstPlaceLeaderboard()
+    initquizgrading()
 
     
 # Backup the old database
@@ -212,6 +218,7 @@ def extract_data():
         data['convertions'] = [convert.read() for convert in BinaryConverter.query.all()]
         data['history'] = [history.read() for history in BinaryHistory.query.all()]
         data['firstPlaceLeaderboard'] = [time.read() for time in firstPlaceLeaderboard.query.all()]
+        data['quizgrading'] = [quiz.read() for quiz in quizgrading.query.all()]
 
     return data
 
