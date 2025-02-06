@@ -5,16 +5,14 @@ server {
     # Configure CORS Headers
     location / { 
         proxy_pass http://localhost:8887; # Change port to port on docker
-        # Simple requests
-        if ($request_method ~* "(GET|POST|PUT|DELETE)") { # Customize Request methods based on your needs
-                add_header "Access-Control-Allow-Origin"  *;
-        }
         # Preflighted requests 
         if ($request_method = OPTIONS ) {
-                add_header "Access-Control-Allow-Origin"  *;
+                add_header "Access-Control-Allow-Credentials" "true" always;
+                add_header "Access-Control-Allow-Origin" "https://voyager162.github.io" always;
+                add_header "Access-Control-Allow-MaxAge" 600 always
                 add_header "Access-Control-Allow-Methods" "GET, POST, PUT, DELETE, OPTIONS, HEAD"; # Make sure the request methods above match here
-                add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept";
-                return 200;
+                add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Origin, X-Requested-With, Content-Type, Accept" always;
+                return 204;
         }
     }
 }
